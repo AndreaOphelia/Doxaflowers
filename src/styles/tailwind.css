@@ -83,6 +83,21 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+/* Typografi */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant";
+  font-weight: normal;
+  text-transform: uppercase;
+}
+p {
+  font-family: "WorkSans";
+  max-width: 65ch;
+}
 
 @layer components {
 }
