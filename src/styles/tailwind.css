@@ -16,16 +16,16 @@
   prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
   color-scheme: light; /* color of browser-provided UI */
 
-/* baggrundsfarve beige */
+  /* baggrundsfarve beige */
   --color-base-100: oklch(0.9939 0.0082 91.48);
 
   /* baggrundsfarve eggplant */
   --color-base-200: oklch(0.2605 0.0511 334.69);
 
-/* baggrundsfarve deep purple */
+  /* baggrundsfarve deep purple */
   --color-base-300: oklch(0.1533 0.0329 304.54);
 
-/*
+  /*
   --color-base-content: oklch(20% 0.05 240);
   --color-primary: oklch(55% 0.3 240);
 
@@ -38,11 +38,11 @@
   /* tekst beige */
   --color-secondary-content: oklch(0.9939 0.0082 91.48);
 
-   /* button mørk */
+  /* button mørk */
   --color-accent-100: oklch(0.2605 0.0511 334.69);
   --color-accent-content-100: oklch(0.2605 0.0511 334.69);
 
-   /* button lys */
+  /* button lys */
   --color-accent-200: oklch(0.9939 0.0082 91.48);
   --color-accent-content-200: oklch(0.9939 0.0082 91.48);
 
@@ -67,7 +67,7 @@
   --size-field: 0.25rem;
 
   /* border size */
-  --border: 1px;
+  --border: 0.5px;
 
   /* effects */
   --depth: 1;
