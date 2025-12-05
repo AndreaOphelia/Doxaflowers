@@ -97,6 +97,8 @@ h6 {
 p {
   font-family: "WorkSans";
   max-width: 65ch;
+  font-family: "WorkSans";
+  max-width: 65ch;
 }
 
 @layer components {
