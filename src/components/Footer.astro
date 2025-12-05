@@ -1,6 +1,78 @@
 ---
+import Button from "../components/Button.astro";
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
-</div>
-  
+
+<footer class="bg-base-100 text-primary-content w-full py-8 px-8">
+  <!-- Top section -->
+  <div class="flex flex-col md:flex-row justify-between flex-wrap">
+    <!-- Brand -->
+    <div class="mb-8">
+      <a
+        href="/"
+        class="text-primary-content font-[OliveCitrus] uppercase text-2xl"
+        >DOXAFLOWERS</a
+      >
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h5 class="text-primary-content mb-2">Tilmeld dig vores nyhedsbrev</h5>
+      <div class="flex mb-8">
+        <input
+          type="email"
+          placeholder="Din e-mail"
+          class="text-primary-content font-[Cormorant]"
+        />
+        <Button type="submit">Tilmeld</Button>
+      </div>
+    </div>
+
+    <!-- Kontakt + Social på mobil ved siden af hinanden -->
+    <div class="flex flex-col sm:flex-row gap-8">
+      <!-- Kontakt -->
+      <div>
+        <h5 class="text-primary-content">Kontakt</h5>
+        <ul>
+          <li>
+            <a href="#" class="text-primary-content font-light text-xs"
+              >info@doxaflowers.dk</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-primary-content font-light text-xs"
+              >+45 42 94 10 03</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h5 class="text-primary-content">Social</h5>
+        <ul>
+          <li>
+            <a href="#" class="text-primary-content font-light text-xs"
+              >Instagram</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-primary-content font-light text-xs"
+              >Facebook</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <hr class="border-primary-content my-4" />
+
+  <!-- Bottom -->
+  <div class="flex flex-col md:flex-row justify-between">
+    <p class="text-primary-content font-light text-xs">
+      © 2025 DOXAFLOWERS – Alle rettigheder forbeholdes
+    </p>
+    <p class="text-primary-content font-light text-xs">CVR:30460960</p>
+  </div>
+</footer>
