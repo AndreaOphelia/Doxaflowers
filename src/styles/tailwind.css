@@ -127,7 +127,7 @@ p {
 
 @font-face {
   font-family: "Cormorant";
-  src: url("/fonts/CormorantGaramond-Variable.ttf") format("truetype");
+  src: url("/fonts/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
