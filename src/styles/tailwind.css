@@ -75,6 +75,33 @@
 }
 
 @layer base {
+  
+  /* Force light mode color scheme */
+  :root,
+  * {
+    color-scheme: light !important;
+  }
+  
+  /* Override dark mode media query */
+  @media (prefers-color-scheme: dark) {
+    :root,
+    * {
+      color-scheme: light !important;
+    }
+    
+    html,
+    body,
+    * {
+      background-color: inherit;
+    }
+    
+    html,
+    body {
+      background-color: oklch(0.9939 0.0082 91.48) !important;
+      color: oklch(0.2605 0.0511 334.69) !important;
+    }
+  }
+  
   *,
   ::after,
   ::before,
@@ -102,6 +129,27 @@ p {
 @layer components {
 }
 @layer utilities {
+  @media (prefers-color-scheme: dark) {
+    .bg-base-100 {
+      background-color: oklch(0.9939 0.0082 91.48) !important;
+    }
+    
+    .bg-base-200 {
+      background-color: oklch(0.2605 0.0511 334.69) !important;
+    }
+    
+    .bg-base-300 {
+      background-color: oklch(0.1533 0.0329 304.54) !important;
+    }
+    
+    .text-primary-content {
+      color: oklch(0.2605 0.0511 334.69) !important;
+    }
+    
+    .text-secondary-content {
+      color: oklch(0.9939 0.0082 91.48) !important;
+    }
+  }
 }
 
 @font-face {
