@@ -4,14 +4,77 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
+import Testimonial from "../components/Testimonial.astro";
 ---
 
 <MainLayout title="Doxa Flowers">
-  <article>
+  <section class="mb-8">
+    <div class="flex gap-2 w-screen justify-center">
+    <img src="./img/forsidepicdoxa.webp" alt="billede af blomster">
+    <img src="./img/forsidepicdoxa.webp" alt="billede af blomster">
+    </div>
+    <div>
     <h1>Håndlavede blomsterværker</h1>
     <p>
       Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din historie, dit rum eller din begivenhed. Slow craftsmanship, hvor hvert blad er farvet og formet i hånden.
     </p>
     <Button></Button>
-  </article>
+  </div>
+  </section>
+  <section class="flex gap-10 mb-8">
+    <div>
+      <img src="./img/forsidepicdoxa.webp" alt="billede af blomster" class="w-2/3">
+    </div>
+    <div>
+      <h2>Doxa buketten er altid
+        i forandring</h2>
+      <p>Hver en blomst drives frem af kærlighed til papiret, former og farver.
+        Jeg lader mig inspirere af naturen men fortolker frit og skaber dermed doxa blomster som alle er unikke i deres farve og udtryk.
+        Alle mine blomster er lavet af FSC/miljøvenligt papir.
+        Udover de færdigfarvede papirer, så indfarver jeg også selv med naturens egne elementer</p>
+      <Button></Button>
+    </div>
+  </section>
+  <section class="flex mb-8 gap-8">
+    <div>
+      <img src="./img/forsidepicdoxa.webp" alt="billeed af blomster">
+      <h2>Hvert et lille blad..</h2>
+      <p>Alle blade håndklippes, og langsomt spirer en ny blomst frem. 
+
+        Ikke nogen form for cutter eller andre maskiner bliver brugt, men masser af kærlighed, en saks og mange timer</p>
+    </div>
+    <div>
+      <img src="./img/forsidepicdoxa.webp" alt="billeed af blomster">
+      <h2>Farver fra naturen</h2>
+      <p>Udover de færdigfarvede papirer, indfarver og tilføres nye dimensioner med farver fra naturens egne elementer.  Farver fra te, kaffe, frugt og grøntsager fører til nye og unikke farver, hvilket gør at der aldrig er to blomster som er ens - hverken i farve eller udtryk.</p>
+    </div>
+    <div>
+      <img src="./img/forsidepicdoxa.webp" alt="billeed af blomster">
+      <h2>Unikt finish</h2>
+      <p>Efter indfarvningen efterbehandler jeg med tørpasteller og eller akvarel. Farveskalaen kan derfor være den samme, men vil naturligvis variere fra buket til buket.
+
+        Jeg indfarver kun materialer til en buket af gangen og derfor vil den enkelte buket altid have sine helt egne unikke farver.</p>
+    </div>
+  </section>
+
+  <section class="my-40">
+    <Testimonial> Testimonials her</Testimonial>
+    <p class="place-self-center">Testimonial her</p>
+  </section>
+
+  <section class="flex max-w-7xl mx-auto">
+    <div class="mt-12">
+      <h2>Sådan Skaber Vi Dit Værk</h2>
+      <p>Trin 1: Idé & Dialog
+        Udfyld kontaktformularen, eller kontakt mig og fortæl om dine ønsker.</p>
+      <p>Trin 2: Design & Håndværk
+        Grundet den 100% håndlavede proces er leveringstiden typisk 4-8 uger efter design og pris er godkendt. Jeg skaber dit værk i ro, ikke i hast.</p>
+      <p>Trin 3: Overlevering
+        Dit kunstværk er klar til levering eller afhentning.</p>
+        <Button></Button>
+    </div>
+    <div>
+      <img src="./img/forsidepicdoxa.webp" alt="billede af blomster" class="w-2/3">
+    </div>
+  </section>
 </MainLayout>
