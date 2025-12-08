@@ -1,7 +1,225 @@
 ---
-// Henter parametrene fra Astro.props
-const {} = Astro.props; 
+import Button from "./Button.astro";
 ---
-<div>
+
+<section class="min-h-screen bg-base-100 py-16 px-4">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     
-</div>
+    <!-- Venstre side - Billede -->
+    <div class="relative">
+      <img 
+        src="/public/img/forsidepicdoxa.webp" 
+        alt="Floral arrangement" 
+        class="w-full h-auto"
+      />
+    </div>
+
+    <!-- Højre side - Formular -->
+    <div class="space-y-8">
+      <div>
+        <h1 class="text-4xl md:text-5xl mb-6 text-primary-content">
+          START DIALOGEN OM DIT UNIKKE VÆRK
+        </h1>
+        <p class="text-primary-content leading-relaxed">
+          Doxa Flowers skaber tidskrævende kunsthåndværk på bestilling.
+          Fortæl mig om din idé, dit projekt eller din begivenhed, så
+          vender jeg tilbage med et oplæg.
+        </p>
+      </div>
+
+      <form class="space-y-6" id="contactForm">
+        <!-- Tekst Sektion -->
+        <div>
+          <label class="block text-sm tracking-widest mb-3 text-primary-content">
+            ØNSKET FORMAT*
+          </label>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input 
+                type="radio" 
+                name="format" 
+                value="buketter" 
+                class="radio radio-sm border-primary-content"
+                checked
+              />
+              <span class="text-primary-content font-light">Buketter og installationer</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input 
+                type="radio" 
+                name="format" 
+                value="workshop" 
+                class="radio radio-sm border-primary-content"
+              />
+              <span class="text-primary-content font-light">Workshop tilmelding</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Navn Felt -->
+        <div>
+          <label class="block text-sm tracking-widest mb-2 text-primary-content">
+            DIT FULDE NAVN*
+          </label>
+          <input 
+            type="text" 
+            name="name"
+            required
+            class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50"
+          />
+        </div>
+
+        <!-- Email Felt -->
+        <div>
+          <label class="block text-sm tracking-widest mb-2 text-primary-content">
+            EMAIL*
+          </label>
+          <input 
+            type="email" 
+            name="email"
+            required
+            class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50"
+          />
+        </div>
+
+        <!-- Telefonnummer Felt -->
+        <div>
+          <label class="block text-sm tracking-widest mb-2 text-primary-content">
+            TELEFONNUMMER*
+          </label>
+          <input 
+            type="tel" 
+            name="phone"
+            required
+            class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50"
+          />
+        </div>
+
+        <!-- Workshop Dato Vælger (skjult som standard) -->
+        <div id="workshopFields" class="hidden space-y-6">
+          <div>
+            <label class="block text-sm tracking-widest mb-2 text-primary-content">
+              VÆLG DATO*
+            </label>
+            <div class="relative">
+              <input 
+                type="text" 
+                id="dateInput"
+                name="date"
+                readonly
+                placeholder="Klik for at vælge dato"
+                class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50 cursor-pointer"
+              />
+              <div id="calendarContainer" class="hidden absolute top-full left-0 mt-2 z-50 bg-base-100 border border-primary-content rounded-lg shadow-xl p-4">
+                <calendar-date id="workshopCalendar"></calendar-date>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buket Felter -->
+        <div id="bouquetFields" class="space-y-6">
+          <!-- Dropdowns -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm tracking-widest mb-2 text-primary-content">
+                ØNSKET PRISRAMME
+              </label>
+              <select name="priceRange" class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content">
+                <option value="">Vælg</option>
+                <option value="under-1000">Under 1.000 kr</option>
+                <option value="1000-3000">1.000-3.000 kr</option>
+                <option value="3000-5000">3.000-5.000 kr</option>
+                <option value="over-5000">Over 5.000 kr</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm tracking-widest mb-2 text-primary-content">
+                TYPE VÆRK
+              </label>
+              <select name="workType" class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content">
+                <option value="">Vælg</option>
+                <option value="buket">Buket</option>
+                <option value="installation">Installation</option>
+                <option value="dekoration">Dekoration</option>
+                <option value="andet">Andet</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Beskriv Din Vision -->
+          <div>
+            <label class="block text-sm tracking-widest mb-2 text-primary-content">
+              BESKRIV DIN VISION
+            </label>
+            <textarea 
+              name="message"
+              rows="6"
+              class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50 resize-none"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Send Knappen -->
+        <Button type="submit">Start dialog</Button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+  /* Radio button styling */
+  .radio:checked {
+    background-color: oklch(0.2605 0.0511 334.69);
+    border-color: oklch(0.2605 0.0511 334.69);
+  }
+</style>
+
+<script>  
+  // Form toggle logik
+  const radioButtons = document.querySelectorAll('input[name="format"]');
+  const workshopFields = document.getElementById('workshopFields');
+  const bouquetFields = document.getElementById('bouquetFields');
+
+  // Toggle felter baseret på valgt format (workshop eller blomster)
+  function toggleFields() {
+    const selectedFormat = document.querySelector('input[name="format"]:checked') as HTMLInputElement;
+    
+    if (selectedFormat?.value === 'workshop') {
+      workshopFields?.classList.remove('hidden');
+      bouquetFields?.classList.add('hidden');
+    } else {
+      workshopFields?.classList.add('hidden');
+      bouquetFields?.classList.remove('hidden');
+    }
+  }
+
+  // Tilføj event listeners til radio knapper
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', toggleFields);
+  });
+
+  // Initialiser formular ved indlæsning
+  toggleFields();
+
+  // Initialiser Cally date picker fra daisy
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const callyInputs = document.querySelectorAll('[data-cally]');
+    
+    callyInputs.forEach((input) => {
+      if (typeof window.Cally !== 'undefined') {
+        new window.Cally({
+          target: input,
+          locale: 'da-DK',
+          firstDayOfWeek: 1, // Monday
+          dateFormat: 'd. MMMM yyyy'
+        });
+      }
+    });
+  });
+
+</script>
