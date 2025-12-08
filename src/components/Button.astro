@@ -1,5 +1,44 @@
 ---
+
+// Henter parametrene fra Astro.props
+
+const { variant = "primary", size = "medium" } = Astro.props;
+
+//Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
+
+const buttonStyling =
+  "cursor-pointer px-8 py-2 border-1 border-black font-['WorkSans'] hover:font-['WorkSansItalic'] items-center duration-1000 inline-flex justify-center gap-2.5";
+
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
+
+const variantClasses = {
+    primary:
+        "bg-transparent text-Color-text-primary border-Color-button-border-primary hover:bg-Color-button-background-primary-hover hover:text-Color-text-primary-hover hover:border-Color-button-border-primary-hover",
+    
+    secondary:
+        "bg-transparent text-Color-text-secondary border-Color-button-border-secondary hover:bg-Color-button-background-secondary-hover hover:text-Color-text-secondary-hover hover:border-Color-button-border-secondary-hover",
+    
+};
+
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
+
+const sizeClasses = {
+  large: "text-4xl",
+
+  medium: "text-2xl",
+
+  small: "text-xl",
+
+  xsmall: "text-sm",
+};
 ---
-<div data-property-1="Desk-Primary" class="px-8 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-Color-button-outline-primary inline-flex justify-center items-center gap-2.5">
+
+<!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
+<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}
+  ><slot /></button
+>
+
+
+<!-- <div data-property-1="Desk-Primary" class="px-8 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-Color-button-outline-primary inline-flex justify-center items-center gap-2.5">
     <div class="justify-start text-Color-text-primary text-lg italic font-light font-['Work_Sans']">Lav en bestilling</div>
-</div>
+</div>  -->
