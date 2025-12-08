@@ -6,8 +6,9 @@ import { Image } from "astro:assets";
 ---
 
 <MainLayout title="Doxa Flowers">
-  <section>
-    <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+  <!-- Første sektion -->
+  <section class="py-16 md:py-24">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <div>
         <h1>SERVICES</h1>
         <p>
@@ -18,20 +19,19 @@ import { Image } from "astro:assets";
           ikke en webshop med hurtig levering.
         </p>
       </div>
-
       <Button type="submit">Tilmeld</Button>
     </div>
   </section>
 
-  <section>
-    <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+  <!-- Anden sektion -->
+  <section class="py-16 md:py-24">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <img
-        class="w-1/3 md:w-1/2"
-        src="./img/forsidepicdoxa.webp"
-        alt="billede af papirblomster"
+        class="w-full md:w-1/2 h-auto max-w-full object-cover"
+        src="./img/buketservice1.webp"
+        alt="billede af papirblomster buket"
       />
-
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
         <h2>Det er Tiden, der Skaber Værket</h2>
         <p>
           For mig er Doxa Flowers en hyldest til ro, nærvær og det langsomme
@@ -45,9 +45,11 @@ import { Image } from "astro:assets";
     </div>
   </section>
 
-  <section class="">
-    <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
-      <div class="flex flex-col gap-4">
+  <!-- Tredje sektion -->
+  <section class="py-16 md:py-24">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+      <!-- Tekstcontainer: 1/3 af bredden på desktop -->
+      <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
         <h2>skræddersyede buketter</h2>
         <p>
           Processen starter altid med en idé og en dialog. Sammen definerer vi
@@ -59,35 +61,42 @@ import { Image } from "astro:assets";
         <p>Priser starter fra 3000 kr.</p>
         <Button type="submit">Tilmeld</Button>
       </div>
-      <div class="flex">
+
+      <!-- Billedcontainer: 2/3 af bredden på desktop -->
+      <div class="flex w-full md:w-2/3 gap-4">
         <img
-          class="w-1/3"
-          src="./img/forsidepicdoxa.webp"
-          alt="billede af papirblomster"
+          class="w-1/2 h-auto max-w-full object-cover"
+          src="./img/buketservice2.webp"
+          alt="billede af papirblomster buket holdt i hånd"
         />
         <img
-          class="w-1/3 md:block"
-          src="./img/forsidepicdoxa.webp"
+          class="w-1/2 h-auto max-w-full object-cover"
+          src="./img/buketservice3.webp"
           alt="billede af papirblomster"
         />
       </div>
     </div>
   </section>
-  <section class="">
-    <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
-      <div class="flex">
+
+  <!-- Fjerde sektion -->
+  <section class="py-16 md:py-24">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+      <!-- Billedcontainer: 2/3 af bredden på desktop -->
+      <div class="flex w-full md:w-2/3 gap-4">
         <img
-          class="w-1/3"
-          src="./img/forsidepicdoxa.webp"
+          class="w-1/2 h-auto max-w-full object-cover"
+          src="./img/buketservice4.webp"
           alt="billede af papirblomster"
         />
         <img
-          class="w-1/3 md:block"
-          src="./img/forsidepicdoxa.webp"
+          class="w-1/2 h-auto max-w-full object-cover"
+          src="./img/buketservice5.webp"
           alt="billede af papirblomster"
         />
       </div>
-      <div class="flex flex-col gap-4">
+
+      <!-- Tekstcontainer: 1/3 af bredden på desktop -->
+      <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
         <h2>ENKELTE STILKE</h2>
         <p>
           Vores enkeltstilke begynder også med en fælles vision. Vi udvælger
