@@ -120,10 +120,29 @@ h6 {
   font-family: "Cormorant";
   font-weight: normal;
   text-transform: uppercase;
+  line-height: auto;
 }
 p {
   font-family: "WorkSans";
+  font-weight: 300;
   max-width: 65ch;
+}
+
+h1 {
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+h2 {
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+h3 {
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+h5 {
+  font-size: 14px;
+  letter-spacing: 4px;
 }
 
 @layer components {
@@ -162,7 +181,7 @@ p {
 @font-face {
   font-family: "WorkSans";
   src: url("/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 300;
   font-style: normal;
 }
 
