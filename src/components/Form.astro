@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import kontaktImage from '../assets/images/formimg.webp';
 import Button from "./Button.astro";
 ---
 
@@ -7,9 +9,9 @@ import Button from "./Button.astro";
     
     <!-- Venstre side - Billede -->
     <div class="relative h-64 md:h-auto">
-      <img 
-        src="/public/img/formimg.webp" 
-        alt="Floral arrangement" 
+      <Image 
+        src={kontaktImage} 
+        alt="Doxa flowers buket med rød baggrund" 
         class="w-full h-full object-cover"
       />
     </div>
