@@ -3,109 +3,189 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import heroImage from '../assets/images/koncepthero.jpg'; 
-import pernilleImage from '../assets/images/pernille_upscaled.jpg';
+import heroImage from "../assets/images/koncepthero.jpg";
+import pernilleImage from "../assets/images/pernille_upscaled.jpg";
+import procesImage from "../assets/images/enkelthvide3.webp";
+import procesImage1 from "../assets/images/enkelthvide.webp";
 ---
 
 <MainLayout title="Doxa Flowers">
   <!-- Hero sektion -->
-<div class="relative h-screen">
+  <div class="relative h-screen">
     <!-- Baggrunds billede -->
-  <Image 
-    src={heroImage} 
-    alt="Doxa Flowers hero image" 
-    class="absolute inset-0 h-full w-full object-cover"
-  />
+    <Image
+      src={heroImage}
+      alt="Doxa Flowers hero image"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
     <!-- Introtekst og CTA -->
-  <div class="absolute bottom-10 left-10 max-w-lg bg-transparent">
-    <h1 class="mb-4 text-secondary-content">KUNSTEN OG TIDEN BAG DOXA FLOWERS</h1>
-    <p class="mb-6 text-secondary-content">
-      Dette er en hyldest til det langsomme håndværk. Jeg skaber varige, unikke kunstværker ikke blot dekorationer. Hvert værk er formet af tid, omhu og en dyb respekt for materialet.
-    </p>
-    
-    <Button size="small" variant="primary" href="/galleri">Se værkerne</Button>
-    <Button size="small" variant="secondary" href="/kontakt">Kontakt mig</Button>
+    <div class="absolute bottom-10 left-10 max-w-lg bg-transparent">
+      <h1 class="mb-4 text-secondary-content">
+        KUNSTEN OG TIDEN BAG DOXA FLOWERS
+      </h1>
+      <p class="mb-6 text-secondary-content">
+        Dette er en hyldest til det langsomme håndværk. Jeg skaber varige,
+        unikke kunstværker ikke blot dekorationer. Hvert værk er formet af tid,
+        omhu og en dyb respekt for materialet.
+      </p>
+
+      <Button size="small" variant="secondary" href="/galleri"
+        >Se værkerne</Button
+      >
+    </div>
   </div>
-
-
-</div>
-  <section class="py-16 md:py-24">
+  <section class="py-16 md:py-24 min-h-dvh">
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
-      <Image 
-    src={pernilleImage} 
-    alt="Doxa Flowers hero image" 
-    class="w-full md:w-1/2 h-auto max-w-full object-cover"
-  />
-    
-    <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
-    <h2>Det Startede med en Følelse</h2>
-    <p>
-        For mig er Doxa Flowers en hyldest til ro, nærvær og det langsomme
-        håndværk. Hver eneste blomst, du ser, er et stykke tid, et valg af
-        farve og en følelse, jeg har formet i hånden. 
-    </p>
-    <p class="mb-4">
-        Min vision er at skabe
-        unika-værker, der ikke blot pynter, men fortæller en historie og
-        holder for evigt.
+      <Image
+        src={pernilleImage}
+        alt="Doxa Flowers hero image"
+        class="w-full md:w-1/2 h-auto object-cover"
+      />
+
+      <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
+        <h2>Det Startede med en Følelse</h2>
+        <p>
+          For mig er Doxa Flowers en hyldest til ro, nærvær og det langsomme
+          håndværk. Hver eneste blomst, du ser, er et stykke tid, et valg af
+          farve og en følelse, jeg har formet i hånden.
         </p>
-        <Button size="small" type="submit">Udforsk universet</Button>
+        <p class="mb-4">
+          Min vision er at skabe unika-værker, der ikke blot pynter, men
+          fortæller en historie og holder for evigt.
+        </p>
+        <div>
+            <Button size="small" type="submit">Udforsk universet</Button>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- skift baggrund ved scroll -->
 
-    <!-- skift baggrund ved scroll -->
+  <!-- video der spiller ved hover 1-->
 
-
-    <!-- video der spiller ved hover -->
-
-<section class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh" id="videoonhover" x-data>
-  <video 
-    x-ref="hovervideo" 
-    @mouseenter="$refs.hovervideo.play()" 
-    @mouseleave="$refs.hovervideo.pause()" 
-    playsinline 
-    muted 
-    preload="metadata"
-    class="w-full h-full absolute inset-0 object-cover"
+  <section
+    class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
+    id="videoonhover"
+    x-data
   >
-    <source src="/video/placeholder.mp4" type="video/mp4" />
-    <source src="/video/placeholder.webm" type="video/webm" />
-  </video>
-  <div class="bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10">
-    <h2 class="mb-4">Et skifte drevet af et nyt fokus</h2>
-    <p>Efter mange år i et andet felt blev jeg klar over, at mit fokus skulle ligge her. Siden etableringen for fire år siden har jeg dedikeret mig fuldt ud til at udvikle og perfektionere dette unikke håndværk. Jeg så potentialet i papirmediet og valgte at forfølge en vision om at levere et eksklusivt kunstprodukt.</p>
-  </div>
+    <video
+      x-ref="hovervideo"
+      @mouseenter="$refs.hovervideo.play()"
+      @mouseleave="$refs.hovervideo.pause()"
+      playsinline
+      muted
+      preload="metadata"
+      class="w-full h-full absolute inset-0 object-cover"
+    >
+      <source src="/video/placeholder.mp4" type="video/mp4" />
+      <source src="/video/placeholder.webm" type="video/webm" />
+    </video>
+    <div
+      class="bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10"
+    >
+      <h2 class="mb-4">Et skifte drevet af et nyt fokus</h2>
+      <p>
+        Efter mange år i et andet felt blev jeg klar over, at mit fokus skulle
+        ligge her. Siden etableringen for fire år siden har jeg dedikeret mig
+        fuldt ud til at udvikle og perfektionere dette unikke håndværk. Jeg så
+        potentialet i papirmediet og valgte at forfølge en vision om at levere
+        et eksklusivt kunstprodukt.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tredje sektion -->
+<section class="py-16 md:py-24 min-h-dvh flex items-center justify-center">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+        <!-- Tekstcontainer: 1/3 af bredden på desktop -->
+        <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
+            <h2>Jeg klipper i frihånd – uden skabeloner</h2>
+            <p class="mb-4">
+                Hvert værk hos Doxa Flowers er et resultat af frihåndsklipning. Jeg
+                bruger ingen standardiserede skabeloner. Denne kompromisløst manuelle
+                tilgang er nødvendig. Den sikrer, at hver blomst er unik og bærer præg
+                af den passion, der ligger i det analoge håndværk.
+            </p>
+            <div>
+                    <Button size="small" type="submit">Tilmeld</Button>
+            </div>
+        </div>
+
+        <!-- Billedcontainer: 2/3 af bredden på desktop -->
+        <div class="flex w-full md:w-1/2 gap-4">
+            <Image
+                src={procesImage}
+                alt="Doxa Flowers hero image"
+                class="w-1/2 h-auto max-w-full object-cover"
+            />
+            <Image
+                src={procesImage1}
+                alt="Doxa Flowers hero image"
+                class="w-1/2 h-auto max-w-full object-cover"
+            />
+        </div>
+    </div>
 </section>
 
-<!-- Tredje sektion -->
-  <section class="py-16 md:py-24">
-    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
-      <!-- Tekstcontainer: 1/3 af bredden på desktop -->
-      <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
-        <h2>Jeg klipper i frihånd – uden skabeloner</h2>
-        <p class="mb-4">
-          Hvert værk hos Doxa Flowers er et resultat af frihåndsklipning. Jeg bruger ingen standardiserede skabeloner. Denne kompromisløst manuelle tilgang er nødvendig. Den sikrer, at hver blomst er unik og bærer præg af den passion, der ligger i det analoge håndværk.
-        </p>
-        <Button size="small" type="submit">Tilmeld</Button>
-      </div>
+  <!-- video der spiller ved hover 1-->
 
-      <!-- Billedcontainer: 2/3 af bredden på desktop -->
-      <div class="flex w-full md:w-2/3 gap-4">
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice2.webp"
-          alt="billede af papirblomster buket holdt i hånd"
-        />
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice3.webp"
-          alt="billede af papirblomster"
-        />
-      </div>
+  <section
+    class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
+    id="videoonhover"
+    x-data
+  >
+    <video
+      x-ref="hovervideo"
+      @mouseenter="$refs.hovervideo.play()"
+      @mouseleave="$refs.hovervideo.pause()"
+      playsinline
+      muted
+      preload="metadata"
+      class="w-full h-full absolute inset-0 object-cover"
+    >
+      <source src="/video/placeholder2.mp4" type="video/mp4" />
+      <source src="/video/placeholder2.webm" type="video/webm" />
+    </video>
+    <div
+      class="bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10"
+    >
+      <h2 class="mb-4">Forståelse af naturen er mit udgangspunkt</h2>
+      <p>
+        For at opnå det realistiske niveau, mine værker er kendt for, ligger der
+        en grundig botanisk analyse bag hvert design. Jeg studerer ægte
+        blomsters strukturer og farveforløb. Først når naturens arkitektur er
+        fuldt forstået, kan jeg minutiøst genopbygge det i papir. Det er her,
+        den virkelige kvalitet skabes.
+      </p>
     </div>
   </section>
+<section class="py-16 md:py-24 min-h-dvh flex items-center justify-center">
+    <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
+        <!-- Billedcontainer: 2/3 af bredden på desktop -->
+        <div class="flex w-full md:w-1/2 gap-4">
+            <img
+                class="w-1/2 h-auto max-w-full object-cover"
+                src="./img/buketservice4.webp"
+                alt="billede af papirblomster"
+            />
+            <img
+                class="w-1/2 h-auto max-w-full object-cover"
+                src="./img/buketservice5.webp"
+                alt="billede af papirblomster"
+            />
+        </div>
 
-  
+        <!-- Tekstcontainer: 1/3 af bredden på desktop -->
+        <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
+            <h2>Doxa skaber Blomster af Papir</h2>
+            <p>
+                Navnet Doxa afspejler den dedikation og det høje niveau, der ligger i hvert eneste værk. Jeg skaber Blomster af Papir – en titel, der bevidst sætter en tyk streg under den kunstneriske dimension. Mine kreationer er ikke blot "papirsblomster"; de er unikke, håndlavede værker, der betragtes som kunst.
+            </p>
+            <div>
+                    <Button size="small" type="submit">Tilmeld</Button>
+            </div>
+        </div>
+    </div>
+</section>
 </MainLayout>
