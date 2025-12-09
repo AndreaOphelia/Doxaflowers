@@ -3,6 +3,12 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
+import hero1 from "../assets/images/stoevethvidblaa2.webp";
+import hero2 from "../assets/images/stoevethvidblaa1.webp"; 
+import hero3 from "../assets/images/buketvase3.webp";
+import hero4 from "../assets/images/vasetaburet2.webp";
+import hero5 from "../assets/images/vasetaburet3.webp";
+import hero6 from "../assets/images/japansk1.webp";
 import Testimonial from "../components/Testimonial.astro";
 ---
 
@@ -11,68 +17,64 @@ import Testimonial from "../components/Testimonial.astro";
 
     
     <div class="absolute inset-0 grid grid-cols-2 gap-2 z-0">
-      <img src="/img/forsidepicdoxa.webp"
-           alt="billede af blomster"
-           class="w-full h-full object-cover"/>
+       <!-- Venstre side -->
+       <div class="relative w-full h-full">
+        <Image 
+          src={hero1} 
+          alt="blomster" 
+          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" 
+          />
+        <Image 
+          src={hero2}  
+          alt="blomster" 
+          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" 
+          />
+        <Image 
+          src={hero3} 
+          alt="blomster" 
+          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" 
+          />
+      </div>
   
-      <img src="/img/forsidepicdoxa.webp"
-           alt="billede af blomster"
-           class="w-full h-full object-cover"/>
+      <!-- Højre side -->
+      <div class="relative w-full h-full">
+        <Image 
+          src={hero4} 
+          alt="blomster" 
+          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
+        <Image 
+          src={hero5} 
+          alt="blomster" 
+          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+        <Image 
+          src={hero6} 
+          alt="blomster" 
+          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+      </div>
     </div>
   
     <!-- Tekstbox -->
     <div class="absolute bg-transparent text-secondary-content left-10 bottom-10 max-w-lg flex flex-col gap-4 z-10">
       <h1 class="">Håndlavede blomster af papir</h1>
-  
       <p>
         Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din historie,
         dit rum eller din begivenhed. Slow craftsmanship, hvor hvert blad er farvet og
         formet i hånden.
       </p>
-  
       <Button variant="secondary" size="small">
         Bestil dit værk
       </Button>
     </div>
   
+     <!-- SLIDE INDICATORS -->
+     <div id="indicators" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20 bg-transparent">
+      <span class="dot w-3 h-3 rounded-full "></span>
+      <span class="dot w-3 h-3 rounded-full "></span>
+      <span class="dot w-3 h-3 rounded-full"></span>
+    </div>
   </section>
 
-
-  <section class="relative h-screen overflow-hidden mb-40">
-
-    <!-- FADE SLIDER WRAPPER -->
-    <div class="absolute inset-0 grid grid-cols-2 z-0">
   
-      <!-- Venstre fade -->
-      <div class="relative w-full h-full">
-        <img class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" src="/img/forsidepicdoxa.webp">
-        <img class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice1.webp">
-        <img class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice2.webp">
-      </div>
-  
-      <!-- Højre fade -->
-      <div class="relative w-full h-full">
-        <img class="fadeRight absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" src="/img/forsidepicdoxa.webp">
-        <img class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice5.webp">
-        <img class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice4.webp">
-      </div>
-  
-    </div>
-  
-    <!-- OVERLAY TEKST  -->
-    <div class="absolute bg-transparent text-secondary-content left-10 bottom-10 max-w-lg flex flex-col gap-4 z-10">
-      <h1>Håndlavede blomster af papir</h1>
-      <p>
-        Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din historie,
-        dit rum eller din begivenhed.
-      </p>
-      <Button variant="secondary" size="small">Bestil dit værk</Button>
-    </div>
-  
-  </section>
-  
-  
-
   <section class="flex flex-row mx-auto items-center mb-40">
     <div>
       <img src="./img/forsidepicdoxa.webp" alt="billede af blomster" class="">
@@ -173,5 +175,34 @@ import Testimonial from "../components/Testimonial.astro";
 
   // Skift hvert 4 sekund
   setInterval(fadeSlider, 4000);
+</script>
+
+<script is:client>
+  const leftImages = document.querySelectorAll(".fadeLeft");
+  const rightImages = document.querySelectorAll(".fadeRight");
+  const dots = document.querySelectorAll(".dot");
+
+  let index = 0;
+
+  function updateSlider() {
+    // Skift billeder
+    leftImages.forEach((img, i) => img.style.opacity = i === index ? 1 : 0);
+    rightImages.forEach((img, i) => img.style.opacity = i === index ? 1 : 0);
+
+    // Opdater dots
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add("bg-white");
+        dot.classList.remove("bg-white/40");
+      } else {
+        dot.classList.remove("bg-white");
+        dot.classList.add("bg-white/40");
+      }
+    });
+
+    index = (index + 1) % leftImages.length;
+  }
+
+  setInterval(updateSlider, 4000);
 </script>
 
