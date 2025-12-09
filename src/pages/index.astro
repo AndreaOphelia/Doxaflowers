@@ -36,6 +36,41 @@ import Testimonial from "../components/Testimonial.astro";
     </div>
   
   </section>
+
+
+  <section class="relative h-screen overflow-hidden mb-40">
+
+    <!-- FADE SLIDER WRAPPER -->
+    <div class="absolute inset-0 grid grid-cols-2 z-0">
+  
+      <!-- Venstre fade -->
+      <div class="relative w-full h-full">
+        <img class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" src="/img/forsidepicdoxa.webp">
+        <img class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice1.webp">
+        <img class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice2.webp">
+      </div>
+  
+      <!-- Højre fade -->
+      <div class="relative w-full h-full">
+        <img class="fadeRight absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" src="/img/forsidepicdoxa.webp">
+        <img class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice5.webp">
+        <img class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" src="/img/buketservice4.webp">
+      </div>
+  
+    </div>
+  
+    <!-- OVERLAY TEKST  -->
+    <div class="absolute bg-transparent text-secondary-content left-10 bottom-10 max-w-lg flex flex-col gap-4 z-10">
+      <h1>Håndlavede blomster af papir</h1>
+      <p>
+        Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din historie,
+        dit rum eller din begivenhed.
+      </p>
+      <Button variant="secondary" size="small">Bestil dit værk</Button>
+    </div>
+  
+  </section>
+  
   
 
   <section class="flex flex-row mx-auto items-center mb-40">
@@ -114,3 +149,29 @@ import Testimonial from "../components/Testimonial.astro";
   
   
 </MainLayout>
+
+
+
+<script>
+  const leftImages = document.querySelectorAll(".fadeLeft");
+  const rightImages = document.querySelectorAll(".fadeRight");
+
+  let index = 0;
+
+  function fadeSlider() {
+    // Fade ud af alle
+    leftImages.forEach(img => img.style.opacity = 0);
+    rightImages.forEach(img => img.style.opacity = 0);
+
+    // Fade ind på næste billede
+    leftImages[index].style.opacity = 1;
+    rightImages[index].style.opacity = 1;
+
+    // Næste index
+    index = (index + 1) % leftImages.length;
+  }
+
+  // Skift hvert 4 sekund
+  setInterval(fadeSlider, 4000);
+</script>
+
