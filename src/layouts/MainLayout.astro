@@ -1,32 +1,49 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import '../styles/tailwind.css';
+import Scrolltop from "../components/Scrolltop.astro";
+import "../styles/tailwind.css";
 const { title } = Astro.props;
 ---
+
 <html lang="da" class="">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/doxafavicon.svg" media="(prefers-color-scheme: dark)"/>
-		<link rel="icon" type="image/svg+xml" href="/doxafavicondark.svg" media="(prefers-color-scheme: light)"/>
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{Astro.props.title}</title>
-		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.2/dist/cdn.min.js"></script>
-	</head>
-	<body class="px-8">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/doxafavicon.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/doxafavicondark.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.2/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body class="px-8">
+    <header>
+      <Header />
+    </header>
 
-		<header>
-			<Header></Header>
-		</header>
-		
-		<main>
-			<slot />
-		</main>
+    <main>
+      <slot />
 
-		<footer>
-			<Footer></Footer>
-		</footer>
-			
-	</body>
+	  <!-- Scroll to top knap -->
+	   <Scrolltop />
+	   
+    </main>
+
+    <footer>
+      <Footer />
+    </footer>
+  </body>
 </html>

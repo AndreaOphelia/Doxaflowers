@@ -29,7 +29,6 @@ import pernilleImage from '../assets/images/pernille_upscaled.jpg';
 
 
 </div>
-
   <section class="py-16 md:py-24">
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <Image 
@@ -37,9 +36,7 @@ import pernilleImage from '../assets/images/pernille_upscaled.jpg';
     alt="Doxa Flowers hero image" 
     class="w-full md:w-1/2 h-auto max-w-full object-cover"
   />
-      
-
-
+    
     <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
     <h2>Det Startede med en Følelse</h2>
     <p>
@@ -56,13 +53,22 @@ import pernilleImage from '../assets/images/pernille_upscaled.jpg';
       </div>
     </div>
   </section>
-
   
 
-  <section id="videoonhover" x-data></section>
-  <video x-ref="hovervideo" @mouseenter="$refs.hovervideo.play()" @mouseleave="$refs.hovervideo.pause()">
-	<source src="/public/video/placeholder.mp4" type="video/mp4">
-	<source src="regnvejr.webm" type="video/webm">
-	</video>
+
+<section class="cursor-pointer" id="videoonhover" x-data>
+  <video 
+    x-ref="hovervideo" 
+    @mouseenter="$refs.hovervideo.play()" 
+    @mouseleave="$refs.hovervideo.pause()" 
+    playsinline 
+    muted 
+    preload="metadata"
+    class="w-full h-auto block"
+  >
+    <source src="/video/placeholder.mp4" type="video/mp4" />
+    <source src="/video/placeholder.webm" type="video/webm" />
+  </video>
+</section>
   
 </MainLayout>
