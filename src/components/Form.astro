@@ -3,10 +3,10 @@ import Button from "./Button.astro";
 ---
 
 <section class="min-h-screen bg-base-100 py-16 px-4">
-  <div class="bg-white max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
+  <div class=" max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
     
     <!-- Venstre side - Billede -->
-    <div class="relative">
+    <div class="relative h-64 md:h-auto">
       <img 
         src="/public/img/formimg.webp" 
         alt="Floral arrangement" 
@@ -94,7 +94,7 @@ import Button from "./Button.astro";
             placeholder="Indtast dit telefonnummer"
             name="phone"
             required
-            class="w-full py-2"
+            class="w-full py-2 bg-transparent"
           />
         </div>
 
@@ -160,7 +160,7 @@ import Button from "./Button.astro";
               name="message"
               placeholder="Fortæl mig om dine ønsker og idéer..."
               rows="6"
-              class="w-full py-2 resize-none border"
+              class="w-full py-2 resize-none border bg-transparent"
             ></textarea>
           </div>
         </div>
