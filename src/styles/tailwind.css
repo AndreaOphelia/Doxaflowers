@@ -9,6 +9,8 @@
   /* Her tilføjes theme variable // tokens */
 }
 
+
+
 @plugin "daisyui";
 @plugin "daisyui/theme" {
   name: "mytheme";
@@ -125,6 +127,55 @@
       background-color: oklch(0.9939 0.0082 91.48) !important;
       color: oklch(0.2605 0.0511 334.69) !important;
     }
+    
+
+  }
+
+    /* Override light mode media query */
+
+    @media (prefers-color-scheme: light) {
+    :root,
+    * {
+      color-scheme: light !important;
+    }
+
+    /* Override dark mode form elementer */
+
+    input::placeholder,
+    textarea::placeholder {
+    color: oklch(0.2605 0.0511 334.69) !important;
+    opacity: 0.5 !important;
+    font-weight: 300 !important;
+    font-style: oblique !important;
+  }
+
+    input,
+    textarea,
+    select {
+    border-color: oklch(0.2605 0.0511 334.69) !important;
+    color: oklch(0.2605 0.0511 334.69) !important;
+    font-weight: 300 !important;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: oklch(0.2605 0.0511 334.69) !important;
+    outline-color: oklch(0.2605 0.0511 334.69) !important;
+  }
+    
+    html,
+    body,
+    * {
+      background-color: inherit;
+    }
+    
+    html,
+    body {
+      background-color: oklch(0.9939 0.0082 91.48) !important;
+      color: oklch(0.2605 0.0511 334.69) !important;
+    }
+    
 
   }
   

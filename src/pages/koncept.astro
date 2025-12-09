@@ -1,0 +1,30 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import heroImage from '../assets/images/koncepthero.jpg'; 
+---
+
+<MainLayout title="Doxa Flowers">
+  <!-- Første sektion -->
+<div class="relative h-screen">
+  <!-- Background Image -->
+  <Image 
+    src={heroImage} 
+    alt="Doxa Flowers hero image" 
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div class="absolute bottom-10 left-10 max-w-lg bg-transparent">
+    <h1 class="mb-4 text-secondary-content">KUNSTEN OG TIDEN BAG DOXA FLOWERS</h1>
+    <p class="mb-6 text-secondary-content">
+      Dette er en hyldest til det langsomme håndværk. Jeg skaber varige, unikke kunstværker ikke blot dekorationer. Hvert værk er formet af tid, omhu og en dyb respekt for materialet.
+    </p>
+    
+    <Button size="small" variant="primary" href="/galleri">Se værkerne</Button>
+    <Button size="small" variant="secondary" href="/kontakt" class="ml-4">Kontakt mig</Button>
+  </div>
+</div>
+  
+</MainLayout>
