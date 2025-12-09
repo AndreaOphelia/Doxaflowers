@@ -1,0 +1,28 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import Testimonial from "../components/Testimonial.astro";
+---
+
+<MainLayout title="Doxa Flowers">
+
+<header class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh">
+  <!-- Video Element -->
+  <video autoplay loop muted class="w-full h-full absolute inset-0 object-cover">
+    <source src="/video/placeholder.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content (Text og CTA) -->
+  <div class="absolute bottom-10 left-10 max-w-lg bg-content-200 p-6">
+    <h1 class="mb-4 text-primary-content">Håndlavede blomsterværker</h1>
+    <p class="mb-6 text-primary-content">
+      Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din historie, dit rum eller din begivenhed. 
+      Slow craftsmanship, hvor hvert blad er farvet og formet i hånden.
+    </p>
+    <Button size="small" variant="primary" href="/galleri">Udforsk universet</Button>
+</header>
+
+</MainLayout>

@@ -53,10 +53,14 @@ import pernilleImage from '../assets/images/pernille_upscaled.jpg';
       </div>
     </div>
   </section>
-  
 
 
-<section class="cursor-pointer" id="videoonhover" x-data>
+    <!-- skift baggrund ved scroll -->
+
+
+    <!-- video der spiller ved hover -->
+
+<section class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh" id="videoonhover" x-data>
   <video 
     x-ref="hovervideo" 
     @mouseenter="$refs.hovervideo.play()" 
@@ -64,11 +68,44 @@ import pernilleImage from '../assets/images/pernille_upscaled.jpg';
     playsinline 
     muted 
     preload="metadata"
-    class="w-full h-auto block"
+    class="w-full h-full absolute inset-0 object-cover"
   >
     <source src="/video/placeholder.mp4" type="video/mp4" />
     <source src="/video/placeholder.webm" type="video/webm" />
   </video>
+  <div class="bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10">
+    <h2 class="mb-4">Et skifte drevet af et nyt fokus</h2>
+    <p>Efter mange år i et andet felt blev jeg klar over, at mit fokus skulle ligge her. Siden etableringen for fire år siden har jeg dedikeret mig fuldt ud til at udvikle og perfektionere dette unikke håndværk. Jeg så potentialet i papirmediet og valgte at forfølge en vision om at levere et eksklusivt kunstprodukt.</p>
+  </div>
 </section>
+
+<!-- Tredje sektion -->
+  <section class="py-16 md:py-24">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+      <!-- Tekstcontainer: 1/3 af bredden på desktop -->
+      <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
+        <h2>Jeg klipper i frihånd – uden skabeloner</h2>
+        <p class="mb-4">
+          Hvert værk hos Doxa Flowers er et resultat af frihåndsklipning. Jeg bruger ingen standardiserede skabeloner. Denne kompromisløst manuelle tilgang er nødvendig. Den sikrer, at hver blomst er unik og bærer præg af den passion, der ligger i det analoge håndværk.
+        </p>
+        <Button size="small" type="submit">Tilmeld</Button>
+      </div>
+
+      <!-- Billedcontainer: 2/3 af bredden på desktop -->
+      <div class="flex w-full md:w-2/3 gap-4">
+        <img
+          class="w-1/2 h-auto max-w-full object-cover"
+          src="./img/buketservice2.webp"
+          alt="billede af papirblomster buket holdt i hånd"
+        />
+        <img
+          class="w-1/2 h-auto max-w-full object-cover"
+          src="./img/buketservice3.webp"
+          alt="billede af papirblomster"
+        />
+      </div>
+    </div>
+  </section>
+
   
 </MainLayout>

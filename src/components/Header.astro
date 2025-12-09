@@ -1,38 +1,57 @@
-<header class="absolute left-0 top-0 w-full z-50 text-primary-content">
+---
+import { Image } from "astro:assets";
+import logoImage from "../assets/images/logo2.svg";
+
+// kigger på om vi er på forsiden eller en underside, koncept siden er undtaget da den har mørk baggrund)
+const isSubpage = !["/", "/koncept", "/test"].includes(Astro.url.pathname);
+
+// sætter tekst farve og logo filter baseret på side type
+
+const textColor = isSubpage ? "text-primary-content" : "text-secondary-content";
+const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
+---
+
+<header
+  class={`absolute left-0 top-0 w-full z-50 ${textColor} bg-transparent`}
+>
   <div class="max-w-7xl mx-auto flex items-center justify-between py-4">
     <!-- LOGO -->
-    <a
-      href="/"
-      class="text-xl font-[OliveCitrus] uppercase text-primary-content"
-    >
-      Doxaflowers
-    </a>
+    <div>
+      <a href="/">
+        <Image
+          src={logoImage}
+          alt="Doxa Flowers Logo"
+          class="w-120 h-auto px-8"
+          style={`filter: ${logoFilter}`}
+        />
+      </a>
+    </div>
 
     <!-- DESKTOP MENU -->
     <nav class="hidden md:flex items-center gap-8 font-[WorkSans]">
       <a
-        href="#"
-        class="uppercase text-sm hover:opacity-80 text-primary-content"
-        >Værker & Priser</a
+        href="/koncept"
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
+        >Koncept</a
       >
       <a
-        href="#"
-        class="uppercase text-sm hover:opacity-80 text-primary-content"
-        >Håndværket</a
-      >
-      <a
-        href="#"
-        class="uppercase text-sm hover:opacity-80 text-primary-content"
+        href="/galleri"
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
         >Galleri</a
       >
       <a
-        href="#"
-        class="uppercase text-sm hover:opacity-80 text-primary-content"
+        href="/services"
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
+        >Værker & Priser</a
+      >
+      <a
+        href="/workshops"
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
         >Workshops</a
       >
       <a
-        href="#"
-        class="uppercase text-sm hover:opacity-80 text-primary-content"
+        href="/kontakt"
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
         >Kontakt</a
       >
     </nav>
@@ -40,12 +59,12 @@
     <!-- BURGER BTN -->
     <button
       id="menuButton"
-      class="md:hidden flex flex-col gap-1.5"
+      class="md:hidden flex flex-col gap-1.5 px-8"
       aria-label="Toggle menu"
     >
-      <span class="w-6 h-[2px] bg-primary-content"></span>
-      <span class="w-6 h-[2px] bg-primary-content"></span>
-      <span class="w-6 h-[2px] bg-primary-content"></span>
+      <span class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}></span>
+      <span class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}></span>
+      <span class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}></span>
     </button>
   </div>
 
@@ -54,11 +73,11 @@
     id="mobileMenu"
     class="hidden md:hidden grid gap-5 px-6 py-8 bg-primary-content"
   >
-    <a href="#" class="uppercase text-base text-base-100">Værker & Priser</a>
-    <a href="#" class="uppercase text-base text-base-100">Håndværket</a>
-    <a href="#" class="uppercase text-base text-base-100">Galleri</a>
-    <a href="#" class="uppercase text-base text-base-100">Workshops</a>
-    <a href="#" class="uppercase text-base text-base-100">Kontakt</a>
+    <a href="/koncept" class="uppercase text-base text-base-100">Koncept</a>
+    <a href="/galleri" class="uppercase text-base text-base-100">Galleri</a>
+    <a href="/services" class="uppercase text-base text-base-100">Værker & Priser</a>
+    <a href="/workshops" class="uppercase text-base text-base-100">Workshops</a>
+    <a href="/kontakt" class="uppercase text-base text-base-100">Kontakt</a>
   </nav>
 </header>
 
