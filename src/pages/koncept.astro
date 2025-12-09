@@ -4,18 +4,19 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import heroImage from '../assets/images/koncepthero.jpg'; 
+import pernilleImage from '../assets/images/pernille_upscaled.jpg';
 ---
 
 <MainLayout title="Doxa Flowers">
-  <!-- Første sektion -->
+  <!-- Hero sektion -->
 <div class="relative h-screen">
-  <!-- Background Image -->
+    <!-- Baggrunds billede -->
   <Image 
     src={heroImage} 
     alt="Doxa Flowers hero image" 
     class="absolute inset-0 h-full w-full object-cover"
   />
-
+    <!-- Introtekst og CTA -->
   <div class="absolute bottom-10 left-10 max-w-lg bg-transparent">
     <h1 class="mb-4 text-secondary-content">KUNSTEN OG TIDEN BAG DOXA FLOWERS</h1>
     <p class="mb-6 text-secondary-content">
@@ -23,8 +24,45 @@ import heroImage from '../assets/images/koncepthero.jpg';
     </p>
     
     <Button size="small" variant="primary" href="/galleri">Se værkerne</Button>
-    <Button size="small" variant="secondary" href="/kontakt" class="ml-4">Kontakt mig</Button>
+    <Button size="small" variant="secondary" href="/kontakt">Kontakt mig</Button>
   </div>
+
+
 </div>
+
+  <section class="py-16 md:py-24">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+      <Image 
+    src={pernilleImage} 
+    alt="Doxa Flowers hero image" 
+    class="w-full md:w-1/2 h-auto max-w-full object-cover"
+  />
+      
+
+
+    <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
+    <h2>Det Startede med en Følelse</h2>
+    <p>
+        For mig er Doxa Flowers en hyldest til ro, nærvær og det langsomme
+        håndværk. Hver eneste blomst, du ser, er et stykke tid, et valg af
+        farve og en følelse, jeg har formet i hånden. 
+    </p>
+    <p class="mb-4">
+        Min vision er at skabe
+        unika-værker, der ikke blot pynter, men fortæller en historie og
+        holder for evigt.
+        </p>
+        <Button size="small" type="submit">Udforsk universet</Button>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="videoonhover" x-data></section>
+  <video x-ref="hovervideo" @mouseenter="$refs.hovervideo.play()" @mouseleave="$refs.hovervideo.pause()">
+	<source src="/public/video/placeholder.mp4" type="video/mp4">
+	<source src="regnvejr.webm" type="video/webm">
+	</video>
   
 </MainLayout>
