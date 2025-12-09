@@ -1,3 +1,4 @@
+<!-- teknikken (vises når brugeren scroller ned, gemmer knappen når brugeren er i toppen, scroller op når der trykkes) -->
 <div
   x-data="{ isVisible: false }"
   x-init="window.addEventListener('scroll', () => { isVisible = window.scrollY > 100; })"
@@ -10,12 +11,14 @@
   x-transition:leave-start="opacity-100 transform translate-y-0"
   x-transition:leave-end="opacity-0 transform translate-y-2"
 >
+  <!-- selve knappen -->
   <button
     title="Scroll to top"
     aria-label="Scroll to top"
     @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
     class="w-10 h-10 flex items-center justify-center cursor-pointer"
   >
+    <!-- pil svg -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="w-5 h-5"
@@ -30,6 +33,8 @@
         stroke-width="2"
         d="M5 15l7-7 7 7"></path>
     </svg>
-    <span class="sr-only">Scroll to top</span>
+
+    <!-- vises kun til screen readers -->
+    <span class="sr-only">Scroll til toppen</span>
   </button>
 </div>
