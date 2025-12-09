@@ -15,12 +15,12 @@ import Button from "./Button.astro";
     </div>
 
     <!-- Højre side - Formular -->
-    <div class="space-y-8 p-7">
+    <div class="space-y-8 p-7 md:p-0">
       <div>
         <h1>
           START DIALOGEN OM DIT UNIKKE VÆRK
         </h1>
-        <p class="leading-relaxed">
+        <p class="mt-4">
           Doxa Flowers skaber tidskrævende kunsthåndværk på bestilling.
           Fortæl mig om din idé, dit projekt eller din begivenhed, så
           vender jeg tilbage med et oplæg.
@@ -42,7 +42,7 @@ import Button from "./Button.astro";
                 class="radio radio-sm"
                 checked
               />
-              <span class="font-light">Buketter og installationer</span>
+              <span class="font-light font-[WorkSans]">Buketter og installationer</span>
             </label>
             <label class="flex items-center gap-3 cursor-pointer">
               <input 
@@ -51,7 +51,7 @@ import Button from "./Button.astro";
                 value="workshop" 
                 class="radio radio-sm"
               />
-              <span class="text-primary-content font-light">Workshop tilmelding</span>
+              <span class="text-primary-content font-light font-light font-[WorkSans]">Workshop tilmelding</span>
             </label>
           </div>
         </div>
@@ -128,7 +128,7 @@ import Button from "./Button.astro";
               <label class="block text-sm tracking-widest mb-2">
                 ØNSKET PRISRAMME
               </label>
-              <select name="priceRange" class="w-full bg-transparent py-2">
+              <select name="priceRange" class="w-full bg-transparent py-2 font-light font-[WorkSans]">
                 <option value="">Vælg</option>
                 <option value="under-1000">Under 1.000 kr</option>
                 <option value="1000-3000">1.000-3.000 kr</option>
@@ -141,7 +141,7 @@ import Button from "./Button.astro";
               <label class="block text-sm tracking-widest mb-2">
                 TYPE VÆRK
               </label>
-              <select name="workType" class="w-full bg-transparent py-2">
+              <select name="workType" class="w-full bg-transparent py-2 font-light font-[WorkSans]">
                 <option value="">Vælg</option>
                 <option value="buket">Buket</option>
                 <option value="installation">Installation</option>
