@@ -3,24 +3,24 @@ import Button from "./Button.astro";
 ---
 
 <section class="min-h-screen bg-base-100 py-16 px-4">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div class="bg-white max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
     
     <!-- Venstre side - Billede -->
     <div class="relative">
       <img 
-        src="/public/img/forsidepicdoxa.webp" 
+        src="/public/img/formimg.webp" 
         alt="Floral arrangement" 
-        class="w-full h-auto"
+        class="w-full h-full object-cover"
       />
     </div>
 
     <!-- Højre side - Formular -->
-    <div class="space-y-8">
+    <div class="space-y-8 p-7">
       <div>
-        <h1 class="text-4xl md:text-5xl mb-6 text-primary-content">
+        <h1>
           START DIALOGEN OM DIT UNIKKE VÆRK
         </h1>
-        <p class="text-primary-content leading-relaxed">
+        <p class="leading-relaxed">
           Doxa Flowers skaber tidskrævende kunsthåndværk på bestilling.
           Fortæl mig om din idé, dit projekt eller din begivenhed, så
           vender jeg tilbage med et oplæg.
@@ -30,7 +30,7 @@ import Button from "./Button.astro";
       <form class="space-y-6" id="contactForm">
         <!-- Tekst Sektion -->
         <div>
-          <label class="block text-sm tracking-widest mb-3 text-primary-content">
+          <label class="block text-sm tracking-widest mb-3">
             ØNSKET FORMAT*
           </label>
           <div class="space-y-2">
@@ -39,17 +39,17 @@ import Button from "./Button.astro";
                 type="radio" 
                 name="format" 
                 value="buketter" 
-                class="radio radio-sm border-primary-content"
+                class="radio radio-sm"
                 checked
               />
-              <span class="text-primary-content font-light">Buketter og installationer</span>
+              <span class="font-light">Buketter og installationer</span>
             </label>
             <label class="flex items-center gap-3 cursor-pointer">
               <input 
                 type="radio" 
                 name="format" 
                 value="workshop" 
-                class="radio radio-sm border-primary-content"
+                class="radio radio-sm"
               />
               <span class="text-primary-content font-light">Workshop tilmelding</span>
             </label>
@@ -58,47 +58,50 @@ import Button from "./Button.astro";
 
         <!-- Navn Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2 text-primary-content">
+          <label class="block text-sm tracking-widest mb-2">
             DIT FULDE NAVN*
           </label>
           <input 
             type="text" 
             name="name"
+            placeholder="Indtast dit fulde navn"
             required
-            class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50"
+            class="w-full bg-transparent py-2" 
           />
         </div>
 
         <!-- Email Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2 text-primary-content">
+          <label class="block text-sm tracking-widest mb-2">
             EMAIL*
           </label>
           <input 
             type="email" 
+            placeholder="Indtast din email"
             name="email"
             required
-            class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50"
+            class="w-full bg-transparent py-2"
           />
         </div>
 
         <!-- Telefonnummer Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2 text-primary-content">
+          <label class="block text-sm tracking-widest mb-2">
             TELEFONNUMMER*
           </label>
           <input 
             type="tel" 
+            placeholder="Indtast dit telefonnummer"
             name="phone"
             required
-            class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50"
+            class="w-full py-2"
           />
         </div>
 
         <!-- Workshop Dato Vælger (skjult som standard) -->
         <div id="workshopFields" class="hidden space-y-6">
           <div>
-            <label class="block text-sm tracking-widest mb-2 text-primary-content">
+            <label class="block text-sm tracking-widest mb-2">
               VÆLG DATO*
             </label>
             <div class="relative">
@@ -108,9 +111,9 @@ import Button from "./Button.astro";
                 name="date"
                 readonly
                 placeholder="Klik for at vælge dato"
-                class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50 cursor-pointer"
+                class="w-full bg-transparent py-2 cursor-pointer"
               />
-              <div id="calendarContainer" class="hidden absolute top-full left-0 mt-2 z-50 bg-base-100 border border-primary-content rounded-lg shadow-xl p-4">
+              <div id="calendarContainer" class="hidden absolute top-full left-0 mt-2 z-50 bg-base-100 p-4">
                 <calendar-date id="workshopCalendar"></calendar-date>
               </div>
             </div>
@@ -122,10 +125,10 @@ import Button from "./Button.astro";
           <!-- Dropdowns -->
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm tracking-widest mb-2 text-primary-content">
+              <label class="block text-sm tracking-widest mb-2">
                 ØNSKET PRISRAMME
               </label>
-              <select name="priceRange" class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content">
+              <select name="priceRange" class="w-full bg-transparent py-2">
                 <option value="">Vælg</option>
                 <option value="under-1000">Under 1.000 kr</option>
                 <option value="1000-3000">1.000-3.000 kr</option>
@@ -135,10 +138,10 @@ import Button from "./Button.astro";
             </div>
 
             <div>
-              <label class="block text-sm tracking-widest mb-2 text-primary-content">
+              <label class="block text-sm tracking-widest mb-2">
                 TYPE VÆRK
               </label>
-              <select name="workType" class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content">
+              <select name="workType" class="w-full bg-transparent py-2">
                 <option value="">Vælg</option>
                 <option value="buket">Buket</option>
                 <option value="installation">Installation</option>
@@ -150,33 +153,25 @@ import Button from "./Button.astro";
 
           <!-- Beskriv Din Vision -->
           <div>
-            <label class="block text-sm tracking-widest mb-2 text-primary-content">
+            <label class="block text-sm tracking-widest mb-2">
               BESKRIV DIN VISION
             </label>
             <textarea 
               name="message"
+              placeholder="Fortæl mig om dine ønsker og idéer..."
               rows="6"
-              class="w-full bg-transparent border-b border-primary-content focus:border-primary-content focus:outline-none py-2 text-primary-content placeholder:text-primary-content/50 resize-none"
+              class="w-full py-2 resize-none border"
             ></textarea>
           </div>
         </div>
 
         <!-- Send Knappen -->
-        <Button type="submit">Start dialog</Button>
+        <Button size="small">Start dialog</Button>
       </form>
     </div>
 
   </div>
 </section>
-
-<style>
-
-  /* Radio button styling */
-  .radio:checked {
-    background-color: oklch(0.2605 0.0511 334.69);
-    border-color: oklch(0.2605 0.0511 334.69);
-  }
-</style>
 
 <script>  
   // Form toggle logik
@@ -204,22 +199,4 @@ import Button from "./Button.astro";
 
   // Initialiser formular ved indlæsning
   toggleFields();
-
-  // Initialiser Cally date picker fra daisy
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const callyInputs = document.querySelectorAll('[data-cally]');
-    
-    callyInputs.forEach((input) => {
-      if (typeof window.Cally !== 'undefined') {
-        new window.Cally({
-          target: input,
-          locale: 'da-DK',
-          firstDayOfWeek: 1, // Monday
-          dateFormat: 'd. MMMM yyyy'
-        });
-      }
-    });
-  });
-
 </script>
