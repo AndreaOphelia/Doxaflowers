@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 
 <MainLayout title="Doxa Flowers">
   <!-- Første sektion -->
-  <section class="py-16 md:py-24">
+  <section class="py-16 md:py-24 mt-16">
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <div>
         <h1>SERVICES</h1>
@@ -19,7 +19,9 @@ import { Image } from "astro:assets";
           ikke en webshop med hurtig levering.
         </p>
       </div>
-      <Button variant="primary" size="small">Lav en bestilling</Button>
+      <a href="/kontakt">
+        <Button variant="primary" size="small">Lav en bestilling</Button></a
+      >
     </div>
   </section>
 
@@ -40,7 +42,9 @@ import { Image } from "astro:assets";
           unika-værker, der ikke blot pynter, men fortæller en historie og
           holder for evigt.
         </p>
-        <Button variant="primary" size="small">Lav en bestilling</Button>
+        <a href="/kontakt">
+          <Button variant="primary" size="small">Lav en bestilling</Button></a
+        >
       </div>
     </div>
   </section>
@@ -59,7 +63,9 @@ import { Image } from "astro:assets";
           installationer kan processen tage længere tid.
         </p>
         <p>Priser starter fra 3000 kr.</p>
-        <Button variant="primary" size="small">Lav en bestilling</Button>
+        <a href="/kontakt">
+          <Button variant="primary" size="small">Lav en bestilling</Button></a
+        >
       </div>
 
       <!-- Billedcontainer: 2/3 af bredden på desktop -->

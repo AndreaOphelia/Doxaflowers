@@ -31,13 +31,11 @@ const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
     <nav class="hidden md:flex items-center gap-8 font-[WorkSans]">
       <a
         href="/koncept"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
-        >Koncept</a
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Koncept</a
       >
       <a
         href="/galleri"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
-        >Galleri</a
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Galleri</a
       >
       <a
         href="/services"
@@ -45,14 +43,12 @@ const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
         >Værker & Priser</a
       >
       <a
-        href="/workshops"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
-        >Workshops</a
+        href="/workshop"
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Workshops</a
       >
       <a
         href="/kontakt"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
-        >Kontakt</a
+        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Kontakt</a
       >
     </nav>
 
@@ -62,9 +58,15 @@ const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
       class="md:hidden flex flex-col gap-1.5 px-8"
       aria-label="Toggle menu"
     >
-      <span class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}></span>
-      <span class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}></span>
-      <span class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}></span>
+      <span
+        class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}
+      ></span>
+      <span
+        class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}
+      ></span>
+      <span
+        class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}
+      ></span>
     </button>
   </div>
 
@@ -75,7 +77,9 @@ const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
   >
     <a href="/koncept" class="uppercase text-base text-base-100">Koncept</a>
     <a href="/galleri" class="uppercase text-base text-base-100">Galleri</a>
-    <a href="/services" class="uppercase text-base text-base-100">Værker & Priser</a>
+    <a href="/services" class="uppercase text-base text-base-100"
+      >Værker & Priser</a
+    >
     <a href="/workshops" class="uppercase text-base text-base-100">Workshops</a>
     <a href="/kontakt" class="uppercase text-base text-base-100">Kontakt</a>
   </nav>

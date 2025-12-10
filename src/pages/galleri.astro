@@ -14,11 +14,14 @@ import Button from "../components/Button.astro";
         events og erhverv. Her kan du finde inspiration til dit eget
         unika-projekt.
       </p>
-      <Button type="submit">Tilmeld</Button>
+      <a href="/kontakt">
+        <Button variant="primary" size="small">Lav en bestilling</Button></a
+      >
     </div>
+  </section>
 
-    <div
-      x-data="{
+  <div
+    x-data="{
       filter: 'all',
       search: '',
       colors: ['all','red','yellow','blue','white','green','multi'],
@@ -60,47 +63,46 @@ import Button from "../components/Button.astro";
         );
       }
     }"
-      class="mt-4"
-    >
-      <!-- Farve-knapper -->
-      <div class="flex gap-4 mb-4 flex-wrap">
-        <template x-for="color in colors" :key="color">
-          <button
-            @click="filter = color"
-            class="px-4 py-1 border"
-            :class="{ 'bg-fuchsia-100': filter===color }"
-            x-text="color"></button>
-        </template>
-      </div>
-
-      <!-- Søg -->
-      <input
-        type="text"
-        placeholder="Søg..."
-        x-model="search"
-        class="border px-3 py-2 mb-4 w-full rounded-none text-[color:var(--color-primary-content)]"
-      />
-
-      <!-- Galleri -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        <template x-for="img in filteredImages()" :key="img.src">
-          <div class="overflow-hidden shadow-none hover:scale-105 transition">
-            <img :src="img.src" class="w-full object-cover" :alt="img.name" />
-            <p
-              class="text-sm mt-1 text-[color:var(--color-primary-content)]"
-              x-text="img.name"
-            >
-            </p>
-            <p
-              class="text-xs text-[color:var(--color-primary-content)]"
-              x-text="'Farve: ' + img.color"
-            >
-            </p>
-          </div>
-        </template>
-      </div>
+    class="mt-4"
+  >
+    <!-- Farve-knapper -->
+    <div class="flex gap-4 mb-4 flex-wrap">
+      <template x-for="color in colors" :key="color">
+        <button
+          @click="filter = color"
+          class="px-4 py-1 border"
+          :class="{ 'bg-fuchsia-100': filter===color }"
+          x-text="color"></button>
+      </template>
     </div>
-  </section>
+
+    <!-- Søg -->
+    <input
+      type="text"
+      placeholder="Søg..."
+      x-model="search"
+      class="border px-3 py-2 mb-4 w-full rounded-none text-[color:var(--color-primary-content)]"
+    />
+
+    <!-- Galleri -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <template x-for="img in filteredImages()" :key="img.src">
+        <div class="overflow-hidden shadow-none hover:scale-105 transition">
+          <img :src="img.src" class="w-full object-cover" :alt="img.name" />
+          <p
+            class="text-sm mt-1 text-[color:var(--color-primary-content)]"
+            x-text="img.name"
+          >
+          </p>
+          <p
+            class="text-xs text-[color:var(--color-primary-content)]"
+            x-text="'Farve: ' + img.color"
+          >
+          </p>
+        </div>
+      </template>
+    </div>
+  </div>
 </MainLayout>
 
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer
