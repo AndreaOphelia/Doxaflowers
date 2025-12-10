@@ -1,21 +1,107 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 ---
 
 <MainLayout title="Doxa Flowers">
-  <section class="px-8">
-    <h1>VÆRKER OG INSPIRATION</h1>
-    <div class="flex justify-between">
-      <p>
+  <section class="px-8 py-24">
+    <h1 class="text-[color:var(--color-primary-content)]">
+      VÆRKER OG INSPIRATION
+    </h1>
+    <div class="flex justify-between mb-8">
+      <p class="text-[color:var(--color-primary-content)]">
         Gennem tiden har jeg skabt unikke blomsterværker til private hjem,
         events og erhverv. Her kan du finde inspiration til dit eget
         unika-projekt.
       </p>
       <Button type="submit">Tilmeld</Button>
     </div>
+
+    <div
+      x-data="{
+      filter: 'all',
+      search: '',
+      colors: ['all','red','yellow','blue','white','green','multi'],
+      images: [
+        { src: '/images/anemoner.webp', name: 'Anemoner', color: 'white' },
+        { src: '/images/anemoner1.webp', name: 'Anemone', color: 'white' },
+        { src: '/images/blaahortensia.webp', name: 'Hortensia', color: 'blue' },
+        { src: '/images/brudebuket.webp', name: 'Brudebuket', color: 'white' },
+        { src: '/images/brudebuket2.webp', name: 'Brudebuket', color: 'white' },
+        { src: '/images/brudebuket3.webp', name: 'Brudebuket', color: 'white' },
+        { src: '/images/bukethojre.webp', name: 'Gul buket', color: 'yellow' },
+        { src: '/images/buketlyseroed.webp', name: 'Ny Blomst 3', color: 'red' },
+        { src: '/images/buketlyseroed2.webp', name: 'Ny Blomst 4', color: 'red' },
+        { src: '/images/buketlyseroed3.webp', name: 'Ny Blomst 5', color: 'red' },
+        { src: '/images/buketlyseroed4.webp', name: 'Ny Blomst 6', color: 'red' },
+        { src: '/images/buketpaabord.webp', name: 'Ny Blomst 7', color: 'red' },
+        { src: '/images/buketseriemulti.webp', name: 'Ny Blomst 8', color: 'red' },
+        { src: '/images/buketseriemulti2.webp', name: 'Ny Blomst 8', color: 'red' },
+        { src: '/images/buketseriemulti3.webp', name: 'Ny Blomst 8', color: 'red' },
+        { src: '/images/buketterpaaraekke.webp', name: 'Ny Blomst 9', color: 'yellow' },
+        { src: '/images/buketvase.webp', name: 'Ny Blomst 10', color: 'red' },
+           { src: '/images/buketvase3.webp', name: 'Ny Blomst 10', color: 'red' },
+        { src: '/images/enkeltelilla.webp', name: 'Ny Blomst 11', color: 'red' },
+        { src: '/images/enkelthvide.webp', name: 'Ny Blomst 11', color: 'multi' },
+        { src: '/images/dybbuket1.webp', name: 'Ny Blomst 12', color: 'red' },
+       { src: '/images/dybbuket2.webp', name: 'Ny Blomst 12', color: 'red' },
+        { src: '/images/groentulipan.webp', name: 'Ny Blomst 14', color: 'green' },
+          { src: '/images/groentulipan2.webp', name: 'Ny Blomst 14', color: 'green' },
+              { src: '/images/groentulipan3.webp', name: 'Ny Blomst 14', color: 'green' },
+                 { src: '/images/vinduebuket.webp', name: 'Ny Blomst 14', color: 'green' },
+                    { src: '/images/vinduebuket2.webp', name: 'Ny Blomst 14', color: 'green' },
+                     { src: '/images/vinduebuket4.webp', name: 'Ny Blomst 14', color: 'green' },
+
+      ],
+      filteredImages() {
+        return this.images.filter(img =>
+          (this.filter==='all' || img.color===this.filter) &&
+          img.name.toLowerCase().includes(this.search.toLowerCase())
+        );
+      }
+    }"
+      class="mt-4"
+    >
+      <!-- Farve-knapper -->
+      <div class="flex gap-4 mb-4 flex-wrap">
+        <template x-for="color in colors" :key="color">
+          <button
+            @click="filter = color"
+            class="px-4 py-1 border"
+            :class="{ 'bg-fuchsia-100': filter===color }"
+            x-text="color"></button>
+        </template>
+      </div>
+
+      <!-- Søg -->
+      <input
+        type="text"
+        placeholder="Søg..."
+        x-model="search"
+        class="border px-3 py-2 mb-4 w-full rounded-none text-[color:var(--color-primary-content)]"
+      />
+
+      <!-- Galleri -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <template x-for="img in filteredImages()" :key="img.src">
+          <div class="overflow-hidden shadow-none hover:scale-105 transition">
+            <img :src="img.src" class="w-full object-cover" :alt="img.name" />
+            <p
+              class="text-sm mt-1 text-[color:var(--color-primary-content)]"
+              x-text="img.name"
+            >
+            </p>
+            <p
+              class="text-xs text-[color:var(--color-primary-content)]"
+              x-text="'Farve: ' + img.color"
+            >
+            </p>
+          </div>
+        </template>
+      </div>
+    </div>
   </section>
 </MainLayout>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer
+></script>
