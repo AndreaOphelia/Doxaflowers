@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
+import atelier from "../assets/images/vaerksted1.webp";
+import atelier2 from "../assets/images/varksted.webp";
 import Form from "../components/Form.astro";
 ---
 
@@ -10,7 +12,7 @@ import Form from "../components/Form.astro";
 
 <MainLayout title="Doxa Workshop">
     <section class="py-16 md:py-24">
-        <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+        <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16 items-end">
           <div>
             <h1>Workshop</h1>
             <p>
@@ -26,7 +28,41 @@ import Form from "../components/Form.astro";
       </section>
 
 
+    
+  <section class="py-16 md:py-24">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+      <!-- Tekstcontainer: 1/3 af bredden på desktop -->
+      <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
+        <h2>Kom med ind i Atelieret</h2>
+        <p>Ønsker du selv at komme tættere på håndværket og lære at skabe dine egne smukke papirblomster? </p>
+        <p>Gennem workshops får du en introduktion til materialerne, teknikkerne og den ro, der ligger i det kreative håndarbejde. Perfekt som et nærværende pusterum eller en teambuilding-event.
+        </p>
+        <Button variant="primary" size="small">Lav en bestilling</Button>
+      </div>
 
+      <!-- Billedcontainer: 2/3 af bredden på desktop -->
+      <div class="flex w-full md:w-2/3 gap-2">
+        <Image 
+        src={atelier}
+        alt="billede af atelier med papirblomster"
+        class="w-1/2 h-auto max-w-full object-cover">
+        </Image>
+        <Image 
+        src={atelier2}
+        alt="billede af atelier med papirblomster"
+        class="w-1/2 h-auto max-w-full object-cover">
+        </Image>
 
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="py-40 place-self-center">FAQ</div>
+  </section>
+
+<section>
+    <Form></Form>
+</section>
 
 </MainLayout>
