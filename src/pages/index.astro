@@ -9,6 +9,13 @@ import hero3 from "../assets/images/buketvase3.webp";
 import hero4 from "../assets/images/vasetaburet2.webp";
 import hero5 from "../assets/images/vasetaburet3.webp";
 import hero6 from "../assets/images/japansk1.webp";
+import hero7 from "../assets/images/buketseriemulti2.webp";
+import hero8 from "../assets/images/buketseriemulti3.webp";
+import hero9 from "../assets/images/moerkbuket1.webp";
+import hero10 from "../assets/images/scrollytelling img 1.webp";
+import buket1 from "../assets/images/buketvase3.webp";
+import blad1 from "../assets/images/maleblade.webp";
+import blad2 from "../assets/images/maleblade2.webp";
 import Testimonial from "../components/Testimonial.astro";
 ---
 
@@ -23,12 +30,17 @@ import Testimonial from "../components/Testimonial.astro";
           class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
         />
         <Image
-          src={hero2}
+          src={hero8}
           alt="blomster"
           class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
         />
         <Image
-          src={hero3}
+          src={hero9}
+          alt="blomster"
+          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        />
+        <Image
+          src={hero4}
           alt="blomster"
           class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
         />
@@ -37,17 +49,22 @@ import Testimonial from "../components/Testimonial.astro";
       <!-- Højre side -->
       <div class="relative w-full h-full">
         <Image
-          src={hero4}
+          src={hero2}
           alt="blomster"
           class="fadeRight absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
         />
         <Image
-          src={hero5}
+          src={hero7}
           alt="blomster"
           class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
         />
         <Image
-          src={hero6}
+          src={hero10}
+          alt="blomster"
+          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        />
+        <Image
+          src={hero3}
           alt="blomster"
           class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
         />
@@ -75,12 +92,17 @@ import Testimonial from "../components/Testimonial.astro";
       <span class="dot w-3 h-3 rounded-full"></span>
       <span class="dot w-3 h-3 rounded-full"></span>
       <span class="dot w-3 h-3 rounded-full"></span>
+      
     </div>
   </section>
 
   <section class="flex flex-row mx-auto items-center mb-40">
     <div>
-      <img src="./img/forsidepicdoxa.webp" alt="billede af blomster" class="" />
+      <Image
+        src={buket1}
+        alt="billede af blomster"
+        class="h-screen w-auto"
+      />
     </div>
     <div class="flex flex-col gap-8 ml-42">
       <h2>Doxa buketten er altid i forandring</h2>
@@ -97,9 +119,9 @@ import Testimonial from "../components/Testimonial.astro";
 
   <section class="flex flex-row mb-40 gap-8">
     <div>
-      <img
-        src="./img/forsidepicdoxa.webp"
-        alt="billeed af blomster"
+      <Image
+        src={blad2}
+        alt="billede af blomster"
         class="max-h-[600px] object-cover w-full"
       />
       <h2>Hvert et lille blad..</h2>
@@ -110,9 +132,9 @@ import Testimonial from "../components/Testimonial.astro";
       </p>
     </div>
     <div>
-      <img
-        src="./img/forsidepicdoxa.webp"
-        alt="billeed af blomster"
+      <Image
+        src={buket1}
+        alt="billede af blomster"
         class="max-h-[600px] object-cover w-full"
       />
       <h2>Farver fra naturen</h2>
@@ -124,9 +146,9 @@ import Testimonial from "../components/Testimonial.astro";
       </p>
     </div>
     <div>
-      <img
-        src="./img/forsidepicdoxa.webp"
-        alt="billeed af blomster"
+      <Image
+        src={buket1}
+        alt="billede af blomster"
         class="max-h-[600px] object-cover w-full"
       />
       <h2>Unikt finish</h2>
@@ -179,10 +201,10 @@ import Testimonial from "../components/Testimonial.astro";
 
     <!-- Billede -->
     <div class="flex-shrink-0">
-      <img
-        src="./img/forsidepicdoxa.webp"
+      <Image
+        src={hero5}
         alt="billede af blomster"
-        class="w-auto"
+        class="max-h-[900px] w-auto"
       />
     </div>
   </section>
