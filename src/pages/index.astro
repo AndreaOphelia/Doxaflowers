@@ -4,7 +4,7 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import hero1 from "../assets/images/stoevethvidblaa2.webp";
-import hero2 from "../assets/images/stoevethvidblaa1.webp"; 
+import hero2 from "../assets/images/stoevethvidblaa1.webp";
 import hero3 from "../assets/images/buketvase3.webp";
 import hero4 from "../assets/images/vasetaburet2.webp";
 import hero5 from "../assets/images/vasetaburet3.webp";
@@ -14,145 +14,179 @@ import Testimonial from "../components/Testimonial.astro";
 
 <MainLayout title="Doxa Flowers">
   <section class="relative h-screen overflow-hidden mb-40">
-
-    
     <div class="absolute inset-0 grid grid-cols-2 gap-2 z-0">
-       <!-- Venstre side -->
-       <div class="relative w-full h-full">
-        <Image 
-          src={hero1} 
-          alt="blomster" 
-          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" 
-          />
-        <Image 
-          src={hero2}  
-          alt="blomster" 
-          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" 
-          />
-        <Image 
-          src={hero3} 
-          alt="blomster" 
-          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" 
-          />
+      <!-- Venstre side -->
+      <div class="relative w-full h-full">
+        <Image
+          src={hero1}
+          alt="blomster"
+          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+        />
+        <Image
+          src={hero2}
+          alt="blomster"
+          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        />
+        <Image
+          src={hero3}
+          alt="blomster"
+          class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        />
       </div>
-  
+
       <!-- Højre side -->
       <div class="relative w-full h-full">
-        <Image 
-          src={hero4} 
-          alt="blomster" 
-          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
-        <Image 
-          src={hero5} 
-          alt="blomster" 
-          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
-        <Image 
-          src={hero6} 
-          alt="blomster" 
-          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+        <Image
+          src={hero4}
+          alt="blomster"
+          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+        />
+        <Image
+          src={hero5}
+          alt="blomster"
+          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        />
+        <Image
+          src={hero6}
+          alt="blomster"
+          class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+        />
       </div>
     </div>
-  
+
     <!-- Tekstbox -->
-    <div class="absolute bg-transparent text-secondary-content left-10 bottom-10 max-w-lg flex flex-col gap-4 z-10">
+    <div
+      class="absolute bg-transparent text-secondary-content left-10 bottom-10 max-w-lg flex flex-col gap-4 z-10"
+    >
       <h1 class="">Håndlavede blomster af papir</h1>
       <p>
-        Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din historie,
-        dit rum eller din begivenhed. Slow craftsmanship, hvor hvert blad er farvet og
-        formet i hånden.
+        Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din
+        historie, dit rum eller din begivenhed. Slow craftsmanship, hvor hvert
+        blad er farvet og formet i hånden.
       </p>
-      <Button variant="secondary" size="small">
-        Bestil dit værk
-      </Button>
+      <Button variant="secondary" size="small"> Bestil dit værk </Button>
     </div>
-  
-     <!-- SLIDE INDICATORS -->
-     <div id="indicators" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20 bg-transparent">
-      <span class="dot w-3 h-3 rounded-full "></span>
-      <span class="dot w-3 h-3 rounded-full "></span>
+
+    <!-- SLIDE INDICATORS -->
+    <div
+      id="indicators"
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20 bg-transparent"
+    >
+      <span class="dot w-3 h-3 rounded-full"></span>
+      <span class="dot w-3 h-3 rounded-full"></span>
       <span class="dot w-3 h-3 rounded-full"></span>
     </div>
   </section>
 
-
   <section class="flex flex-row mx-auto items-center mb-40">
     <div>
-      <img src="./img/forsidepicdoxa.webp" alt="billede af blomster" class="">
+      <img src="./img/forsidepicdoxa.webp" alt="billede af blomster" class="" />
     </div>
-    <div class="flex flex-col gap-8 ml-42 ">
-      <h2>Doxa buketten er altid
-        i forandring</h2>
-      <p>Hver en blomst drives frem af kærlighed til papiret, former og farver.
-        Jeg lader mig inspirere af naturen men fortolker frit og skaber dermed doxa blomster som alle er unikke i deres farve og udtryk.
-        Alle mine blomster er lavet af FSC/miljøvenligt papir.
-        Udover de færdigfarvede papirer, så indfarver jeg også selv med naturens egne elementer</p>
+    <div class="flex flex-col gap-8 ml-42">
+      <h2>Doxa buketten er altid i forandring</h2>
+      <p>
+        Hver en blomst drives frem af kærlighed til papiret, former og farver.
+        Jeg lader mig inspirere af naturen men fortolker frit og skaber dermed
+        doxa blomster som alle er unikke i deres farve og udtryk. Alle mine
+        blomster er lavet af FSC/miljøvenligt papir. Udover de færdigfarvede
+        papirer, så indfarver jeg også selv med naturens egne elementer
+      </p>
       <Button variant="primary" size="small">Udforsk konceptet</Button>
     </div>
   </section>
 
-
   <section class="flex flex-row mb-40 gap-8">
     <div>
-      <img src="./img/forsidepicdoxa.webp" alt="billeed af blomster" class="max-h-[600px] object-cover w-full">
+      <img
+        src="./img/forsidepicdoxa.webp"
+        alt="billeed af blomster"
+        class="max-h-[600px] object-cover w-full"
+      />
       <h2>Hvert et lille blad..</h2>
-      <p>Alle blade håndklippes, og langsomt spirer en ny blomst frem. 
-
-        Ikke nogen form for cutter eller andre maskiner bliver brugt, men masser af kærlighed, en saks og mange timer</p>
+      <p>
+        Alle blade håndklippes, og langsomt spirer en ny blomst frem. Ikke nogen
+        form for cutter eller andre maskiner bliver brugt, men masser af
+        kærlighed, en saks og mange timer
+      </p>
     </div>
     <div>
-      <img src="./img/forsidepicdoxa.webp" alt="billeed af blomster" class="max-h-[600px] object-cover w-full">
+      <img
+        src="./img/forsidepicdoxa.webp"
+        alt="billeed af blomster"
+        class="max-h-[600px] object-cover w-full"
+      />
       <h2>Farver fra naturen</h2>
-      <p>Udover de færdigfarvede papirer, indfarver og tilføres nye dimensioner med farver fra naturens egne elementer.  Farver fra te, kaffe, frugt og grøntsager fører til nye og unikke farver, hvilket gør at der aldrig er to blomster som er ens - hverken i farve eller udtryk.</p>
+      <p>
+        Udover de færdigfarvede papirer, indfarver og tilføres nye dimensioner
+        med farver fra naturens egne elementer. Farver fra te, kaffe, frugt og
+        grøntsager fører til nye og unikke farver, hvilket gør at der aldrig er
+        to blomster som er ens - hverken i farve eller udtryk.
+      </p>
     </div>
     <div>
-      <img src="./img/forsidepicdoxa.webp" alt="billeed af blomster" class="max-h-[600px] object-cover w-full">
+      <img
+        src="./img/forsidepicdoxa.webp"
+        alt="billeed af blomster"
+        class="max-h-[600px] object-cover w-full"
+      />
       <h2>Unikt finish</h2>
-      <p>Efter indfarvningen efterbehandler jeg med tørpasteller og eller akvarel. Farveskalaen kan derfor være den samme, men vil naturligvis variere fra buket til buket.
-
-        Jeg indfarver kun materialer til en buket af gangen og derfor vil den enkelte buket altid have sine helt egne unikke farver.</p>
+      <p>
+        Efter indfarvningen efterbehandler jeg med tørpasteller og eller
+        akvarel. Farveskalaen kan derfor være den samme, men vil naturligvis
+        variere fra buket til buket. Jeg indfarver kun materialer til en buket
+        af gangen og derfor vil den enkelte buket altid have sine helt egne
+        unikke farver.
+      </p>
     </div>
   </section>
 
-
   <section class="my-40">
-    <Testimonial> Testimonials her</Testimonial>
-    <p class="place-self-center">Testimonial her</p>
+    <Testimonial
+      testimonials={[
+        { text: "Fantastisk service!", author: "– Mads K." },
+        { text: "Virkelig god oplevelse.", author: "– Sofie P." },
+        { text: "Kunne ikke være mere tilfreds!", author: "– Jonas H." },
+      ]}
+    />
   </section>
 
   <section class="flex flex-row mx-auto items-center mb-40">
-
     <!-- Tekst -->
     <div class="flex flex-col flex-1 ml-42">
       <span class="flex flex-col gap-8 max-w-xl">
         <h2>Sådan Skaber Vi Dit Værk</h2>
-  
-        <p>Trin 1: Idé & Dialog
-          Udfyld kontaktformularen, eller kontakt mig og fortæl om dine ønsker.</p>
-  
-        <p>Trin 2: Design & Håndværk
-          Grundet den 100% håndlavede proces er leveringstiden typisk 4-8 uger 
-          efter design og pris er godkendt. Jeg skaber dit værk i ro, ikke i hast.</p>
-  
-        <p>Trin 3: Overlevering
-          Dit kunstværk er klar til levering eller afhentning.</p>
-  
-        <Button variant="primary" size="small">Læs mere om mine services</Button>
+
+        <p>
+          Trin 1: Idé & Dialog Udfyld kontaktformularen, eller kontakt mig og
+          fortæl om dine ønsker.
+        </p>
+
+        <p>
+          Trin 2: Design & Håndværk Grundet den 100% håndlavede proces er
+          leveringstiden typisk 4-8 uger efter design og pris er godkendt. Jeg
+          skaber dit værk i ro, ikke i hast.
+        </p>
+
+        <p>
+          Trin 3: Overlevering Dit kunstværk er klar til levering eller
+          afhentning.
+        </p>
+
+        <Button variant="primary" size="small">Læs mere om mine services</Button
+        >
       </span>
     </div>
-  
+
     <!-- Billede -->
     <div class="flex-shrink-0">
-      <img src="./img/forsidepicdoxa.webp"
-           alt="billede af blomster"
-           class="w-auto">
+      <img
+        src="./img/forsidepicdoxa.webp"
+        alt="billede af blomster"
+        class="w-auto"
+      />
     </div>
-  
   </section>
-  
-  
 </MainLayout>
-
-
 
 <script>
   const leftImages = document.querySelectorAll(".fadeLeft");
@@ -162,8 +196,8 @@ import Testimonial from "../components/Testimonial.astro";
 
   function fadeSlider() {
     // Fade ud af alle
-    leftImages.forEach(img => img.style.opacity = 0);
-    rightImages.forEach(img => img.style.opacity = 0);
+    leftImages.forEach((img) => (img.style.opacity = 0));
+    rightImages.forEach((img) => (img.style.opacity = 0));
 
     // Fade ind på næste billede
     leftImages[index].style.opacity = 1;
@@ -186,8 +220,8 @@ import Testimonial from "../components/Testimonial.astro";
 
   function updateSlider() {
     // Skift billeder
-    leftImages.forEach((img, i) => img.style.opacity = i === index ? 1 : 0);
-    rightImages.forEach((img, i) => img.style.opacity = i === index ? 1 : 0);
+    leftImages.forEach((img, i) => (img.style.opacity = i === index ? 1 : 0));
+    rightImages.forEach((img, i) => (img.style.opacity = i === index ? 1 : 0));
 
     // Opdater dots
     dots.forEach((dot, i) => {
@@ -205,4 +239,3 @@ import Testimonial from "../components/Testimonial.astro";
 
   setInterval(updateSlider, 4000);
 </script>
-
