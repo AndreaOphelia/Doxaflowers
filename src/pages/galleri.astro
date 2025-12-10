@@ -26,6 +26,14 @@ import Button from "../components/Button.astro";
       search: '',
       colors: ['all','red','yellow','blue','white','green','multi'],
       images: [
+      
+         { src: '/images/blomst2.webp', name: 'lilla', color: 'white' },
+       { src: '/images/blomst3.webp', name: 'lilla', color: 'white' },
+          { src: '/images/blomst4.webp', name: 'lilla', color: 'white' },
+             { src: '/images/blomst5.webp', name: 'lilla', color: 'white' },
+                { src: '/images/blomst6.webp', name: 'lilla', color: 'white' },
+                   { src: '/images/blomst7.webp', name: 'lilla', color: 'white' },
+                      { src: '/images/blomst8.webp', name: 'lilla', color: 'white' },
         { src: '/images/anemoner.webp', name: 'Anemoner', color: 'white' },
         { src: '/images/anemoner1.webp', name: 'Anemone', color: 'white' },
         { src: '/images/blaahortensia.webp', name: 'Hortensia', color: 'blue' },
@@ -43,17 +51,21 @@ import Button from "../components/Button.astro";
         { src: '/images/buketseriemulti3.webp', name: 'Ny Blomst 8', color: 'red' },
         { src: '/images/buketterpaaraekke.webp', name: 'Ny Blomst 9', color: 'yellow' },
         { src: '/images/buketvase.webp', name: 'Ny Blomst 10', color: 'red' },
-           { src: '/images/buketvase3.webp', name: 'Ny Blomst 10', color: 'red' },
+        { src: '/images/buketvase3.webp', name: 'Ny Blomst 10', color: 'red' },
         { src: '/images/enkeltelilla.webp', name: 'Ny Blomst 11', color: 'red' },
         { src: '/images/enkelthvide.webp', name: 'Ny Blomst 11', color: 'multi' },
+            { src: '/images/blomst1.webp', name: 'lilla', color: 'white' },
         { src: '/images/dybbuket1.webp', name: 'Ny Blomst 12', color: 'red' },
-       { src: '/images/dybbuket2.webp', name: 'Ny Blomst 12', color: 'red' },
+        { src: '/images/dybbuket2.webp', name: 'Ny Blomst 12', color: 'red' },
         { src: '/images/groentulipan.webp', name: 'Ny Blomst 14', color: 'green' },
-          { src: '/images/groentulipan2.webp', name: 'Ny Blomst 14', color: 'green' },
-              { src: '/images/groentulipan3.webp', name: 'Ny Blomst 14', color: 'green' },
-                 { src: '/images/vinduebuket.webp', name: 'Ny Blomst 14', color: 'green' },
-                    { src: '/images/vinduebuket2.webp', name: 'Ny Blomst 14', color: 'green' },
-                     { src: '/images/vinduebuket4.webp', name: 'Ny Blomst 14', color: 'green' },
+        { src: '/images/groentulipan2.webp', name: 'Ny Blomst 14', color: 'green' },
+        { src: '/images/groentulipan3.webp', name: 'Ny Blomst 14', color: 'green' },
+        { src: '/images/vinduebuket.webp', name: 'Ny Blomst 14', color: 'green' },
+        { src: '/images/vinduebuket2.webp', name: 'Ny Blomst 14', color: 'green' },
+       { src: '/images/vinduebuket4.webp', name: 'Ny Blomst 14', color: 'green' },
+  { src: '/images/flotbuket.webp', name: 'Ny Blomst 14', color: 'green' },
+   { src: '/images/glasbuket1.webp', name: 'Ny Blomst 14', color: 'multi' },
+    { src: '/images/sortbaggrundbuket1.webp', name: 'Ny Blomst 14', color: 'multi' },
 
       ],
       filteredImages() {
@@ -70,7 +82,7 @@ import Button from "../components/Button.astro";
       <template x-for="color in colors" :key="color">
         <button
           @click="filter = color"
-          class="px-4 py-1 border"
+          class="px-4 py-1 text-sm cursor-pointer hover:bg-fuchsia-100 transition"
           :class="{ 'bg-fuchsia-100': filter===color }"
           x-text="color"></button>
       </template>
@@ -81,7 +93,7 @@ import Button from "../components/Button.astro";
       type="text"
       placeholder="Søg..."
       x-model="search"
-      class="border px-3 py-2 mb-4 w-full rounded-none text-[color:var(--color-primary-content)]"
+      class="border px-3 py-2 mb-4 rounded-none text-[color:var(--color-primary-content)]"
     />
 
     <!-- Galleri -->
