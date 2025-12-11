@@ -92,33 +92,47 @@ import vindue from "../assets/images/vindue.webp";
     
   </section>
 
-  <section class="md:flex items-center mb-24 gap-8">
-    <div class="flex flex-col gap-4 justify-center w-full md:w-2/3 mb-8 m-x-65ch ">
-      <Heading htmlheading="h2" size="large"
-        >Doxa buketten er altid i forandring</Heading
-      >
+  <section class="md:flex items-center justify-between mb-24 gap-8">
+
+    <!-- Tekst -->
+    <div class="flex flex-col gap-6 w-full md:w-2/3 mb-8 md:mb-0">
+      <Heading htmlheading="h2" size="large">
+        Doxa buketten er altid i forandring
+      </Heading>
+  
       <p>
         Hver en blomst drives frem af kærlighed til papiret, former og farver.
         Jeg lader mig inspirere af naturen men fortolker frit og skaber dermed
         doxa blomster som alle er unikke i deres farve og udtryk. Alle mine
         blomster er lavet af FSC/miljøvenligt papir. Udover de færdigfarvede
-        papirer, så indfarver jeg også selv med naturens egne elementer
+        papirer, så indfarver jeg også selv med naturens egne elementer.
       </p>
-      <Button variant="primary" size="small">Udforsk konceptet</Button>
+  
+      <Button variant="primary" size="small">
+        Udforsk konceptet
+      </Button>
     </div>
-    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
-      <Image src={buket1} alt="billede af blomster" class="w-full md:w1/2 h-auto m-w-full object-cover" />
+  
+    <!-- Billede -->
+    <div class="md:w-3/4 flex justify-end">
+      <Image 
+        src={buket1} 
+        alt="billede af blomster" 
+        class="w-full md:w-4/5 object-cover"
+      />
     </div>
+  
   </section>
+  
 
-
-  <section class="flex flex-row mb-40 gap-8">
-    <div>
+  <section class="md:flex flex-row mb-40 gap-8">
+    <div class="flex flex-col gap-4 mb-8">
       <Image
         src={blad2}
         alt="billede af blomster"
-        class="max-h-[600px] object-cover w-full"
+        class="max-h-[500px] object-cover w-full hidden md:block"
       />
+      <div class="mb-8">
       <h2>Hvert et lille blad..</h2>
       <p>
         Alle blade håndklippes, og langsomt spirer en ny blomst frem. Ikke nogen
@@ -126,12 +140,14 @@ import vindue from "../assets/images/vindue.webp";
         kærlighed, en saks og mange timer
       </p>
     </div>
-    <div>
+    </div>
+    <div class="flex flex-col mb-8 gap-4">
       <Image
         src={maler}
         alt="billede af blomster"
-        class="max-h-[600px] object-cover w-full"
+        class="max-h-[500px] object-cover w-full hidden md:block"
       />
+      <div class="gap-8">
       <h2>Farver fra naturen</h2>
       <p>
         Udover de færdigfarvede papirer, indfarver og tilføres nye dimensioner
@@ -140,21 +156,29 @@ import vindue from "../assets/images/vindue.webp";
         to blomster som er ens - hverken i farve eller udtryk.
       </p>
     </div>
-    <div>
+    </div>
+
+
+    <div class="flex flex-col-reverse md:flex-col gap-4">
       <Image
         src={vindue}
         alt="billede af blomster"
-        class="max-h-[600px] object-cover w-full"
+        class="max-h-[500px] object-cover w-full"
       />
-      <h2>Unikt finish</h2>
-      <p>
-        Efter indfarvningen efterbehandler jeg med tørpasteller og eller
-        akvarel. Farveskalaen kan derfor være den samme, men vil naturligvis
-        variere fra buket til buket. Jeg indfarver kun materialer til en buket
-        af gangen og derfor vil den enkelte buket altid have sine helt egne
-        unikke farver.
-      </p>
+    
+      <div class="flex flex-col">
+        <h2>Unikt finish</h2>
+        <p>
+          Efter indfarvningen efterbehandler jeg med tørpasteller og eller akvarel.
+          Farveskalaen kan derfor være den samme, men vil naturligvis variere fra
+          buket til buket. Jeg indfarver kun materialer til en buket af gangen og
+          derfor vil den enkelte buket altid have sine helt egne unikke farver.
+        </p>
+      </div>
+    
     </div>
+    
+    
   </section>
 
   <section class="my-40">
@@ -176,42 +200,46 @@ import vindue from "../assets/images/vindue.webp";
     />
   </section>
 
-  <section class="flex flex-row mx-auto items-center mb-40">
+  <section class="md:flex md:justify-between items-center mb-40 gap-8">
+  
     <!-- Tekst -->
-    <div class="flex flex-col flex-1">
-      <span class="flex flex-col gap-8">
-        <h2>Sådan Skaber Vi Dit Værk</h2>
-
-        <p>
-          Trin 1: Idé & Dialog Udfyld kontaktformularen, eller kontakt mig og
-          fortæl om dine ønsker.
-        </p>
-
-        <p>
-          Trin 2: Design & Håndværk Grundet den 100% håndlavede proces er
-          leveringstiden typisk 4-8 uger efter design og pris er godkendt. Jeg
-          skaber dit værk i ro, ikke i hast.
-        </p>
-
-        <p>
-          Trin 3: Overlevering Dit kunstværk er klar til levering eller
-          afhentning.
-        </p>
-
-        <Button variant="primary" size="small">Læs mere om mine services</Button
-        >
-      </span>
+    <div class="flex flex-col gap-8 mb-8 lg:mb-0 lg:w-1/2">
+      <Heading htmlheading="h2" size="large">
+        Sådan Skaber Vi Dit Værk
+      </Heading>
+  
+      <p>
+        Trin 1: Idé & Dialog Udfyld kontaktformularen, eller kontakt mig og
+        fortæl om dine ønsker.
+      </p>
+  
+      <p>
+        Trin 2: Design & Håndværk Grundet den 100% håndlavede proces er
+        leveringstiden typisk 4-8 uger efter design og pris er godkendt. Jeg
+        skaber dit værk i ro, ikke i hast.
+      </p>
+  
+      <p>
+        Trin 3: Overlevering Dit kunstværk er klar til levering eller
+        afhentning.
+      </p>
+  
+      <Button variant="primary" size="small">
+        Læs mere om mine services
+      </Button>
     </div>
-
+  
     <!-- Billede -->
-    <div class="flex-shrink-0">
+    <div class="lg: flex md:justify-end">
       <Image
         src={hero5}
         alt="billede af blomster"
-        class="max-h-[900px] w-auto"
+        class="md:w-3/4"
       />
     </div>
+  
   </section>
+  
 </MainLayout>
 
 <script>
