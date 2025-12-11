@@ -67,138 +67,114 @@ import Heading from "../components/Heading.astro";
 
   <section class="text-primary-content">
     <div class="py-20 place-self-center">
-      <Heading htmlheading="h2" size="large">FAQ</Heading>
-    </div>
+      <!-- Spørgsmål grid: -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Venstre kolonne -->
+        <div class="flex flex-col gap-4">
+          <div class="collapse collapse-arrow border-[1px] rounded-none">
+            <input id="faq-1" type="checkbox" />
+            <label for="faq-1" class="collapse-title font-semibold">
+              <p>Hvilke typer workshops tilbyder Doxa Flowers?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Doxa Flowers tilbyder både introduktionsworkshops, temabaserede forløb og mere fordybende masterclasses. Fælles for alle workshops er fokus på slow craft, farver, formgivning og de kunstneriske processer bag papirblomster.</p>
+            </div>
+          </div>
 
-  
-  <!-- Spørgsmål grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" checked />
-    <div class="collapse-title font-semibold">
-      <p>HHvilke typer workshops tilbyder Doxa Flowers?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Doxa Flowers tilbyder både introduktionsworkshops, temabaserede forløb og mere fordybende masterclasses. Fælles for alle workshops er fokus på slow craft, farver, formgivning og de kunstneriske processer bag papirblomster.</p>
-    </div>
-  </div>
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-2" type="checkbox" />
+            <label for="faq-2" class="collapse-title font-semibold">
+              <p>Skal man have erfaring for at deltage?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Nej, alle kan være med. Workshoppen er designet til både begyndere, nysgerrige kreative sjæle og dem, der ønsker at forfine deres teknik. Jeg guider dig igennem hele processen trin for trin.</p>
+            </div>
+          </div>
 
-  
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-3" type="checkbox" />
+            <label for="faq-3" class="collapse-title font-semibold">
+              <p>Hvor lang tid varer en workshop?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>De fleste workshops varer mellem 2–4 timer, afhængigt af tema og sværhedsgrad. Fordybelse er en vigtig del af processen, så der er god tid til både læring, farvning og formgivning.</p>
+            </div>
+          </div>
 
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Skal man have erfaring med blomster eller kunsthåndværk for at deltage?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Nej, alle kan være med. Workshoppen er designet til både begyndere, nysgerrige kreative sjæle og dem, der ønsker at forfine deres teknik. Jeg guider dig igennem hele processen trin for trin.</p>
-    </div>
-  </div>
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-4" type="checkbox" />
+            <label for="faq-4" class="collapse-title font-semibold">
+              <p>Er materialer og værktøj inkluderet?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Alt er inkluderet: papir, farver, værktøj og de små materialer, der bruges til at forme og samle blomsterne. Du skal blot møde op med nysgerrighed og lyst til at skabe.</p>
+            </div>
+          </div>
 
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Hvor lang tid varer en workshop?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        De fleste workshops varer mellem 2–4 timer, afhængigt af tema og sværhedsgrad. Fordybelse er en vigtig del af processen, så der er god tid til både læring, farvning og formgivning.</p>
-    </div>
-  </div>
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-5" type="checkbox" />
+            <label for="faq-5" class="collapse-title font-semibold">
+              <p>Hvor mange deltagere er der på hvert hold?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>For at sikre ro, fordybelse og individuel vejledning arbejder jeg i små hold på typisk 4–6 deltagere.</p>
+            </div>
+          </div>
+        </div>
 
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Er materialer og værktøj inkluderet, eller skal man selv medbringe noget?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Alt er inkluderet: papir, farver, værktøj og de små materialer, der bruges til at forme og samle blomsterne. Du skal blot møde op med nysgerrighed og lyst til at skabe.
-      </p>
-    </div>
-  </div>
+        <!-- Højre kolonne -->
+        <div class="flex flex-col gap-4">
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-6" type="checkbox" />
+            <label for="faq-6" class="collapse-title font-semibold">
+              <p>Hvor ofte afholdes workshops, og hvordan annonceres nye datoer?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Workshops afholdes løbende året rundt og annonceres på Instagram og via nyhedsbrevet. Her finder du altid de nyeste datoer og ledige pladser.</p>
+            </div>
+          </div>
 
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Hvor mange deltagere er der på hvert hold?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        For at sikre ro, fordybelse og individuel vejledning arbejder jeg i små hold på typisk 4–6 deltagere.
-      </p>
-    </div>
-  </div>
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-7" type="checkbox" />
+            <label for="faq-7" class="collapse-title font-semibold">
+              <p>Hvad lærer man typisk til en Doxa Flowers workshop?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Du lærer hele processen bag en Doxa-blomst: fra farveforståelse og formskabelse til indfarvning, nuancering og det kunstneriske udtryk. Du går hjem med én eller flere håndlavede blomster og teknikkerne til selv at fortsætte.</p>
+            </div>
+          </div>
 
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Hvor ofte afholdes workshops, og hvordan annonceres nye datoer?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Workshops afholdes løbende året rundt og annonceres på Instagram og via nyhedsbrevet. Her finder du altid de nyeste datoer og ledige pladser.
-      </p>
-    </div>
-  </div>
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-8" type="checkbox" />
+            <label for="faq-8" class="collapse-title font-semibold">
+              <p>Hvad er prisen, og hvad inkluderer den?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Prisen afhænger af workshoptypen, men inkluderer altid alle materialer, værktøj, personlig vejledning, let forplejning samt de blomster, du skaber undervejs.</p>
+            </div>
+          </div>
 
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Hvad lærer man typisk til en Doxa Flowers workshop?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Du lærer hele processen bag en Doxa-blomst:
-        fra farveforståelse og formskabelse til indfarvning, nuancering og det kunstneriske udtryk. Du går hjem med én eller flere håndlavede blomster og teknikkerne til selv at fortsætte.
-      </p>
-    </div>
-  </div>
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-9" type="checkbox" />
+            <label for="faq-9" class="collapse-title font-semibold">
+              <p>Hvor foregår workshops – i atelieret, eller på eksterne lokationer?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Workshops foregår primært i mit atelier, hvor rammerne er rolige og fyldt med inspiration. Jeg tilbyder også workshops på udvalgte eksterne lokationer ved særlige arrangementer.</p>
+            </div>
+          </div>
 
- 
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Hvad er prisen, og hvad inkluderer den?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Prisen afhænger af workshoptypen, men inkluderer altid alle materialer, værktøj, personlig vejledning, let forplejning samt de blomster, du skaber undervejs.
-      </p>
-    </div>
-  </div>
-
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Hvor foregår workshops – i atelieret, eller på eksterne lokationer?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Workshops foregår primært i mit atelier, hvor rammerne er rolige og fyldt med inspiration. Jeg tilbyder også workshops på udvalgte eksterne lokationer ved særlige arrangementer. </p>
-    </div>
-  </div>
-
-  
-  <div class="collapse collapse-arrow border-[1px] rounded-none">
-    <input type="radio" name="faq" />
-    <div class="collapse-title font-semibold">
-      <p>Hvad hvis jeg bliver forhindret?</p>
-    </div>
-    <div class="collapse-content text-sm">
-      <p>
-        Du kan afmelde eller flytte din plads op til 48 timer før workshoppen.
-      </p>
+          <div class="collapse collapse-arrow border-1 rounded-none">
+            <input id="faq-10" type="checkbox" />
+            <label for="faq-10" class="collapse-title font-semibold">
+              <p>Hvad hvis jeg bliver forhindret?</p>
+            </label>
+            <div class="collapse-content text-sm">
+              <p>Du kan afmelde eller flytte din plads op til 48 timer før workshoppen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
