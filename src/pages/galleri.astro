@@ -21,55 +21,72 @@ import Heading from "../components/Heading.astro";
 
   <div
     x-data="{
-      filter: 'all',
+      filter: 'alle',
       search: '',
-      colors: ['all','red','yellow','blue','white','green','multi'],
+      colors: ['alle','rød','lyserød','gul','blå','hvid','grøn','flerfarvet'],
       images: [
-      
-         { src: '/images/blomst2.webp', name: 'lilla', color: 'white' },
-       { src: '/images/blomst3.webp', name: 'lilla', color: 'white' },
-          { src: '/images/blomst4.webp', name: 'lilla', color: 'white' },
-             { src: '/images/blomst5.webp', name: 'lilla', color: 'white' },
-                { src: '/images/blomst6.webp', name: 'lilla', color: 'white' },
-                   { src: '/images/blomst7.webp', name: 'lilla', color: 'white' },
-                      { src: '/images/blomst8.webp', name: 'lilla', color: 'white' },
-        { src: '/images/anemoner.webp', name: 'Anemoner', color: 'white' },
-        { src: '/images/anemoner1.webp', name: 'Anemone', color: 'white' },
-        { src: '/images/blaahortensia.webp', name: 'Hortensia', color: 'blue' },
-        { src: '/images/brudebuket.webp', name: 'Brudebuket', color: 'white' },
-        { src: '/images/brudebuket2.webp', name: 'Brudebuket', color: 'white' },
-        { src: '/images/brudebuket3.webp', name: 'Brudebuket', color: 'white' },
-        { src: '/images/bukethojre.webp', name: 'Gul buket', color: 'yellow' },
-        { src: '/images/buketlyseroed.webp', name: 'Ny Blomst 3', color: 'red' },
-        { src: '/images/buketlyseroed2.webp', name: 'Ny Blomst 4', color: 'red' },
-        { src: '/images/buketlyseroed3.webp', name: 'Ny Blomst 5', color: 'red' },
-        { src: '/images/buketlyseroed4.webp', name: 'Ny Blomst 6', color: 'red' },
-        { src: '/images/buketpaabord.webp', name: 'Ny Blomst 7', color: 'red' },
-        { src: '/images/buketseriemulti.webp', name: 'Ny Blomst 8', color: 'red' },
-        { src: '/images/buketseriemulti2.webp', name: 'Ny Blomst 8', color: 'red' },
-        { src: '/images/buketseriemulti3.webp', name: 'Ny Blomst 8', color: 'red' },
-        { src: '/images/buketterpaaraekke.webp', name: 'Ny Blomst 9', color: 'yellow' },
-        { src: '/images/buketvase.webp', name: 'Ny Blomst 10', color: 'red' },
-        { src: '/images/buketvase3.webp', name: 'Ny Blomst 10', color: 'red' },
-        { src: '/images/enkeltelilla.webp', name: 'Ny Blomst 11', color: 'red' },
-        { src: '/images/enkelthvide.webp', name: 'Ny Blomst 11', color: 'multi' },
-            { src: '/images/blomst1.webp', name: 'lilla', color: 'white' },
-        { src: '/images/dybbuket1.webp', name: 'Ny Blomst 12', color: 'red' },
-        { src: '/images/dybbuket2.webp', name: 'Ny Blomst 12', color: 'red' },
-        { src: '/images/groentulipan.webp', name: 'Ny Blomst 14', color: 'green' },
-        { src: '/images/groentulipan2.webp', name: 'Ny Blomst 14', color: 'green' },
-        { src: '/images/groentulipan3.webp', name: 'Ny Blomst 14', color: 'green' },
-        { src: '/images/vinduebuket.webp', name: 'Ny Blomst 14', color: 'green' },
-        { src: '/images/vinduebuket2.webp', name: 'Ny Blomst 14', color: 'green' },
-       { src: '/images/vinduebuket4.webp', name: 'Ny Blomst 14', color: 'green' },
-  { src: '/images/flotbuket.webp', name: 'Ny Blomst 14', color: 'green' },
-   { src: '/images/glasbuket1.webp', name: 'Ny Blomst 14', color: 'multi' },
-    { src: '/images/sortbaggrundbuket1.webp', name: 'Ny Blomst 14', color: 'multi' },
 
+        { src: '/images/blomst2.webp', name: 'Blå hortensia', color: 'blå' },
+        { src: '/images/blomst3.webp', name: 'Pink hortensia', color: 'lyserød' },
+        { src: '/images/blomst4.webp', name: 'Lyserød peon', color: 'lyserød' },
+        { src: '/images/blomst5.webp', name: 'Pastel lilla blomst', color: 'flerfarvet' },
+        { src: '/images/blomst6.webp', name: 'Gul naturblomst', color: 'gul' },
+        { src: '/images/blomst7.webp', name: 'Rød kronemix', color: 'rød' },
+        { src: '/images/blomst8.webp', name: 'Lilla stilk', color: 'lyserød' },
+
+        { src: '/images/anemoner.webp', name: 'Anemoner i hvid', color: 'hvid' },
+        { src: '/images/anemoner1.webp', name: 'Anemoner klassisk', color: 'hvid' },
+        { src: '/images/blaahortensia.webp', name: 'Blå hortensia', color: 'blå' },
+
+        { src: '/images/brudebuket.webp', name: 'Hvide roser', color: 'hvid' },
+        { src: '/images/brudebuket2.webp', name: 'Hvide blomsterstilke', color: 'hvid' },
+        { src: '/images/brudebuket3.webp', name: 'Hvide liljer', color: 'hvid' },
+
+        { src: '/images/bukethojre.webp', name: 'Gule blomster', color: 'gul' },
+
+        { src: '/images/buketlyseroed.webp', name: 'Lyserød buket', color: 'lyserød' },
+        { src: '/images/buketlyseroed2.webp', name: 'Pastel buket', color: 'lyserød' },
+        { src: '/images/buketlyseroed3.webp', name: 'Pink tulipaner', color: 'lyserød' },
+        { src: '/images/buketlyseroed4.webp', name: 'Lyserøde ranunkler', color: 'lyserød' },
+
+        { src: '/images/buketpaabord.webp', name: 'Gul buket', color: 'gul' },
+
+        { src: '/images/buketseriemulti.webp', name: 'Sommerblomst mix', color: 'flerfarvet' },
+        { src: '/images/buketseriemulti2.webp', name: 'Vilde engblomster', color: 'flerfarvet' },
+        { src: '/images/buketseriemulti3.webp', name: 'Farverigt blomsterudtryk', color: 'flerfarvet' },
+
+        { src: '/images/buketterpaaraekke.webp', name: 'Gule gerbera', color: 'gul' },
+
+        { src: '/images/buketvase.webp', name: 'Sommerbuket', color: 'flerfarvet' },
+        { src: '/images/buketvase3.webp', name: 'Blomster i vase', color: 'flerfarvet' },
+
+        { src: '/images/enkeltelilla.webp', name: 'Enkelt lilla blomst', color: 'lyserød' },
+        { src: '/images/enkelthvide.webp', name: 'Hvid lilje', color: 'flerfarvet' },
+
+        { src: '/images/blomst1.webp', name: 'Lilla engplante', color: 'lyserød' },
+
+        { src: '/images/dybbuket1.webp', name: 'Peon', color: 'hvid' },
+        { src: '/images/dybbuket2.webp', name: 'Mørkerøde blomster', color: 'rød' },
+
+        { src: '/images/groentulipan.webp', name: 'Grøn tulipan', color: 'grøn' },
+        { src: '/images/groentulipan2.webp', name: 'Grøn blomstergren', color: 'grøn' },
+        { src: '/images/groentulipan3.webp', name: 'Grønne bløde blade', color: 'grøn' },
+        { src: '/images/vinduebuket.webp', name: 'Vinduesblomst', color: 'flerfarvet' },
+        { src: '/images/vinduebuket2.webp', name: 'Grøn naturbuket', color: 'grøn' },
+        { src: '/images/vinduebuket4.webp', name: 'Forårs buket', color: 'flerfarvet' },
+        { src: '/images/flotbuket.webp', name: 'Grøn dekorationsblomst', color: 'grøn' },
+
+        { src: '/images/glasbuket1.webp', name: 'Blomster i glasopsats', color: 'flerfarvet' },
+        { src: '/images/sortbaggrundbuket1.webp', name: 'farverig buket', color: 'flerfarvet' },
+          { src: '/images/valmue.webp', name: 'Valmue', color: 'rød' },
+           { src: '/images/blo.webp', name: 'Blå blomst', color: 'blå' },
+             { src: '/images/bonde.webp', name: 'Bonderose', color: 'lyserød' },
+         { src: '/images/gul.webp', name: 'Gule blomster', color: 'gul' },
+          { src: '/images/rode.webp', name: 'Røde blomster', color: 'rød' },
       ],
       filteredImages() {
         return this.images.filter(img =>
-          (this.filter==='all' || img.color===this.filter) &&
+          (this.filter==='alle' || img.color===this.filter) &&
           img.name.toLowerCase().includes(this.search.toLowerCase())
         );
       }
@@ -95,19 +112,16 @@ import Heading from "../components/Heading.astro";
       class="border px-3 py-2 mb-4 rounded-none text-[color:var(--color-primary-content)]"
     />
 
-    <!-- Galleri -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <!-- Masonry Galleri -->
+    <div class="columns-2 sm:columns-3 md:columns-4 gap-8 space-y-4">
       <template x-for="img in filteredImages()" :key="img.src">
-        <div class="overflow-hidden shadow-none hover:scale-105 transition">
+        <div
+          class="break-inside-avoid overflow-hidden hover:scale-[1.01] transition"
+        >
           <img :src="img.src" class="w-full object-cover" :alt="img.name" />
           <p
             class="text-sm mt-1 text-[color:var(--color-primary-content)]"
             x-text="img.name"
-          >
-          </p>
-          <p
-            class="text-xs text-[color:var(--color-primary-content)]"
-            x-text="'Farve: ' + img.color"
           >
           </p>
         </div>
