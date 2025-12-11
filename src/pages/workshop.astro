@@ -6,15 +6,14 @@ import { Image } from "astro:assets";
 import atelier from "../assets/images/vaerksted1.webp";
 import atelier2 from "../assets/images/varksted.webp";
 import Form from "../components/Form.astro";
+import Heading from "../components/Heading.astro";
 ---
 
 <MainLayout title="Doxa Workshop">
   <section class="py-16 md:py-24">
-    <div
-      class="flex flex-col md:flex-row justify-between gap-8 md:gap-16 items-end"
-    >
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <div>
-        <h1>Workshop</h1>
+        <Heading htmlheading="h1" size="large">Workshop</Heading>
         <p>
           Doxa Flowers skaber kunstneriske papirblomster, hvor hvert arrangement
           er et unikt værk, skabt specielt til dig, dit rum eller din
@@ -23,7 +22,9 @@ import Form from "../components/Form.astro";
           ikke en webshop med hurtig levering.
         </p>
       </div>
-      <Button variant="primary" size="small">Tilmeld workshop</Button>
+      <div class="items-end">
+        <Button variant="primary" size="small">Tilmeld workshop</Button>
+      </div>
     </div>
   </section>
 
@@ -31,7 +32,7 @@ import Form from "../components/Form.astro";
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <!-- Tekstcontainer: 1/3 af bredden på desktop -->
       <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
-        <h2>Kom med ind i Atelieret</h2>
+        <Heading htmlheading="h2" size="large">Kom med ind i Atelieret</Heading>
         <p>
           Ønsker du selv at komme tættere på håndværket og lære at skabe dine
           egne smukke papirblomster?
@@ -61,38 +62,48 @@ import Form from "../components/Form.astro";
   </section>
 
   <section>
-    <div class="py-40 place-self-center"><h1>Faq</h1></div>
-    <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+    <div class="py-40 place-self-center">
+      <Heading htmlheading="h2" size="large">FAQ</Heading>
+    </div>
+
+    <div class="collapse collapse-arrow border-[1px] rounded-none">
       <input type="radio" name="my-accordion-2" checked="checked" />
-      <div class="collapse-title font-semibold">
-        How do I create an account?
+      <div class="collapse-title font-semibold rounded-none">
+        <p>Hvilke typer workshops tilbyder I?</p>
       </div>
-      <div class="collapse-content text-sm">
-        Click the "Sign Up" button in the top right corner and follow the
-        registration process.
-      </div>
-    </div>
-    <div class="collapse collapse-arrow bg-base-100 border border-base-300">
-      <input type="radio" name="my-accordion-2" />
-      <div class="collapse-title font-semibold">
-        I forgot my password. What should I do?
-      </div>
-      <div class="collapse-content text-sm">
-        Click on "Forgot Password" on the login page and follow the instructions
-        sent to your email.
+      <div class="collapse-content text-sm rounded-none">
+        <p>
+          Vi tilbyder forskellige typer workshops, herunder introduktion til
+          papirblomster, avancerede teknikker og skræddersyede forløb.
+        </p>
       </div>
     </div>
-    <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+
+    <div class="collapse collapse-arrow border-[1px] rounded-none">
       <input type="radio" name="my-accordion-2" />
-      <div class="collapse-title font-semibold">
-        How do I update my profile information?
+      <div class="collapse-title font-semibold rounded-none">
+        <p>I forgot my password. What should I do?</p>
       </div>
-      <div class="collapse-content text-sm">
-        Go to "My Account" settings and select "Edit Profile" to make changes.
+      <div class="collapse-content text-sm rounded-none">
+        <p>
+          Click on "Forgot Password" on the login page and follow the
+          instructions sent to your email.
+        </p>
+      </div>
+    </div>
+
+    <div class="collapse collapse-arrow border-[1px] rounded-none">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title font-semibold rounded-none">
+        <p>How do I update my profile information?</p>
+      </div>
+      <div class="collapse-content text-sm rounded-none">
+        <p>
+          Go to "My Account" settings and select "Edit Profile" to make changes.
+        </p>
       </div>
     </div>
   </section>
-
   <section>
     <Form />
   </section>
