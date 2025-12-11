@@ -234,6 +234,7 @@ h5 {
   src: url("/fonts/OliveCitrus.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -241,6 +242,7 @@ h5 {
   src: url("/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -248,6 +250,7 @@ h5 {
   src: url("/fonts/WorkSans-Italic-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -255,4 +258,5 @@ h5 {
   src: url("/fonts/CormorantGaramond-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
