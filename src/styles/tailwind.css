@@ -72,6 +72,11 @@
   --noise: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 @layer base {
   /* midlertidig løsning til at override dark mode på mac */
   :root,

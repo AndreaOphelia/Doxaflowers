@@ -23,7 +23,9 @@ import Heading from "../components/Heading.astro";
         </p>
       </div>
       <div class="items-end">
-        <Button variant="primary" size="small">Tilmeld workshop</Button>
+        <a href="#form">
+        <Button href="#form" variant="primary" size="small">Tilmeld workshop</Button>
+        </a>
       </div>
     </div>
   </section>
@@ -42,7 +44,9 @@ import Heading from "../components/Heading.astro";
           og den ro, der ligger i det kreative håndarbejde. Perfekt som et
           nærværende pusterum eller en teambuilding-event.
         </p>
+        <a href="#form">
         <Button variant="primary" size="small">Lav en bestilling</Button>
+        </a>
       </div>
 
       <!-- Billedcontainer: 2/3 af bredden på desktop -->
@@ -202,7 +206,7 @@ import Heading from "../components/Heading.astro";
 
   </section>
 
-  <section>
+  <section id="form">
     <Form />
   </section>
 </MainLayout>
