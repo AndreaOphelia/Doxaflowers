@@ -23,8 +23,13 @@ import vindue from "../assets/images/vindue.webp";
 ---
 
 <MainLayout title="Doxa Flowers">
-  <section class="relative h-screen overflow-hidden mb-40">
-    <div class="absolute inset-0 grid grid-cols-2 gap-2 z-0">
+  <section class="relative h-screen overflow-hidden mb-40 -mx-8 md:-mx-8 lg:-mx-10">
+
+   
+    <div 
+      class=" absolute inset-0 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-2 z-0"
+    >
+  
       <!-- Venstre side -->
       <div class="relative w-full h-full">
         <Image
@@ -48,9 +53,9 @@ import vindue from "../assets/images/vindue.webp";
           class="fadeLeft absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
         />
       </div>
-
-      <!-- Højre side -->
-      <div class="relative w-full h-full hidden md:block">
+  
+      <!-- Højre side  -->
+      <div class="relative w-full h-full hidden lg:block">
         <Image
           src={hero2}
           alt="blomster"
@@ -72,25 +77,30 @@ import vindue from "../assets/images/vindue.webp";
           class="fadeRight absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
         />
       </div>
+  
     </div>
-
-    <!-- Tekstbox -->
-    <div
-      class="absolute bg-transparent text-secondary-content left-10 bottom-10 max-w-lg flex flex-col gap-4 z-10"
+  
+    <!-- TEKST -->
+    <div 
+      class=" absolute bg-transparent text-secondary-content left-6 md:left-10 bottom-10 max-w-sm md:max-w-lg flex flex-col gap-4 z-10"
     >
-      <Heading htmlheading="h1" size="large"
-        >Håndlavede blomster af papir</Heading
-      >
+      <Heading htmlheading="h1" size="large">
+        Håndlavede blomster af papir
+      </Heading>
+  
       <p>
         Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din
         historie, dit rum eller din begivenhed. Slow craftsmanship, hvor hvert
         blad er farvet og formet i hånden.
       </p>
-      <Button variant="secondary" size="small"> Bestil dit værk </Button>
+  
+      <Button variant="secondary" size="small">
+        Bestil dit værk
+      </Button>
     </div>
-
-    
+  
   </section>
+  
 
   <section class="md:flex items-center justify-between mb-24 gap-8">
 

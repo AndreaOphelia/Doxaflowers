@@ -1,6 +1,6 @@
 ---
 // Henter parametrene fra Astro.props
-const { href="#" , target="_self" , variant= "", size = "" } = Astro.props; 
+const { href="#" , target="_self" , variant= "textlink", size = "small" } = Astro.props; 
  
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
 
@@ -8,20 +8,20 @@ const linkStyling = "cursor-pointer text: font-['WorkSans'] transition duration-
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
 const variantClasses = {
-"textlink": "underline",
-"primary": "uppercase border-4 rounded-2xl p-2 m-2 hover:bg-transparent hover:text-[var(--color-accent)] hover:border-4 border-[var(--color-accent)] font-['LilitaOne'] transition duration-200 hover:animate-pulse",
-"secondary": "rounded-2xl p-3 m-3 text-bold bg-[var(--color-primary)] text-[var(--color-primary-content)] hover:bg-[var(--color-accent)] hover:animate-pulse transition duration-200"
+"textlink": "uppercase",
+"primary": "px-8 py-2 border-1 border-black bg-transparent text-primary-content border-primary-content",
+"secondary": "px-8 py-2 border-1 border-black bg-transparent text-secondary-content border-secondary-content"
 };
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
 const sizeClasses = {
-"large": "text-4xl",
+  large: "text-4xl",
 
-"medium": "text-2xl",
+  medium: "text-2xl",
 
-"small": "text-xl",
+  small: "text-md",
 
-"xsmall": "text-sm",
+  xsmall: "text-sm",
 };
 ---
 <!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
