@@ -55,6 +55,7 @@
   --color-error: oklch(65% 0.3 30);
   --color-error-content: oklch(98% 0.01 30);
 
+
   /* border radius */
   --radius-selector: 1rem;
   --radius-field: 0.25rem;
@@ -79,104 +80,6 @@
     color-scheme: light !important;
   }
 
-  /* Override dark mode media query */
-  @media (prefers-color-scheme: dark) {
-    :root,
-    * {
-      color-scheme: light !important;
-    }
-
-    /* Override dark mode form elementer */
-
-    input::placeholder,
-    textarea::placeholder {
-      color: oklch(0.2605 0.0511 334.69) !important;
-      opacity: 0.5 !important;
-      font-weight: 300 !important;
-      font-style: oblique !important;
-    }
-
-    input,
-    textarea,
-    select {
-      border-color: oklch(0.2605 0.0511 334.69) !important;
-      color: oklch(0.2605 0.0511 334.69) !important;
-      font-weight: 300 !important;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: oklch(0.2605 0.0511 334.69) !important;
-      outline-color: oklch(0.2605 0.0511 334.69) !important;
-    }
-
-    html,
-    body,
-    * {
-      background-color: inherit;
-    }
-
-    html,
-    body {
-      background-color: oklch(0.9939 0.0082 91.48) !important;
-      color: oklch(0.2605 0.0511 334.69) !important;
-    }
-  }
-
-  /* Override light mode media query */
-
-  @media (prefers-color-scheme: light) {
-    :root,
-    * {
-      color-scheme: light !important;
-    }
-
-    /* Override dark mode form elementer */
-
-    input::placeholder,
-    textarea::placeholder {
-      color: oklch(0.2605 0.0511 334.69) !important;
-      opacity: 0.5 !important;
-      font-weight: 300 !important;
-      font-style: oblique !important;
-    }
-
-    input,
-    textarea,
-    select {
-      border-color: oklch(0.2605 0.0511 334.69) !important;
-      color: oklch(0.2605 0.0511 334.69) !important;
-      font-weight: 300 !important;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: oklch(0.2605 0.0511 334.69) !important;
-      outline-color: oklch(0.2605 0.0511 334.69) !important;
-    }
-
-    html,
-    body,
-    * {
-      background-color: inherit;
-    }
-
-    html,
-    body {
-      background-color: oklch(0.9939 0.0082 91.48) !important;
-      color: oklch(0.2605 0.0511 334.69) !important;
-    }
-  }
-
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
 }
 /* Typografi */
 h1,
@@ -196,6 +99,7 @@ p {
   max-width: 55ch;
 }
 
+
 h5 {
   font-size: 14px;
   letter-spacing: 4px;
@@ -203,6 +107,7 @@ h5 {
 
 @layer components {
 }
+
 @layer utilities {
   @media (prefers-color-scheme: dark) {
     .bg-base-100 {
@@ -224,6 +129,23 @@ h5 {
     .text-secondary-content {
       color: oklch(0.9939 0.0082 91.48) !important;
     }
+
+    .color-accent-100 {
+      color: oklch(0.2605 0.0511 334.69) !important;
+    }
+
+     .color-accent-content-100:  {
+      color: oklch(0.2605 0.0511 334.69) !important;
+    }
+
+    .color-accent-200:  {
+      color: oklch(0.9939 0.0082 91.48) !important;
+    }
+
+    .color-accent-content-200:  {
+      color: oklch(0.9939 0.0082 91.48) !important;
+    }
+
   }
 }
 
@@ -258,3 +180,4 @@ h5 {
   font-style: normal;
   font-display: swap;
 }
+

@@ -8,7 +8,7 @@ import Heading from "../components/Heading.astro";
   <section class="py-24">
     <Heading htmlheading="h1" size="large">Værker og Inspiration</Heading>
     <div class="flex justify-between mb-8">
-      <p class="text-[color:var(--color-primary-content)]">
+      <p class="">
         Gennem tiden har jeg skabt unikke blomsterværker til private hjem,
         events og erhverv. Her kan du finde inspiration til dit eget
         unika-projekt.
@@ -23,7 +23,7 @@ import Heading from "../components/Heading.astro";
     x-data="{
       filter: 'alle',
       search: '',
-      colors: ['alle','rød','lyserød','gul','blå','hvid','grøn','flerfarvet'],
+      colors: ['Alle','Rød','Lyserød','Gul','Blå','Hvid','Grøn','Flerfarvet'],
       images: [
 
         { src: '/images/blomst2.webp', name: 'Blå hortensia', color: 'blå' },
@@ -109,7 +109,7 @@ import Heading from "../components/Heading.astro";
       type="text"
       placeholder="Søg..."
       x-model="search"
-      class="border px-3 py-2 mb-4 rounded-none text-[color:var(--color-primary-content)]"
+      class="border px-3 py-2 mb-4 rounded-none"
     />
 
     <!-- Masonry Galleri -->
@@ -120,7 +120,7 @@ import Heading from "../components/Heading.astro";
         >
           <img :src="img.src" class="w-full object-cover" :alt="img.name" />
           <p
-            class="text-sm mt-1 text-[color:var(--color-primary-content)]"
+            class="text-sm mt-1"
             x-text="img.name"
           >
           </p>

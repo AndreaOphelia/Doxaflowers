@@ -4,7 +4,7 @@ import Heading from "./Heading.astro";
 ---
 
 <div
-  class="relative w-full flex flex-col gap-8 items-center text-center py-16 overflow-hidden text-[color:var(--color-primary-content)]"
+  class="relative w-full flex flex-col gap-8 items-center text-center py-16 overflow-hidden text--primary-content"
 >
  
   <Heading htmlheading="h2" size="large" >
@@ -40,7 +40,7 @@ import Heading from "./Heading.astro";
       testimonials.map(() => (
         <span
           class="dot w-3 h-3 rounded-full"
-          style="background-color: var(--color-primary-content); opacity: 0.3;"
+          style="background-color: #331A2E; opacity: 0.3;"
         />
       ))
     }
