@@ -1,11 +1,15 @@
 ---
 const { testimonials = [] } = Astro.props;
+import Heading from "./Heading.astro";
 ---
 
 <div
-  class="relative w-full flex flex-col items-center text-center py-16 overflow-hidden text-[color:var(--color-primary-content)]"
+  class="relative w-full flex flex-col gap-8 items-center text-center py-16 overflow-hidden text-[color:var(--color-primary-content)]"
 >
-  <h2 class="mb-8">Hvad siger vores kunder?</h2>
+ 
+  <Heading htmlheading="h2" size="large" >
+    Hvad siger vores kunder?
+  </Heading>
 
   <img
     class="w-12 mx-auto mb-4"
