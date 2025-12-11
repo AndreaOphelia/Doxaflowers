@@ -3,14 +3,20 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
+import vindue from "../assets/images/vindue.webp";
+import buketvase from "../assets/images/buketvase.webp";
+import lyseroedbuketglas from "../assets/images/lyseroedbuketglas.webp";
+import solsikke from "../assets/images/solsikke.webp";
+import buketservice5 from "../assets/images/buketservice5.webp";
+import Heading from "../components/Heading.astro";
 ---
 
 <MainLayout title="Doxa Flowers">
   <!-- Første sektion -->
-  <section class="py-16 md:py-24 mt-16">
+  <section class="py-16 md:py-24">
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <div>
-        <h1>SERVICES</h1>
+        <Heading htmlheading="h1" size="large">Sevices</Heading>
         <p>
           Doxa Flowers skaber kunstneriske papirblomster, hvor hvert arrangement
           er et unikt værk, skabt specielt til dig, dit rum eller din
@@ -28,13 +34,15 @@ import { Image } from "astro:assets";
   <!-- Anden sektion -->
   <section class="py-16 md:py-24">
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
-      <img
-        class="w-full md:w-1/2 h-auto max-w-full object-cover"
-        src="img/buketservice1.webp"
-        alt="billede af papirblomster buket"
+      <Image
+        src={vindue}
+        alt="billede af blomster"
+        class="w-full md:w-1/2 h-auto object-cover"
       />
       <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
-        <h2>Det er Tiden, der Skaber Værket</h2>
+        <Heading htmlheading="h2" size="large"
+          >Der er tiden der skaber værket</Heading
+        >
         <p>
           For mig er Doxa Flowers en hyldest til ro, nærvær og det langsomme
           håndværk. Hver eneste blomst, du ser, er et stykke tid, et valg af
@@ -54,7 +62,7 @@ import { Image } from "astro:assets";
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <!-- Tekstcontainer: 1/3 af bredden på desktop -->
       <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
-        <h2>skræddersyede buketter</h2>
+        <Heading htmlheading="h2" size="large">Skræddersyede buketter</Heading>
         <p>
           Processen starter altid med en idé og en dialog. Sammen definerer vi
           form, farver og blomstervalg, hvorefter jeg skaber et kunstværk, der
@@ -70,15 +78,15 @@ import { Image } from "astro:assets";
 
       <!-- Billedcontainer: 2/3 af bredden på desktop -->
       <div class="flex w-full md:w-2/3 gap-4">
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice2.webp"
-          alt="billede af papirblomster buket holdt i hånd"
+        <Image
+          src={buketvase}
+          alt="billede af blomster"
+          class="w-full md:w-1/2 h-auto object-cover"
         />
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice3.webp"
-          alt="billede af papirblomster"
+        <Image
+          src={lyseroedbuketglas}
+          alt="billede af blomster"
+          class="w-full md:w-1/2 h-auto object-cover"
         />
       </div>
     </div>
@@ -89,21 +97,21 @@ import { Image } from "astro:assets";
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <!-- Billedcontainer: 2/3 af bredden på desktop -->
       <div class="flex w-full md:w-2/3 gap-4">
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice4.webp"
-          alt="billede af papirblomster"
+        <Image
+          src={solsikke}
+          alt="billede af blomster"
+          class="w-full md:w-1/2 h-auto object-cover"
         />
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice5.webp"
-          alt="billede af papirblomster"
+        <Image
+          src={buketservice5}
+          alt="billede af blomster"
+          class="w-full md:w-1/2 h-auto object-cover"
         />
       </div>
 
       <!-- Tekstcontainer: 1/3 af bredden på desktop -->
       <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
-        <h2>ENKELTE STILKE</h2>
+        <Heading htmlheading="h2" size="large">Enkelte stilke</Heading>
         <p>
           Vores enkeltstilke begynder også med en fælles vision. Vi udvælger
           sammen den perfekte blomstertype og farvenuance, hvorefter jeg
