@@ -5,10 +5,10 @@ import Heading from "../components/Heading.astro";
 ---
 
 <MainLayout title="Doxa Flowers">
-  <section class="py-24">
+  <section class="text-primary-content py-24">
     <Heading htmlheading="h1" size="large">Værker og Inspiration</Heading>
     <div class="flex justify-between mb-8">
-      <p class="">
+      <p class="primary-content">
         Gennem tiden har jeg skabt unikke blomsterværker til private hjem,
         events og erhverv. Her kan du finde inspiration til dit eget
         unika-projekt.
@@ -21,72 +21,72 @@ import Heading from "../components/Heading.astro";
 
   <div
     x-data="{
-      filter: 'alle',
+      filter: 'Alle',
       search: '',
       colors: ['Alle','Rød','Lyserød','Gul','Blå','Hvid','Grøn','Flerfarvet'],
       images: [
 
-        { src: '/images/blomst2.webp', name: 'Blå hortensia', color: 'blå' },
-        { src: '/images/blomst3.webp', name: 'Pink hortensia', color: 'lyserød' },
-        { src: '/images/blomst4.webp', name: 'Lyserød peon', color: 'lyserød' },
-        { src: '/images/blomst5.webp', name: 'Pastel lilla blomst', color: 'flerfarvet' },
-        { src: '/images/blomst6.webp', name: 'Gul naturblomst', color: 'gul' },
-        { src: '/images/blomst7.webp', name: 'Rød kronemix', color: 'rød' },
-        { src: '/images/blomst8.webp', name: 'Lilla stilk', color: 'lyserød' },
+        { src: '/images/blomst2.webp', name: 'Blå hortensia', color: 'Blå' },
+        { src: '/images/blomst3.webp', name: 'Pink hortensia', color: 'Lyserød' },
+        { src: '/images/blomst4.webp', name: 'Lyserød peon', color: 'Lyserød' },
+        { src: '/images/blomst5.webp', name: 'Pastel lilla blomst', color: 'Flerfarvet' },
+        { src: '/images/blomst6.webp', name: 'Gul naturblomst', color: 'Gul' },
+        { src: '/images/blomst7.webp', name: 'Rød kronemix', color: 'Rød' },
+        { src: '/images/blomst8.webp', name: 'Lilla stilk', color: 'Lyserød' },
 
-        { src: '/images/anemoner.webp', name: 'Anemoner i hvid', color: 'hvid' },
-        { src: '/images/anemoner1.webp', name: 'Anemoner klassisk', color: 'hvid' },
-        { src: '/images/blaahortensia.webp', name: 'Blå hortensia', color: 'blå' },
+        { src: '/images/anemoner.webp', name: 'Anemoner i hvid', color: 'Hvid' },
+        { src: '/images/anemoner1.webp', name: 'Anemoner klassisk', color: 'Hvid' },
+        { src: '/images/blaahortensia.webp', name: 'Blå hortensia', color: 'Blå' },
 
-        { src: '/images/brudebuket.webp', name: 'Hvide roser', color: 'hvid' },
-        { src: '/images/brudebuket2.webp', name: 'Hvide blomsterstilke', color: 'hvid' },
-        { src: '/images/brudebuket3.webp', name: 'Hvide liljer', color: 'hvid' },
+        { src: '/images/brudebuket.webp', name: 'Hvide roser', color: 'Hvid' },
+        { src: '/images/brudebuket2.webp', name: 'Hvide blomsterstilke', color: 'Hvid' },
+        { src: '/images/brudebuket3.webp', name: 'Hvide liljer', color: 'Hvid' },
 
-        { src: '/images/bukethojre.webp', name: 'Gule blomster', color: 'gul' },
+        { src: '/images/bukethojre.webp', name: 'Gule blomster', color: 'Gul' },
 
-        { src: '/images/buketlyseroed.webp', name: 'Lyserød buket', color: 'lyserød' },
-        { src: '/images/buketlyseroed2.webp', name: 'Pastel buket', color: 'lyserød' },
-        { src: '/images/buketlyseroed3.webp', name: 'Pink tulipaner', color: 'lyserød' },
-        { src: '/images/buketlyseroed4.webp', name: 'Lyserøde ranunkler', color: 'lyserød' },
+        { src: '/images/buketlyseroed.webp', name: 'Lyserød buket', color: 'Lyserød' },
+        { src: '/images/buketlyseroed2.webp', name: 'Pastel buket', color: 'Lyserød' },
+        { src: '/images/buketlyseroed3.webp', name: 'Pink tulipaner', color: 'Lyserød' },
+        { src: '/images/buketlyseroed4.webp', name: 'Lyserøde ranunkler', color: 'Lyserød' },
 
-        { src: '/images/buketpaabord.webp', name: 'Gul buket', color: 'gul' },
+        { src: '/images/buketpaabord.webp', name: 'Gul buket', color: 'Gul' },
 
-        { src: '/images/buketseriemulti.webp', name: 'Sommerblomst mix', color: 'flerfarvet' },
-        { src: '/images/buketseriemulti2.webp', name: 'Vilde engblomster', color: 'flerfarvet' },
-        { src: '/images/buketseriemulti3.webp', name: 'Farverigt blomsterudtryk', color: 'flerfarvet' },
+        { src: '/images/buketseriemulti.webp', name: 'Sommerblomst mix', color: 'Flerfarvet' },
+        { src: '/images/buketseriemulti2.webp', name: 'Vilde engblomster', color: 'Flerfarvet' },
+        { src: '/images/buketseriemulti3.webp', name: 'Farverigt blomsterudtryk', color: 'Flerfarvet' },
 
-        { src: '/images/buketterpaaraekke.webp', name: 'Gule gerbera', color: 'gul' },
+        { src: '/images/buketterpaaraekke.webp', name: 'Gule gerbera', color: 'Gul' },
 
-        { src: '/images/buketvase.webp', name: 'Sommerbuket', color: 'flerfarvet' },
-        { src: '/images/buketvase3.webp', name: 'Blomster i vase', color: 'flerfarvet' },
+        { src: '/images/buketvase.webp', name: 'Sommerbuket', color: 'Flerfarvet' },
+        { src: '/images/buketvase3.webp', name: 'Blomster i vase', color: 'Flerfarvet' },
 
-        { src: '/images/enkeltelilla.webp', name: 'Enkelt lilla blomst', color: 'lyserød' },
-        { src: '/images/enkelthvide.webp', name: 'Hvid lilje', color: 'flerfarvet' },
+        { src: '/images/enkeltelilla.webp', name: 'Enkelt lilla blomst', color: 'Lyserød' },
+        { src: '/images/enkelthvide.webp', name: 'Hvid lilje', color: 'Flerfarvet' },
 
-        { src: '/images/blomst1.webp', name: 'Lilla engplante', color: 'lyserød' },
+        { src: '/images/blomst1.webp', name: 'Lilla engplante', color: 'Lyserød' },
 
-        { src: '/images/dybbuket1.webp', name: 'Peon', color: 'hvid' },
-        { src: '/images/dybbuket2.webp', name: 'Mørkerøde blomster', color: 'rød' },
+        { src: '/images/dybbuket1.webp', name: 'Peon', color: 'Hvid' },
+        { src: '/images/dybbuket2.webp', name: 'Mørkerøde blomster', color: 'Rød' },
 
-        { src: '/images/groentulipan.webp', name: 'Grøn tulipan', color: 'grøn' },
-        { src: '/images/groentulipan2.webp', name: 'Grøn blomstergren', color: 'grøn' },
-        { src: '/images/groentulipan3.webp', name: 'Grønne bløde blade', color: 'grøn' },
-        { src: '/images/vinduebuket.webp', name: 'Vinduesblomst', color: 'flerfarvet' },
-        { src: '/images/vinduebuket2.webp', name: 'Grøn naturbuket', color: 'grøn' },
-        { src: '/images/vinduebuket4.webp', name: 'Forårs buket', color: 'flerfarvet' },
-        { src: '/images/flotbuket.webp', name: 'Grøn dekorationsblomst', color: 'grøn' },
+        { src: '/images/groentulipan.webp', name: 'Grøn tulipan', color: 'Grøn' },
+        { src: '/images/groentulipan2.webp', name: 'Grøn blomstergren', color: 'Grøn' },
+        { src: '/images/groentulipan3.webp', name: 'Grønne bløde blade', color: 'Grøn' },
+        { src: '/images/vinduebuket.webp', name: 'Vinduesblomst', color: 'Flerfarvet' },
+        { src: '/images/vinduebuket2.webp', name: 'Grøn naturbuket', color: 'Grøn' },
+        { src: '/images/vinduebuket4.webp', name: 'Forårs buket', color: 'Flerfarvet' },
+        { src: '/images/flotbuket.webp', name: 'Grøn dekorationsblomst', color: 'Grøn' },
 
-        { src: '/images/glasbuket1.webp', name: 'Blomster i glasopsats', color: 'flerfarvet' },
-        { src: '/images/sortbaggrundbuket1.webp', name: 'farverig buket', color: 'flerfarvet' },
-          { src: '/images/valmue.webp', name: 'Valmue', color: 'rød' },
-           { src: '/images/blo.webp', name: 'Blå blomst', color: 'blå' },
-             { src: '/images/bonde.webp', name: 'Bonderose', color: 'lyserød' },
-         { src: '/images/gul.webp', name: 'Gule blomster', color: 'gul' },
-          { src: '/images/rode.webp', name: 'Røde blomster', color: 'rød' },
+        { src: '/images/glasbuket1.webp', name: 'Blomster i glasopsats', color: 'Flerfarvet' },
+        { src: '/images/sortbaggrundbuket1.webp', name: 'farverig buket', color: 'Flerfarvet' },
+          { src: '/images/valmue.webp', name: 'Valmue', color: 'Rød' },
+           { src: '/images/blo.webp', name: 'Blå blomst', color: 'Blå' },
+             { src: '/images/bonde.webp', name: 'Bonderose', color: 'Lyserød' },
+         { src: '/images/gul.webp', name: 'Gule blomster', color: 'Gul' },
+          { src: '/images/rode.webp', name: 'Røde blomster', color: 'Rød' },
       ],
       filteredImages() {
         return this.images.filter(img =>
-          (this.filter==='alle' || img.color===this.filter) &&
+          (this.filter==='Alle' || img.color===this.filter) &&
           img.name.toLowerCase().includes(this.search.toLowerCase())
         );
       }
@@ -98,7 +98,7 @@ import Heading from "../components/Heading.astro";
       <template x-for="color in colors" :key="color">
         <button
           @click="filter = color"
-          class="px-4 py-1 text-sm cursor-pointer hover:bg-fuchsia-100 transition"
+          class="text-primary-content px-4 py-1 text-sm cursor-pointer hover:bg-fuchsia-100 transition"
           :class="{ 'bg-fuchsia-100': filter===color }"
           x-text="color"></button>
       </template>
