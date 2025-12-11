@@ -13,7 +13,7 @@ const buttonStyling =
 
 const variantClasses = {
     primary:
-        "bg-transparent text-Color-text-primary border-Color-button-border-primary hover:bg-Color-button-background-primary-hover hover:text-Color-text-primary-hover hover:border-Color-button-border-primary-hover",
+        "bg-transparent text-Color-text-primary border-Color-button-border-primary hover:border-Color-button-border-primary-hover",
     
     secondary:
         "bg-transparent text-secondary-content border-secondary-content ",
@@ -37,8 +37,3 @@ const sizeClasses = {
 <button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}
   ><slot /></button
 >
-
-
-<!-- <div data-property-1="Desk-Primary" class="px-8 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-Color-button-outline-primary inline-flex justify-center items-center gap-2.5">
-    <div class="justify-start text-Color-text-primary text-lg italic font-light font-['Work_Sans']">Lav en bestilling</div>
-</div>  -->
