@@ -9,8 +9,6 @@
   /* Her tilføjes theme variable // tokens */
 }
 
-
-
 @plugin "daisyui";
 @plugin "daisyui/theme" {
   name: "mytheme";
@@ -77,13 +75,12 @@
 }
 
 @layer base {
-  
   /* midlertidig løsning til at override dark mode på mac */
   :root,
   * {
     color-scheme: light !important;
   }
-  
+
   /* Override dark mode media query */
   @media (prefers-color-scheme: dark) {
     :root,
@@ -95,45 +92,43 @@
 
     input::placeholder,
     textarea::placeholder {
-    color: oklch(0.2605 0.0511 334.69) !important;
-    opacity: 0.5 !important;
-    font-weight: 300 !important;
-    font-style: oblique !important;
-  }
+      color: oklch(0.2605 0.0511 334.69) !important;
+      opacity: 0.5 !important;
+      font-weight: 300 !important;
+      font-style: oblique !important;
+    }
 
     input,
     textarea,
     select {
-    border-color: oklch(0.2605 0.0511 334.69) !important;
-    color: oklch(0.2605 0.0511 334.69) !important;
-    font-weight: 300 !important;
-  }
-  
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: oklch(0.2605 0.0511 334.69) !important;
-    outline-color: oklch(0.2605 0.0511 334.69) !important;
-  }
-    
+      border-color: oklch(0.2605 0.0511 334.69) !important;
+      color: oklch(0.2605 0.0511 334.69) !important;
+      font-weight: 300 !important;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: oklch(0.2605 0.0511 334.69) !important;
+      outline-color: oklch(0.2605 0.0511 334.69) !important;
+    }
+
     html,
     body,
     * {
       background-color: inherit;
     }
-    
+
     html,
     body {
       background-color: oklch(0.9939 0.0082 91.48) !important;
       color: oklch(0.2605 0.0511 334.69) !important;
     }
-    
-
   }
 
-    /* Override light mode media query */
+  /* Override light mode media query */
 
-    @media (prefers-color-scheme: light) {
+  @media (prefers-color-scheme: light) {
     :root,
     * {
       color-scheme: light !important;
@@ -143,42 +138,40 @@
 
     input::placeholder,
     textarea::placeholder {
-    color: oklch(0.2605 0.0511 334.69) !important;
-    opacity: 0.5 !important;
-    font-weight: 300 !important;
-    font-style: oblique !important;
-  }
+      color: oklch(0.2605 0.0511 334.69) !important;
+      opacity: 0.5 !important;
+      font-weight: 300 !important;
+      font-style: oblique !important;
+    }
 
     input,
     textarea,
     select {
-    border-color: oklch(0.2605 0.0511 334.69) !important;
-    color: oklch(0.2605 0.0511 334.69) !important;
-    font-weight: 300 !important;
-  }
-  
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: oklch(0.2605 0.0511 334.69) !important;
-    outline-color: oklch(0.2605 0.0511 334.69) !important;
-  }
-    
+      border-color: oklch(0.2605 0.0511 334.69) !important;
+      color: oklch(0.2605 0.0511 334.69) !important;
+      font-weight: 300 !important;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: oklch(0.2605 0.0511 334.69) !important;
+      outline-color: oklch(0.2605 0.0511 334.69) !important;
+    }
+
     html,
     body,
     * {
       background-color: inherit;
     }
-    
+
     html,
     body {
       background-color: oklch(0.9939 0.0082 91.48) !important;
       color: oklch(0.2605 0.0511 334.69) !important;
     }
-    
-
   }
-  
+
   *,
   ::after,
   ::before,
@@ -186,7 +179,6 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-
 }
 /* Typografi */
 h1,
@@ -206,15 +198,6 @@ p {
   max-width: 65ch;
 }
 
-h1 {
-  font-size: 24px;
-  letter-spacing: 4px;
-}
-
-h3 {
-  font-size: 20px;
-  letter-spacing: 4px;
-}
 h5 {
   font-size: 14px;
   letter-spacing: 4px;
@@ -227,19 +210,19 @@ h5 {
     .bg-base-100 {
       background-color: oklch(0.9939 0.0082 91.48) !important;
     }
-    
+
     .bg-base-200 {
       background-color: oklch(0.2605 0.0511 334.69) !important;
     }
-    
+
     .bg-base-300 {
       background-color: oklch(0.1533 0.0329 304.54) !important;
     }
-    
+
     .text-primary-content {
       color: oklch(0.2605 0.0511 334.69) !important;
     }
-    
+
     .text-secondary-content {
       color: oklch(0.9939 0.0082 91.48) !important;
     }
