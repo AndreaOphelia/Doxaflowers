@@ -8,61 +8,92 @@ import atelier2 from "../assets/images/varksted.webp";
 import Form from "../components/Form.astro";
 ---
 
-
-
 <MainLayout title="Doxa Workshop">
-    <section class="py-16 md:py-24">
-        <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16 items-end">
-          <div>
-            <h1>Workshop</h1>
-            <p>
-              Doxa Flowers skaber kunstneriske papirblomster, hvor hvert arrangement
-              er et unikt værk, skabt specielt til dig, dit rum eller din
-              begivenhed. Jeg arbejder efter principperne om slow craftsmanship,
-              hvilket betyder, at hvert blad farves og formes i hånden. Dette er
-              ikke en webshop med hurtig levering.
-            </p>
-          </div>
-          <Button variant="primary" size="small">Tilmeld workshop</Button>
-        </div>
-      </section>
+  <section class="py-16 md:py-24">
+    <div
+      class="flex flex-col md:flex-row justify-between gap-8 md:gap-16 items-end"
+    >
+      <div>
+        <h1>Workshop</h1>
+        <p>
+          Doxa Flowers skaber kunstneriske papirblomster, hvor hvert arrangement
+          er et unikt værk, skabt specielt til dig, dit rum eller din
+          begivenhed. Jeg arbejder efter principperne om slow craftsmanship,
+          hvilket betyder, at hvert blad farves og formes i hånden. Dette er
+          ikke en webshop med hurtig levering.
+        </p>
+      </div>
+      <Button variant="primary" size="small">Tilmeld workshop</Button>
+    </div>
+  </section>
 
-
-    
   <section class="py-16 md:py-24">
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <!-- Tekstcontainer: 1/3 af bredden på desktop -->
       <div class="flex flex-col gap-4 justify-center w-full md:w-1/3">
         <h2>Kom med ind i Atelieret</h2>
-        <p>Ønsker du selv at komme tættere på håndværket og lære at skabe dine egne smukke papirblomster? </p>
-        <p>Gennem workshops får du en introduktion til materialerne, teknikkerne og den ro, der ligger i det kreative håndarbejde. Perfekt som et nærværende pusterum eller en teambuilding-event.
+        <p>
+          Ønsker du selv at komme tættere på håndværket og lære at skabe dine
+          egne smukke papirblomster?
+        </p>
+        <p>
+          Gennem workshops får du en introduktion til materialerne, teknikkerne
+          og den ro, der ligger i det kreative håndarbejde. Perfekt som et
+          nærværende pusterum eller en teambuilding-event.
         </p>
         <Button variant="primary" size="small">Lav en bestilling</Button>
       </div>
 
       <!-- Billedcontainer: 2/3 af bredden på desktop -->
       <div class="flex w-full md:w-2/3 gap-2">
-        <Image 
-        src={atelier}
-        alt="billede af atelier med papirblomster"
-        class="w-1/2 h-auto max-w-full object-cover">
-        </Image>
-        <Image 
-        src={atelier2}
-        alt="billede af atelier med papirblomster"
-        class="w-1/2 h-auto max-w-full object-cover">
-        </Image>
-
+        <Image
+          src={atelier}
+          alt="billede af atelier med papirblomster"
+          class="w-1/2 h-auto max-w-full object-cover"
+        />
+        <Image
+          src={atelier2}
+          alt="billede af atelier med papirblomster"
+          class="w-1/2 h-auto max-w-full object-cover"
+        />
       </div>
     </div>
   </section>
 
   <section>
     <div class="py-40 place-self-center"><h1>Faq</h1></div>
+    <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-2" checked="checked" />
+      <div class="collapse-title font-semibold">
+        How do I create an account?
+      </div>
+      <div class="collapse-content text-sm">
+        Click the "Sign Up" button in the top right corner and follow the
+        registration process.
+      </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title font-semibold">
+        I forgot my password. What should I do?
+      </div>
+      <div class="collapse-content text-sm">
+        Click on "Forgot Password" on the login page and follow the instructions
+        sent to your email.
+      </div>
+    </div>
+    <div class="collapse collapse-arrow bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title font-semibold">
+        How do I update my profile information?
+      </div>
+      <div class="collapse-content text-sm">
+        Go to "My Account" settings and select "Edit Profile" to make changes.
+      </div>
+    </div>
   </section>
 
-<section>
-    <Form></Form>
-</section>
-
+  <section>
+    <Form />
+  </section>
 </MainLayout>
