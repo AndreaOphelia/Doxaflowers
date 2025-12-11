@@ -18,6 +18,8 @@ import blad1 from "../assets/images/maleblade.webp";
 import blad2 from "../assets/images/maleblade2.webp";
 import Testimonial from "../components/Testimonial.astro";
 import Heading from "../components/Heading.astro";
+import maler from "../assets/images/maler.webp";
+import vindue from "../assets/images/vindue.webp";
 ---
 
 <MainLayout title="Doxa Flowers">
@@ -76,7 +78,9 @@ import Heading from "../components/Heading.astro";
     <div
       class="absolute bg-transparent text-secondary-content left-10 bottom-10 max-w-lg flex flex-col gap-4 z-10"
     >
-      <Heading htmlheading="h1" size="large">Håndlavede blomster af papir</Heading>
+      <Heading htmlheading="h1" size="large"
+        >Håndlavede blomster af papir</Heading
+      >
       <p>
         Jeg skaber varige, unikke blomsterarrangementer i papir, tilpasset din
         historie, dit rum eller din begivenhed. Slow craftsmanship, hvor hvert
@@ -93,21 +97,17 @@ import Heading from "../components/Heading.astro";
       <span class="dot w-3 h-3 rounded-full"></span>
       <span class="dot w-3 h-3 rounded-full"></span>
       <span class="dot w-3 h-3 rounded-full"></span>
-      
     </div>
   </section>
 
   <section class="flex flex-row mx-auto items-center mb-40">
     <div>
-      <Image
-        src={buket1}
-        alt="billede af blomster"
-        class="h-screen w-auto"
-      />
+      <Image src={buket1} alt="billede af blomster" class="h-screen w-auto" />
     </div>
     <div class="flex flex-col gap-8 ml-42">
-      
-      <Heading htmlheading="h2" size="large">Doxa buketten er altid i forandring</Heading>
+      <Heading htmlheading="h2" size="large"
+        >Doxa buketten er altid i forandring</Heading
+      >
       <p>
         Hver en blomst drives frem af kærlighed til papiret, former og farver.
         Jeg lader mig inspirere af naturen men fortolker frit og skaber dermed
@@ -135,7 +135,7 @@ import Heading from "../components/Heading.astro";
     </div>
     <div>
       <Image
-        src={buket1}
+        src={maler}
         alt="billede af blomster"
         class="max-h-[600px] object-cover w-full"
       />
@@ -149,7 +149,7 @@ import Heading from "../components/Heading.astro";
     </div>
     <div>
       <Image
-        src={buket1}
+        src={vindue}
         alt="billede af blomster"
         class="max-h-[600px] object-cover w-full"
       />
@@ -167,9 +167,18 @@ import Heading from "../components/Heading.astro";
   <section class="my-40">
     <Testimonial
       testimonials={[
-        { text: "Fantastisk service!", author: "– Mads K." },
-        { text: "Virkelig god oplevelse.", author: "– Sofie P." },
-        { text: "Kunne ikke være mere tilfreds!", author: "– Jonas H." },
+        {
+          text: "Kære Pernille, Den flotte og smukke kunstbuket pryder mit hjem og giver mig et smil på læberne hver morgen, når jeg ser hvor smukt den pynter i mit vindue. Den er med til at skabe glæde i hjemmet. TAK",
+          author: "– Gork Jensen.",
+        },
+        {
+          text: "Tak for den fantastiske buket, der nu pryder psykologklinikken på Frederiksberg. De unikke farver passer perfekt ind i PsykologNords univers, og vi glæder os til at buketterne også kommer i resten af vores klinikker",
+          author: "–Katrine Breum Larsen, PsykologNord ",
+        },
+        {
+          text: "Fra første gang jeg så Doxaflowers kunstbuketter på IG,vidste jeg bare, at jeg måtte eje en buket. Nu er min bestilte Doxaflowers buket så lige ankommet. mukt og sikkert indpakket - og jeg er meget tilfreds, for den er virkelig virkelig smuk! Jeg er ret imponeret over de mange forskellige blomster typer, de skønne nuancer/farvesammensætninger, som Doxaflowers med sikker hånd kreerer. Det er kvalitetsblomster med fokus på de mindste detaljer- meget naturtro fra støvdragere til kronblade- fantastisk håndværk simpelthen!",
+          author: "– Mayanna J.Riis, Brønshøj",
+        },
       ]}
     />
   </section>
