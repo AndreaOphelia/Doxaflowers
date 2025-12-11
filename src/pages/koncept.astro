@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import Link from "../components/Link.astro";
+import Heading from "../components/Heading.astro";
 import { Image } from "astro:assets";
 import heroImage from "../assets/images/koncepthero.jpg";
 import pernilleImage from "../assets/images/pernille_upscaled.jpg";
@@ -19,10 +19,12 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
       class="absolute inset-0 h-full w-full object-cover"
     />
     <!-- Introtekst og CTA -->
-    <div class="absolute bottom-10 left-10 max-w-lg bg-transparent">
-      <h1 class="mb-4 text-secondary-content">
-        KUNSTEN OG TIDEN BAG DOXA FLOWERS
-      </h1>
+    <div class="absolute bottom-10 p-8 bg-transparent">
+      
+      <Heading htmlheading="h1" size="large" style="secondary"
+        >KUNSTEN OG TIDEN BAG DOXA FLOWERS</Heading
+      >
+
       <p class="mb-6 text-secondary-content">
         Dette er en hyldest til det langsomme håndværk. Jeg skaber varige,
         unikke kunstværker ikke blot dekorationer. Hvert værk er formet af tid,
