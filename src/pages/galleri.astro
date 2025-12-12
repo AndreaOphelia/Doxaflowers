@@ -98,7 +98,7 @@ import Heading from "../components/Heading.astro";
       <template x-for="color in colors" :key="color">
         <button
           @click="filter = color"
-          class="text-primary-content px-4 py-1 text-sm cursor-pointer hover:bg-fuchsia-100 transition"
+          class="text-primary-content px-4 py-1 text-sm uppercase cursor-pointer hover:bg-fuchsia-100 transition"
           :class="{ 'bg-fuchsia-100': filter===color }"
           x-text="color"></button>
       </template>
@@ -119,11 +119,7 @@ import Heading from "../components/Heading.astro";
           class="break-inside-avoid overflow-hidden hover:scale-[1.01] transition"
         >
           <img :src="img.src" class="w-full object-cover" :alt="img.name" />
-          <p
-            class="text-sm mt-1"
-            x-text="img.name"
-          >
-          </p>
+          <p class="text-sm mt-1" x-text="img.name"></p>
         </div>
       </template>
     </div>
