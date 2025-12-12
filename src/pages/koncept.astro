@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import Heading from "../components/Heading.astro";
 import { Image } from "astro:assets";
@@ -7,11 +8,28 @@ import heroImage from "../assets/images/koncepthero.jpg";
 import pernilleImage from "../assets/images/pernille_upscaled.jpg";
 import procesImage from "../assets/images/enkelthvide3.webp";
 import procesImage1 from "../assets/images/enkelthvide.webp";
+import flotbuket from "../assets/images/flotbuket.webp";
+import bukethojre from "../assets/images/bukethojre.webp";
+import buketseriemulti from "../assets/images/buketseriemulti.webp";
+import buketseriemulti3 from "../assets/images/buketseriemulti3.webp";
+import vasetaburet1 from "../assets/images/vasetaburet1.webp";
+import moerkbuket1 from "../assets/images/moerkbuket1.webp";
+import lyseroedbuketglas from "../assets/images/lyseroedbuketglas.webp";
+import multifarvebuket1 from "../assets/images/multifarvebuket1.webp";
+import vasestue from "../assets/images/vasestue.webp";
 ---
 
 <MainLayout title="Doxa Flowers">
+  <!-- Progress bar -->
+  <div
+    class="progress-bar h-2 fixed w-full bg-base-200 left-0 origin-top-left top-0 right-0 rounded-none z-100"
+  >
+  </div>
+
   <!-- Hero sektion -->
-  <div class="relative h-screen">
+  <div
+    class="py-16 md:py-24 relative h-screen overflow-hidden -mx-8 md:-mx-8 lg:-mx-10n"
+  >
     <!-- Baggrunds billede -->
     <Image
       src={heroImage}
@@ -19,8 +37,9 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
       class="absolute inset-0 h-full w-full object-cover"
     />
     <!-- Introtekst og CTA -->
-    <div class="absolute bottom-10 p-8 bg-transparent">
-      
+    <div
+      class="absolute !bg-transparent text-secondary-content left-6 md:left-10 bottom-10 max-w-sm md:max-w-lg flex flex-col gap-4 z-10"
+    >
       <Heading htmlheading="h1" size="large" style="secondary"
         >KUNSTEN OG TIDEN BAG DOXA FLOWERS</Heading
       >
@@ -41,11 +60,17 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
       <Image
         src={pernilleImage}
         alt="Doxa Flowers hero image"
-        class="w-full md:w-1/2 h-auto object-cover"
+        class="fotoinview w-full md:w-2/5 object-cover"
       />
 
-      <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
-        <h2>Det Startede med en Følelse</h2>
+      <div
+        class="flex flex-col gap-4 justify-center w-full md:w-1/2"
+        data-animate="fadein-text"
+      >
+        <Heading htmlheading="h2" size="large">
+          Det Startede med en Følelse
+        </Heading>
+
         <p>
           For mig er Doxa Flowers en hyldest til ro, nærvær og det langsomme
           håndværk. Hver eneste blomst, du ser, er et stykke tid, et valg af
@@ -67,27 +92,45 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
   <!-- video der spiller ved hover 1-->
 
   <section
-    class="text-primary-content cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
-    id="videoonhover"
-    x-data
+    class="text-primary-content cursor-pointer relative flex flex-col items-center justify-top min-h-dvh"
+    id="videoinview"
+    x-data="{
+      playOnView: false,
+      observer: null,
+      init() {
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const video = this.$refs.hovervideo;
+            if (entry.isIntersecting) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.3 });
+        this.observer.observe(this.$el);
+      }
+    }"
+    x-init="init()"
   >
     <video
       x-ref="hovervideo"
-      @mouseenter="$refs.hovervideo.play()"
-      @mouseleave="$refs.hovervideo.pause()"
       playsinline
       muted
       preload="metadata"
+      loop
       class="w-full h-full absolute inset-0 object-cover"
     >
       <source src="/video/cykel.mp4" type="video/mp4" />
       <source src="/video/cykel.webm" type="video/webm" />
     </video>
     <div
-      class="bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10"
+      class="sticky top-1/4 bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10 cursor-default"
     >
-      <h2 class="mb-4">Et skifte drevet af et nyt fokus</h2>
-      <p>
+      <Heading htmlheading="h2" size="large">
+        Et skifte drevet af et nyt fokus
+      </Heading>
+      <p class="mt-4">
         Efter mange år i et andet felt blev jeg klar over, at mit fokus skulle
         ligge her. Siden etableringen for fire år siden har jeg dedikeret mig
         fuldt ud til at udvikle og perfektionere dette unikke håndværk. Jeg så
@@ -98,13 +141,21 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
   </section>
 
   <!-- Tredje sektion -->
-  <section class="text-primary-content py-16 md:py-24 min-h-dvh flex items-center justify-center">
+  <section
+    class="text-primary-content py-16 md:py-24 min-h-dvh flex items-center justify-center"
+  >
     <div
       class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16"
     >
       <!-- Tekstcontainer: 1/3 af bredden på desktop -->
-      <div class="flex flex-col gap-4 justify-center w-full md:w-1/2">
-        <h2>Jeg klipper i frihånd – uden skabeloner</h2>
+      <div
+        class="flex flex-col gap-4 justify-center w-full md:w-1/2"
+        data-animate="fadein-text"
+      >
+        <Heading htmlheading="h2" size="large">
+          Jeg klipper i frihånd – uden skabeloner
+        </Heading>
+
         <p class="mb-4">
           Hvert værk hos Doxa Flowers er et resultat af frihåndsklipning. Jeg
           bruger ingen standardiserede skabeloner. Denne kompromisløst manuelle
@@ -117,16 +168,16 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
       </div>
 
       <!-- Billedcontainer: 2/3 af bredden på desktop -->
-      <div class="flex w-full md:w-1/2 gap-4">
+      <div class="fotoinview flex w-full md:w-1/2 gap-4">
         <Image
           src={procesImage}
           alt="Doxa Flowers hero image"
-          class="w-1/2 h-auto max-w-full object-cover"
+          class="fotoinview w-1/2 h-auto max-w-full object-cover"
         />
         <Image
           src={procesImage1}
           alt="Doxa Flowers hero image"
-          class="w-1/2 h-auto max-w-full object-cover"
+          class="fotoinview w-1/2 h-auto max-w-full object-cover"
         />
       </div>
     </div>
@@ -136,26 +187,44 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
 
   <section
     class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
-    id="videoonhover"
-    x-data
+    id="videoinview"
+    x-data="{
+      playOnView: false,
+      observer: null,
+      init() {
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const video = this.$refs.hovervideo;
+            if (entry.isIntersecting) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.3 });
+        this.observer.observe(this.$el);
+      }
+    }"
+    x-init="init()"
   >
     <video
       x-ref="hovervideo"
-      @mouseenter="$refs.hovervideo.play()"
-      @mouseleave="$refs.hovervideo.pause()"
       playsinline
       muted
       preload="metadata"
-      class="w-full h-full absolute inset-0 object-cover"
+      loop
+      class="sticky- w-full h-full absolute inset-0 object-cover"
     >
-      <source src="/video/placeholder2.mp4" type="video/mp4" />
-      <source src="/video/placeholder2.webm" type="video/webm" />
+      <source src="/video/springud.mp4" type="video/mp4" />
+      <source src="/video/springud.webm" type="video/webm" />
     </video>
     <div
-      class="text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10"
+      class="sticky top-1/4 text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10 cursor-default"
     >
-      <h2 class="mb-4">Forståelse af naturen er mit udgangspunkt</h2>
-      <p>
+      <Heading htmlheading="h2" size="large">
+        Forståelse af naturen er mit udgangspunkt
+      </Heading>
+      <p class="mt-4">
         For at opnå det realistiske niveau, mine værker er kendt for, ligger der
         en grundig botanisk analyse bag hvert design. Jeg studerer ægte
         blomsters strukturer og farveforløb. Først når naturens arkitektur er
@@ -165,25 +234,32 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
     </div>
   </section>
 
-  <section class="text-primary-content py-16 md:py-24 min-h-dvh flex items-center justify-center">
+  <section
+    class="text-primary-content py-16 md:py-24 min-h-dvh flex items-center justify-center"
+  >
     <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16">
       <!-- Billedcontainer: 2/3 af bredden på desktop -->
       <div class="flex w-full md:w-1/2 gap-4">
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice4.webp"
-          alt="billede af papirblomster"
+        <Image
+          src={flotbuket}
+          alt="Doxa Flowers hero image"
+          class="fotoinview w-1/2 h-auto max-w-full object-cover"
         />
-        <img
-          class="w-1/2 h-auto max-w-full object-cover"
-          src="./img/buketservice5.webp"
-          alt="billede af papirblomster"
+        <Image
+          src={bukethojre}
+          alt="Doxa Flowers hero image"
+          class="fotoinview w-1/2 h-auto max-w-full object-cover"
         />
       </div>
 
       <!-- Tekstcontainer: 1/3 af bredden på desktop -->
-      <div class="text-primary-content flex flex-col gap-4 justify-center w-full md:w-1/2">
-        <h2>Doxa skaber Blomster af Papir</h2>
+      <div
+        class="text-primary-content flex flex-col gap-4 justify-center w-full md:w-1/2"
+        data-animate="fadein-text"
+      >
+        <Heading htmlheading="h2" size="large">
+          Doxa skaber Blomster af Papir
+        </Heading>
         <p>
           Navnet Doxa afspejler den dedikation og det høje niveau, der ligger i
           hvert eneste værk. Jeg skaber Blomster af Papir – en titel, der
@@ -201,27 +277,46 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
   <!-- video der spiller ved hover 1-->
 
   <section
-    class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
-    id="videoonhover"
-    x-data
+    class="cursor-pointer relative flex flex-col items-center justify-top h-screen"
+    id="videoinview"
+    x-data="{
+      playOnView: false,
+      observer: null,
+      init() {
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const video = this.$refs.hovervideo;
+            if (entry.isIntersecting) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.3 });
+        this.observer.observe(this.$el);
+      }
+    }"
+    x-init="init()"
   >
     <video
       x-ref="hovervideo"
-      @mouseenter="$refs.hovervideo.play()"
-      @mouseleave="$refs.hovervideo.pause()"
       playsinline
       muted
       preload="metadata"
+      loop
       class="w-full h-full absolute inset-0 object-cover"
     >
       <source src="/video/placeholder.mp4" type="video/mp4" />
       <source src="/video/placeholder.webm" type="video/webm" />
     </video>
     <div
-      class="text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10"
+      class="sticky top-1/4 text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full z-10 cursor-default"
     >
-      <h2 class="mb-4">En dristig og skræddersyet palette</h2>
-      <p>
+      <Heading htmlheading="h2" size="large" style="primary"
+        >En dristig og skræddersyet palette</Heading
+      >
+
+      <p class="mt-4">
         Jeg er kendt for min kulørte, modige og kunstneriske palette. Jeg er
         ikke bange for at sætte farver sammen på nye måder. Mange materialer
         indfarver jeg selv i atelieret, hvilket sikrer en skræddersyet æstetik
@@ -231,25 +326,33 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
   </section>
 
   <!-- sektion -->
-  <section class="text-primary-content py-16 md:py-24 min-h-dvh flex items-center justify-center">
+  <section
+    class="text-primary-content py-16 md:py-24 min-h-dvh flex items-center justify-center"
+  >
     <div
       class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16"
     >
       <!-- Tekstcontainer: 1/3 af bredden på desktop -->
-      <div class="text-primary-content flex flex-col gap-4 justify-center w-full md:w-1/2">
-        <h2>Skræddersyet produktion – kvalitet tager tid</h2>
+      <div
+        class="text-primary-content flex flex-col gap-4 justify-center w-full md:w-1/2"
+      >
+        <Heading htmlheading="h2" size="large" style="primary"
+          >Skræddersyet produktion – kvalitet tager tid</Heading
+        >
+
         <p class="mb-4">
           Doxa Flowers drives med fokus på kvalitet frem for volumen. Hver ordre
           er et skræddersyet værk, som jeg skaber fra bunden. Jeg har ingen
           ansatte, hvilket sikrer min personlige kontrol med den høje standard.
         </p>
 
-        <ul class="mb-4 font-light text-primary-content list-disc list-inside font-[WorkSans]">
-            <li class="mb-4">Betaling: Privatkunder betaler up front.</li>
-            <li class="mb-4">
-                Leveringstid: Da jeg ikke har et lager, skal du forvente lang
-                leveringstid – op til 8 uger er normalt.
-            </li>
+        <ul
+          class="mb-4 font-light text-primary-content list-disc list-inside font-[WorkSans]"
+        >
+          <li class="mb-4">Betaling: Privatkunder betaler up front.</li>
+          <li class="mb-4">
+            Leveringstid: Skræddersyet håndværk kræver tid. Forvent op til 8 ugers levering.
+          </li>
         </ul>
 
         <div>
@@ -260,43 +363,136 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
       <!-- Billedcontainer: 2/3 af bredden på desktop -->
       <div class="flex w-full md:w-1/2 gap-4">
         <Image
-          src={procesImage}
+          src={buketseriemulti}
           alt="Doxa Flowers hero image"
-          class="w-1/2 h-auto max-w-full object-cover"
+          class="fotoinview w-1/2 h-auto max-w-full object-cover"
+          data-animate="fadein-img"
         />
         <Image
-          src={procesImage1}
+          src={buketseriemulti3}
           alt="Doxa Flowers hero image"
-          class="w-1/2 h-auto max-w-full object-cover"
+          class="fotoinview w-1/2 h-auto max-w-full object-cover"
+          data-animate="fadein-img"
         />
       </div>
     </div>
   </section>
 
+  <div class="overflow-clip">
+    <section id="horisontalscrollsection" class="h-[500vw]">
+      <ul id="horisontalliste" class="list-none pl-0 flex sticky top-[12vh]">
+        <li
+          class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+        >
+          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+            <Image src={vasetaburet1} class="w-2/3" alt="foto" />
+            <figcaption
+              class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
+            >
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Varighed & Minde</span>
+              Et kunstværk, der holder for evigt. Papirblomsten fastholder mindet, hvor ægte blomster visner.
+            </figcaption>
+          </figure>
+        </li>
+        <li
+          class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+        >
+          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+            <Image src={moerkbuket1} class="w-2/3" alt="foto" />
+            <figcaption
+              class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
+            >
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Taktil Dybde</span>
+              Se dybden i lagene. Hver fold og nuance bidrager til et realistisk, taktilt udtryk.
+            </figcaption>
+          </figure>
+        </li>
+        <li
+          class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+        >
+          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+            <Image src={lyseroedbuketglas} class="w-2/3" alt="foto" />
+            <figcaption
+              class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
+            >
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Kunstobjekt</span>
+              Ikke blot dekoration, men et unikt kunstobjekt. Designet til at være rummets midtpunkt.
+            </figcaption>
+          </figure>
+        </li>
+        <li
+          class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+        >
+          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+            <Image src={multifarvebuket1} class="w-2/3" alt="foto" />
+            <figcaption
+              class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
+            >
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Farvegaranti</span>
+              Farver, der er skabt til at holde. Den høje farveægthed sikrer, at dit værk forbliver levende i årtier.            
+            </figcaption>
+          </figure>
+        </li>
+        <li
+          class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+        >
+          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+            <Image src={vasestue} class="w-2/3" alt="foto" />
+            <figcaption
+              class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
+            >
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Æstetisk Perfektion</span>
+              Hvert værk er omhyggeligt bygget op, så det kan nydes fra hele rummet.           
+            </figcaption>
+          </figure>
+          </figure>
+        </li>
+      </ul>
+    </section>
+  </div>
+
   <!-- video der spiller ved hover 1-->
 
   <section
     class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
-    id="videoonhover"
-    x-data
+    id="videoinview"
+    x-data="{
+      playOnView: false,
+      observer: null,
+      init() {
+        this.observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const video = this.$refs.hovervideo;
+            if (entry.isIntersecting) {
+              video.play();
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.3 });
+        this.observer.observe(this.$el);
+      }
+    }"
+    x-init="init()"
   >
     <video
       x-ref="hovervideo"
-      @mouseenter="$refs.hovervideo.play()"
-      @mouseleave="$refs.hovervideo.pause()"
       playsinline
       muted
       preload="metadata"
+      loop
       class="w-full h-full absolute inset-0 object-cover"
     >
       <source src="/video/placeholder2.mp4" type="video/mp4" />
-      <source src="/video/placeholder2.webm" type="video/webm" />
+      <source src="/video/placeholder.webm" type="video/webm" />
     </video>
     <div
-      class="text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10"
+      class="text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10 cursor-default"
     >
-      <h2 class="mb-4">Doxa Flowers bygger på to værdier</h2>
-      <p class="mb-4">
+      <Heading htmlheading="h2" size="large" style="primary"
+        >Doxa Flowers bygger på to værdier</Heading
+      >
+      <p class="mb-8 mt-4">
         Ærlighed og Kvalitet. Disse principper er essensen af det, jeg leverer.
         Hvert værk er skabt med en dyb respekt for materialet og en forpligtelse
         til at levere noget, der ikke blot er smukt, men også holdbart og
@@ -306,3 +502,28 @@ import procesImage1 from "../assets/images/enkelthvide.webp";
     </div>
   </section>
 </MainLayout>
+<script>
+  import { animate, stagger, inView, scroll } from "motion";
+  // Initial page load animation
+  animate("body", { opacity: [0, 1] }, { duration: 0.5 });
+  // Progress bar animation on scroll
+  scroll(animate(".progress-bar", { scaleX: [0, 1] }));
+
+  /* inView animation */
+  inView(".fotoinview", () => {
+    animate(".fotoinview", { x: [-20, 0] }, { duration: 1 });
+  });
+
+  /* inView animation y */
+  inView(".fotoinviewy", () => {
+    animate(".fotoinviewy", { y: [-20, 0] }, { duration: 1 });
+  });
+
+  /* Horisontal scroll sektion */
+  scroll(
+    animate("#horisontalliste", {
+      transform: ["none", "translateX(-500vw)"],
+    }),
+    { target: document.querySelector("#horisontalscrollsection") }
+  );
+</script>

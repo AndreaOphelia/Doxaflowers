@@ -107,7 +107,7 @@ p {
 
 h5 {
   font-size: 14px;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
 }
 
 @layer components {
@@ -139,15 +139,15 @@ h5 {
       color: oklch(0.2605 0.0511 334.69) !important;
     }
 
-     .color-accent-content-100:  {
+     .color-accent-content-100  {
       color: oklch(0.2605 0.0511 334.69) !important;
     }
 
-    .color-accent-200:  {
+    .color-accent-200  {
       color: oklch(0.9939 0.0082 91.48) !important;
     }
 
-    .color-accent-content-200:  {
+    .color-accent-content-200  {
       color: oklch(0.9939 0.0082 91.48) !important;
     }
 
