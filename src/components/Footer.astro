@@ -1,5 +1,6 @@
 ---
 import Button from "../components/Button.astro";
+import Heading from "../components/Heading.astro";
 ---
 
 <footer class="text-primary-content bg-base-100 w-full py-8 min-h-[200px]">
@@ -7,16 +8,14 @@ import Button from "../components/Button.astro";
   <div class="flex flex-col md:flex-row justify-between flex-wrap">
     <!-- Brand -->
     <div class="mb-8">
-      <a
-        href="/"
-        class="font-[OliveCitrus] uppercase text-2xl"
-        >DOXAFLOWERS</a
-      >
+      <a href="/" class="font-[OliveCitrus] uppercase text-2xl">DOXAFLOWERS</a>
     </div>
 
     <!-- Newsletter -->
     <div>
-      <h5 class="mb-2">Tilmeld dig vores nyhedsbrev</h5>
+      <Heading htmlheading="h2" size="small"
+        >Tilmeld dig vores nyhedsbrev</Heading
+      >
       <div class="flex mb-8 font-light">
         <input
           type="email"
@@ -30,35 +29,27 @@ import Button from "../components/Button.astro";
     <!-- Kontakt + Social på mobil ved siden af hinanden -->
     <div class="flex flex-col sm:flex-row gap-8">
       <!-- Kontakt -->
-      <div>
-        <h5>Kontakt</h5>
+      <divs>
+        <Heading htmlheading="h2" size="small">Kontakt</Heading>
         <ul>
           <li>
-            <a href="#" class="font-light text-xs"
-              >info@doxaflowers.dk</a
-            >
+            <a href="#" class="font-light text-xs">info@doxaflowers.dk</a>
           </li>
           <li>
-            <a href="#" class="font-light text-xs"
-              >+45 42 94 10 03</a
-            >
+            <a href="#" class="font-light text-xs">+45 42 94 10 03</a>
           </li>
         </ul>
-      </div>
+      </divs>
 
       <!-- Social -->
       <div>
-        <h5 class="">Social</h5>
+        <Heading htmlheading="h2" size="small">Social</Heading>
         <ul>
           <li>
-            <a href="#" class="font-light text-xs"
-              >Instagram</a
-            >
+            <a href="#" class="font-light text-xs">Instagram</a>
           </li>
           <li>
-            <a href="#" class=" font-light text-xs"
-              >Facebook</a
-            >
+            <a href="#" class="font-light text-xs">Facebook</a>
           </li>
         </ul>
       </div>
