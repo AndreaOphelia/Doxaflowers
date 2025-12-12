@@ -1,19 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import logoImage from "../assets/images/logo2.svg";
-
-// kigger på om vi er på forsiden eller en underside, koncept siden er undtaget da den har mørk baggrund)
-const isSubpage = !["/", "/koncept", "/test"].includes(Astro.url.pathname);
-
-// sætter tekst farve og logo filter baseret på side type
-
-const textColor = isSubpage ? "text-primary-content" : "text-secondary-content";
-const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
 ---
 
-<header
-  class={`absolute left-0 top-0 w-full z-50 ${textColor} !bg-transparent tracking-widest`}
->
+<header class="bg-base-100 text-primary-content left-0 top-0 w-full z-50 tracking-widest">
   <div class="max-w-7xl mx-auto flex items-center justify-between py-4">
     <!-- LOGO -->
     <div>
@@ -21,8 +11,7 @@ const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
         <Image
           src={logoImage}
           alt="Doxa Flowers Logo"
-          class="w-120 h-auto px-8"
-          style={`filter: ${logoFilter}`}
+          class="w-120 h-auto px-8 text-primary-content fill-current"
         />
       </a>
     </div>
@@ -31,24 +20,28 @@ const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
     <nav class="hidden md:flex items-center gap-8 font-[WorkSans]">
       <a
         href="/koncept"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Koncept</a
+        class="uppercase text-sm hover:opacity-80"
+        >Koncept</a
       >
       <a
         href="/galleri"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Galleri</a
+        class="uppercase text-sm hover:opacity-80"
+        >Galleri</a
       >
       <a
         href="/services"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}
+        class="uppercase text-sm hover:opacity-80"
         >Værker & Priser</a
       >
       <a
         href="/workshop"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Workshops</a
+        class="uppercase text-sm hover:opacity-80"
+        >Workshops</a
       >
       <a
         href="/kontakt"
-        class={`uppercase text-sm hover:opacity-80 ${textColor}`}>Kontakt</a
+        class="uppercase text-sm hover:opacity-80"
+        >Kontakt</a
       >
     </nav>
 
@@ -58,15 +51,9 @@ const logoFilter = isSubpage ? "invert(1) brightness(0.45)" : "none";
       class="md:hidden flex flex-col gap-1.5 px-8"
       aria-label="Toggle menu"
     >
-      <span
-        class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}
-      ></span>
-      <span
-        class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}
-      ></span>
-      <span
-        class={`w-6 h-[2px] ${textColor === "text-primary-content" ? "bg-primary-content" : "bg-secondary-content"}`}
-      ></span>
+      <span class="w-6 h-[2px] bg-primary-content"></span>
+      <span class="w-6 h-[2px] bg-primary-content"></span>
+      <span class="w-6 h-[2px] bg-primary-content"></span>
     </button>
   </div>
 
