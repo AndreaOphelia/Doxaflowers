@@ -20,6 +20,7 @@ import Testimonial from "../components/Testimonial.astro";
 import Heading from "../components/Heading.astro";
 import maler from "../assets/images/maler.webp";
 import vindue from "../assets/images/vindue.webp";
+import vaerksted1 from "../assets/images/vaerksted1.webp";
 ---
 
 <MainLayout title="Doxa Flowers">
@@ -262,45 +263,52 @@ import vindue from "../assets/images/vindue.webp";
 <!-- POPUP OVERLAY -->
 <div
   id="popup-overlay"
-  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+  class="fixed inset-0 bg-primary-content/40 backdrop-blur-sm flex items-center justify-center z-50 hidden"
 >
   <!-- POPUP BOX -->
   <div
-    class="bg-white w-[90%] max-w-3xl h-auto md:h-[420px] rounded-lg overflow-hidden shadow-xl flex flex-col md:flex-row"
+    class="relative bg-secondary-content max-w-3xl h-auto md:h-[420px] rounded-lg overflow-hidden shadow-xl flex flex-col md:flex-row"
   >
-    <!-- BILLEDE / VENSTRE SIDE -->
+    <!-- X-KNAP -->
+    <button
+      id="popup-close-x"
+      class="absolute top-3 right-3 text-gray-500 hover:text-black text-2xl leading-none"
+      aria-label="Luk popup"
+    >
+      ×
+    </button>
+
+    <!-- Billede venstre side -->
     <div class="md:w-1/2 w-full h-48 md:h-full">
-      <Image  
-      src={blad1}
+      <Image
+      src={vaerksted1}
       alt="Popup billede"
-      class="w-full h-full object-cover">
-        
-      </Image>
+      class="w-full h-full object-cover"
+      ></Image>
     </div>
 
-    <!-- TEKST / HØJRE SIDE -->
-    <div class="md:w-1/2 w-full p-6 flex flex-col justify-between gap-4">
+    <!-- Tekst højre side -->
+    <div class="md:w-1/2 w-full p-6 mt-4 flex flex-col justify-between gap-4">
       <div>
         <h2 class="text-xl font-semibold mb-2">Velkommen til Doxa Flowers</h2>
-        <p class="text-sm leading-relaxed">
+        <p class=" leading-relaxed">
+          Hold øje med kommende workshops og nye kollektioner!
+          </p>
+          <p>
           Oplev håndlavede papirblomster skabt med ro, nærvær og slow
           craftsmanship. Tilmeld dig nyhedsbrevet og få insider-adgang til nye
           kollektioner og workshops.
         </p>
       </div>
 
-      <!-- Knapper -->
       <div class="flex gap-3 mt-4">
-        <Button
+        <button
           id="popup-close"
-          variant="primary"
-          size="xsmall"
-          class="px-4 py-2 rounded "
-        >
-          Luk
-        </Button>
-        <a href="">
-          <Button variant="primary" size="xsmall">Læs mere om workshops</Button>
+          class="">
+        </button>
+
+        <a href="/workshops">
+          <Button variant="primary" size="small">Læs mere om workshops</Button>
         </a>
       </div>
     </div>
@@ -390,22 +398,28 @@ import vindue from "../assets/images/vindue.webp";
   window.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("popup-overlay");
     const closeBtn = document.getElementById("popup-close");
+    const closeX = document.getElementById("popup-close-x");
 
-    // Vis popup efter kort delay (føles bedre visuelt)
+    // Vis popup efter 300 ms
     setTimeout(() => {
       popup.classList.remove("hidden");
     }, 300);
 
-    // Luk ved klik på knap
-    closeBtn.addEventListener("click", () => {
+    // Lukke funktion
+    function closePopup() {
       popup.classList.add("hidden");
-    });
+    }
 
-    // Luk ved klik udenfor popup
+    // Luk via nederste knap
+    closeBtn.addEventListener("click", closePopup);
+
+    // Luk via X-knap
+    closeX.addEventListener("click", closePopup);
+
+    // Luk hvis der klikkes udenfor boksen
     popup.addEventListener("click", (e) => {
-      if (e.target === popup) {
-        popup.classList.add("hidden");
-      }
+      if (e.target === popup) closePopup();
     });
   });
 </script>
+
