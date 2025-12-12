@@ -258,6 +258,56 @@ import vindue from "../assets/images/vindue.webp";
     </div>
   
   </section>
+
+<!-- POPUP OVERLAY -->
+<div
+  id="popup-overlay"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden"
+>
+  <!-- POPUP BOX -->
+  <div
+    class="bg-white w-[90%] max-w-3xl h-auto md:h-[420px] rounded-lg overflow-hidden shadow-xl flex flex-col md:flex-row"
+  >
+    <!-- BILLEDE / VENSTRE SIDE -->
+    <div class="md:w-1/2 w-full h-48 md:h-full">
+      <Image  
+      src={blad1}
+      alt="Popup billede"
+      class="w-full h-full object-cover">
+        
+      </Image>
+    </div>
+
+    <!-- TEKST / HØJRE SIDE -->
+    <div class="md:w-1/2 w-full p-6 flex flex-col justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-semibold mb-2">Velkommen til Doxa Flowers</h2>
+        <p class="text-sm leading-relaxed">
+          Oplev håndlavede papirblomster skabt med ro, nærvær og slow
+          craftsmanship. Tilmeld dig nyhedsbrevet og få insider-adgang til nye
+          kollektioner og workshops.
+        </p>
+      </div>
+
+      <!-- Knapper -->
+      <div class="flex gap-3 mt-4">
+        <Button
+          id="popup-close"
+          variant="primary"
+          size="xsmall"
+          class="px-4 py-2 rounded "
+        >
+          Luk
+        </Button>
+        <a href="">
+          <Button variant="primary" size="xsmall">Læs mere om workshops</Button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   
 </MainLayout>
 
@@ -311,4 +361,51 @@ import vindue from "../assets/images/vindue.webp";
   }
 
   setInterval(updateSlider, 4000);
+</script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popup-overlay");
+    const closeBtn = document.getElementById("popup-close");
+
+    // Vis popup'en
+    popup.classList.remove("hidden");
+
+    // Luk popup'en
+    closeBtn.addEventListener("click", () => {
+      popup.classList.add("hidden");
+    });
+
+    // Luk ved klik udenfor popup
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
+</script>
+
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popup-overlay");
+    const closeBtn = document.getElementById("popup-close");
+
+    // Vis popup efter kort delay (føles bedre visuelt)
+    setTimeout(() => {
+      popup.classList.remove("hidden");
+    }, 300);
+
+    // Luk ved klik på knap
+    closeBtn.addEventListener("click", () => {
+      popup.classList.add("hidden");
+    });
+
+    // Luk ved klik udenfor popup
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        popup.classList.add("hidden");
+      }
+    });
+  });
 </script>
