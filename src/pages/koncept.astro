@@ -50,12 +50,12 @@ import vasestue from "../assets/images/vasestue.webp";
         omhu og en dyb respekt for materialet.
       </p>
 
-      <Button size="small" variant="secondary" href="/galleri"
-        >Se værkerne</Button
-      >
+      <a href="#pernille">
+        <Button variant="secondary" size="small"> Udforsk Doxa Flowers</Button>
+      </a>
     </div>
   </div>
-  <section class="py-16 md:py-24 min-h-dvh text-primary-content">
+  <section id="pernille" class="py-16 md:py-24 min-h-dvh text-primary-content">
     <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
       <Image
         src={pernilleImage}
@@ -81,8 +81,14 @@ import vasestue from "../assets/images/vasestue.webp";
           fortæller en historie og holder for evigt.
         </p>
         <div>
-          <Button size="small" type="submit">Udforsk universet</Button>
+          <a href="/galleri">
+            <Button 
+            variant="primary" 
+            size="small"> Se værkerne 
+            </Button>
+          </a>
         </div>
+        
       </div>
     </div>
   </section>
@@ -163,7 +169,12 @@ import vasestue from "../assets/images/vasestue.webp";
           af den passion, der ligger i det analoge håndværk.
         </p>
         <div>
-          <Button size="small" type="submit">Tilmeld</Button>
+         <a href="/galleri">
+            <Button 
+            variant="primary" 
+            size="small"> Se værkerne 
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -268,7 +279,12 @@ import vasestue from "../assets/images/vasestue.webp";
           værker, der betragtes som kunst.
         </p>
         <div>
-          <Button size="small" type="submit">Tilmeld</Button>
+         <a href="/galleri">
+            <Button 
+            variant="primary" 
+            size="small"> Se værkerne 
+            </Button>
+          </a>
         </div>
       </div>
     </div>
@@ -351,12 +367,18 @@ import vasestue from "../assets/images/vasestue.webp";
         >
           <li class="mb-4">Betaling: Privatkunder betaler up front.</li>
           <li class="mb-4">
-            Leveringstid: Skræddersyet håndværk kræver tid. Forvent op til 8 ugers levering.
+            Leveringstid: Skræddersyet håndværk kræver tid. Forvent op til 8
+            ugers levering.
           </li>
         </ul>
 
         <div>
-          <Button size="small" type="submit">Tilmeld</Button>
+         <a href="/kontakt">
+            <Button 
+            variant="primary" 
+            size="small"> Bestil dit unikke værk 
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -384,126 +406,152 @@ import vasestue from "../assets/images/vasestue.webp";
         <li
           class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
         >
-          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+          <figure
+            class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto"
+          >
             <Image src={vasetaburet1} class="w-2/3" alt="foto" />
             <figcaption
               class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
             >
-              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Varighed & Minde</span>
-              Et kunstværk, der holder for evigt. Papirblomsten fastholder mindet, hvor ægte blomster visner.
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase"
+                >Varighed & Minde</span
+              >
+              Et kunstværk, der holder for evigt. Papirblomsten fastholder mindet,
+              hvor ægte blomster visner.
             </figcaption>
           </figure>
         </li>
         <li
           class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
         >
-          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+          <figure
+            class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto"
+          >
             <Image src={moerkbuket1} class="w-2/3" alt="foto" />
             <figcaption
               class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
             >
-              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Taktil Dybde</span>
-              Se dybden i lagene. Hver fold og nuance bidrager til et realistisk, taktilt udtryk.
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase"
+                >Taktil Dybde</span
+              >
+              Se dybden i lagene. Hver fold og nuance bidrager til et realistisk,
+              taktilt udtryk.
             </figcaption>
           </figure>
         </li>
         <li
           class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
         >
-          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+          <figure
+            class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto"
+          >
             <Image src={lyseroedbuketglas} class="w-2/3" alt="foto" />
             <figcaption
               class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
             >
-              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Kunstobjekt</span>
-              Ikke blot dekoration, men et unikt kunstobjekt. Designet til at være rummets midtpunkt.
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase"
+                >Kunstobjekt</span
+              >
+              Ikke blot dekoration, men et unikt kunstobjekt. Designet til at være
+              rummets midtpunkt.
             </figcaption>
           </figure>
         </li>
         <li
           class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
         >
-          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+          <figure
+            class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto"
+          >
             <Image src={multifarvebuket1} class="w-2/3" alt="foto" />
             <figcaption
               class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
             >
-              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Farvegaranti</span>
-              Farver, der er skabt til at holde. Den høje farveægthed sikrer, at dit værk forbliver levende i årtier.            
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase"
+                >Farvegaranti</span
+              >
+              Farver, der er skabt til at holde. Den høje farveægthed sikrer, at dit
+              værk forbliver levende i årtier.
             </figcaption>
           </figure>
         </li>
         <li
           class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
         >
-          <figure class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto">
+          <figure
+            class="flex flex-col w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[60vw] lg:max-w-[40vw] mx-auto"
+          >
             <Image src={vasestue} class="w-2/3" alt="foto" />
             <figcaption
               class="mt-4 text-primary-content font-[WorkSans] font-light w-2/3 flex flex-col"
             >
-              <span class="block text-2xl mb-2 font-[Cormorant] uppercase">Æstetisk Perfektion</span>
-              Hvert værk er omhyggeligt bygget op, så det kan nydes fra hele rummet.           
+              <span class="block text-2xl mb-2 font-[Cormorant] uppercase"
+                >Æstetisk Perfektion</span
+              >
+              Hvert værk er omhyggeligt bygget op, så det kan nydes fra hele rummet.
             </figcaption>
-          </figure>
           </figure>
         </li>
       </ul>
     </section>
   </div>
-
+  
   <!-- video der spiller ved hover 1-->
-
+  
   <section
-    class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
-    id="videoinview"
-    x-data="{
-      playOnView: false,
-      observer: null,
-      init() {
-        this.observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            const video = this.$refs.hovervideo;
-            if (entry.isIntersecting) {
-              video.play();
+  class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh"
+  id="videoinview"
+  x-data="{
+    playOnView: false,
+    observer: null,
+    init() {
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = this.$refs.hovervideo;
+          if (entry.isIntersecting) {
+            video.play();
             } else {
               video.pause();
-            }
-          });
-        }, { threshold: 0.3 });
-        this.observer.observe(this.$el);
-      }
-    }"
-    x-init="init()"
-  >
-    <video
-      x-ref="hovervideo"
-      playsinline
-      muted
-      preload="metadata"
-      loop
-      class="w-full h-full absolute inset-0 object-cover"
-    >
-      <source src="/video/placeholder2.mp4" type="video/mp4" />
-      <source src="/video/placeholder.webm" type="video/webm" />
-    </video>
-    <div
-      class="text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10 cursor-default"
-    >
-      <Heading htmlheading="h2" size="large" style="primary"
-        >Doxa Flowers bygger på to værdier</Heading
-      >
-      <p class="mb-8 mt-4">
-        Ærlighed og Kvalitet. Disse principper er essensen af det, jeg leverer.
-        Hvert værk er skabt med en dyb respekt for materialet og en forpligtelse
-        til at levere noget, der ikke blot er smukt, men også holdbart og
-        meningsfuldt. Kontakt mig for at starte dialogen om dit unikke værk.
-      </p>
-      <Button size="small" type="submit">Kontakt</Button>
-    </div>
-  </section>
-
-
-
+              }
+              });
+              }, { threshold: 0.3 });
+              this.observer.observe(this.$el);
+              }
+              }"
+              x-init="init()"
+              >
+              <video
+              x-ref="hovervideo"
+              playsinline
+              muted
+              preload="metadata"
+              loop
+              class="w-full h-full absolute inset-0 object-cover"
+              >
+              <source src="/video/placeholder2.mp4" type="video/mp4" />
+              <source src="/video/placeholder.webm" type="video/webm" />
+            </video>
+            <div
+            class="text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full relative z-10 cursor-default"
+            >
+            <Heading htmlheading="h2" size="large" style="primary"
+            >Doxa Flowers bygger på to værdier</Heading
+            >
+            <p class="mb-8 mt-4">
+              Ærlighed og Kvalitet. Disse principper er essensen af det, jeg leverer.
+              Hvert værk er skabt med en dyb respekt for materialet og en forpligtelse
+              til at levere noget, der ikke blot er smukt, men også holdbart og
+              meningsfuldt. Kontakt mig for at starte dialogen om dit unikke værk.
+            </p>
+         <a href="/kontakt">
+            <Button 
+            variant="primary" 
+            size="small"> Bestil dit unikke værk 
+            </Button>
+          </a>
+          </div>
+        </section>
+        
 </MainLayout>
 <script>
   import { animate, stagger, inView, scroll } from "motion";
