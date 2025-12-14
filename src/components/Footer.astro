@@ -1,6 +1,8 @@
 ---
 import Button from "../components/Button.astro";
 import Heading from "../components/Heading.astro";
+import { Image } from "astro:assets";
+import logosvg from "../assets/images/doxaflowers_logo.svg";
 ---
 
 <footer class="text-primary-content bg-base-100 w-full py-8 min-h-[200px]">
@@ -8,7 +10,12 @@ import Heading from "../components/Heading.astro";
   <div class="flex flex-col md:flex-row justify-between flex-wrap">
     <!-- Brand -->
     <div class="mb-8">
-      <a href="/" class="font-[OliveCitrus] uppercase text-2xl">DOXAFLOWERS</a>
+      <a href="/">
+        <Image
+          src={logosvg}
+          alt="Doxa Flowers Logo"
+        />
+      </a>
     </div>
 
     <!-- Newsletter -->
