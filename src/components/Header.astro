@@ -3,52 +3,36 @@ import { Image } from "astro:assets";
 import logosvg from "../assets/images/doxaflowers_logo.svg";
 ---
 
-<header class="fixed bg-base-100 text-primary-content left-0 top-0 w-full z-50 tracking-widest">
-  <div class="px-8 md:px-12 lg:px-14 mx-auto flex items-center justify-between py-1">
+<header
+  class="fixed bg-base-100 text-primary-content left-0 top-0 w-full z-50 tracking-widest"
+>
+  <div
+    class="px-8 md:px-12 lg:px-14 mx-auto flex items-center justify-between py-1"
+  >
     <!-- LOGO -->
     <div>
       <a href="/">
-        <Image
-          src={logosvg}
-          alt="Doxa Flowers Logo"
-          class=""
-        />
+        <Image src={logosvg} alt="Doxa Flowers Logo" class="" />
       </a>
     </div>
 
     <!-- DESKTOP MENU -->
-    <nav class="hidden md:flex items-center gap-8 font-[WorkSans]">
-      <a
-        href="/koncept"
-        class="uppercase text-sm hover:opacity-80"
-        >Koncept</a
-      >
-      <a
-        href="/galleri"
-        class="uppercase text-sm hover:opacity-80"
-        >Galleri</a
-      >
-      <a
-        href="/services"
-        class="uppercase text-sm hover:opacity-80"
+    <nav class="hidden lg:flex items-center gap-8 font-[WorkSans]">
+      <a href="/koncept" class="uppercase text-sm hover:opacity-80">Koncept</a>
+      <a href="/galleri" class="uppercase text-sm hover:opacity-80">Galleri</a>
+      <a href="/services" class="uppercase text-sm hover:opacity-80"
         >Værker & Priser</a
       >
-      <a
-        href="/workshop"
-        class="uppercase text-sm hover:opacity-80"
+      <a href="/workshop" class="uppercase text-sm hover:opacity-80"
         >Workshops</a
       >
-      <a
-        href="/kontakt"
-        class="uppercase text-sm hover:opacity-80"
-        >Kontakt</a
-      >
+      <a href="/kontakt" class="uppercase text-sm hover:opacity-80">Kontakt</a>
     </nav>
 
     <!-- BURGER BTN -->
     <button
       id="menuButton"
-      class="md:hidden flex flex-col gap-1.5 px-8 fill-primary-content"
+      class="lg:hidden flex flex-col gap-1.5 px-8 fill-primary-content"
       aria-label="Toggle menu"
     >
       <span class="w-6 h-[2px] bg-base-200"></span>
@@ -58,10 +42,7 @@ import logosvg from "../assets/images/doxaflowers_logo.svg";
   </div>
 
   <!-- MOBILE MENU -->
-  <nav
-    id="mobileMenu"
-    class="hidden md:hidden grid gap-5 px-6 py-8"
-  >
+  <nav id="mobileMenu" class="hidden md:hidden grid gap-5 px-6 py-8">
     <a href="/koncept" class="uppercase text-base text-base-100">Koncept</a>
     <a href="/galleri" class="uppercase text-base text-base-100">Galleri</a>
     <a href="/services" class="uppercase text-base text-base-100"
