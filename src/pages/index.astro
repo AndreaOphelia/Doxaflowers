@@ -294,7 +294,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
     </div>
   </div>
 
-  
+
 </MainLayout>
 
 <script>
@@ -400,20 +400,19 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
   });
 </script>
 
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("popup-overlay");
-    const closeBtn = document.getElementById("popup-close");
-    const closeX = document.getElementById("popup-close-x");
+<script client:load>
+  const popup = document.getElementById("popup-overlay");
+  const closeX = document.getElementById("popup-close-x");
 
-    // Tjek om popup allerede er set
+  if (!popup || !closeX) {
+    console.warn("Popup elements not found");
+  } else {
     const hasSeenPopup = localStorage.getItem("doxaPopupSeen");
 
     if (!hasSeenPopup) {
-      // Vis popup efter kort delay
       setTimeout(() => {
         popup.classList.remove("hidden");
-      }, 400);
+      }, 2500);
     }
 
     function closePopup() {
@@ -421,15 +420,11 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
       localStorage.setItem("doxaPopupSeen", "true");
     }
 
-    // Luk via knapper
-    closeBtn?.addEventListener("click", closePopup);
-    closeX?.addEventListener("click", closePopup);
+    closeX.addEventListener("click", closePopup);
 
-    // Luk ved klik udenfor boksen
     popup.addEventListener("click", (e) => {
-      if (e.target === popup) {
-        closePopup();
-      }
+      if (e.target === popup) closePopup();
     });
-  });
+  }
 </script>
+
