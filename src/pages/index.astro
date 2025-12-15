@@ -283,7 +283,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
         </div>
 
         <div class="flex gap-3 mt-4">
-          <button id="popup-close" class=""> </button>
+          
 
           <a href="/workshop">
             <Button variant="primary" size="small">Læs mere om workshops</Button
@@ -293,6 +293,8 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
       </div>
     </div>
   </div>
+
+  
 </MainLayout>
 
 <script>
@@ -394,6 +396,40 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
     // Luk hvis der klikkes udenfor boksen
     popup.addEventListener("click", (e) => {
       if (e.target === popup) closePopup();
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popup-overlay");
+    const closeBtn = document.getElementById("popup-close");
+    const closeX = document.getElementById("popup-close-x");
+
+    // Tjek om popup allerede er set
+    const hasSeenPopup = localStorage.getItem("doxaPopupSeen");
+
+    if (!hasSeenPopup) {
+      // Vis popup efter kort delay
+      setTimeout(() => {
+        popup.classList.remove("hidden");
+      }, 400);
+    }
+
+    function closePopup() {
+      popup.classList.add("hidden");
+      localStorage.setItem("doxaPopupSeen", "true");
+    }
+
+    // Luk via knapper
+    closeBtn?.addEventListener("click", closePopup);
+    closeX?.addEventListener("click", closePopup);
+
+    // Luk ved klik udenfor boksen
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        closePopup();
+      }
     });
   });
 </script>
