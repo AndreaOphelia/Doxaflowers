@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 import Heading from "./Heading.astro";
 ---
 
-<section class="text-primary-content min-h-screen bg-base-100 justify-center flex py-16">
+<section class="text-primary-content min-h-screen bg-base-100 justify-center flex py-24">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
     {/* Venstre side - billede */}
     <div
@@ -20,14 +20,14 @@ import Heading from "./Heading.astro";
 
     {/* Højre side - formular */}
     <div
-      class="font-[WorkSans] space-y-8 p-7 md:p-0"
+      class="font-[WorkSans] p-7 md:p-0"
       x-data="{ format: '${defaultFormat}', showSuccess: false }"
     >
       <div>
         <Heading htmlheading="h1" size="large">
           START DIALOGEN OM DIT UNIKKE VÆRK
         </Heading>
-        <p class="mt-4">
+        <p>
           Doxa Flowers skaber tidskrævende kunsthåndværk på bestilling. Vi tilbyder også workshops hvor du selv kan lære at skabe. Fortæl mig om din idé, dit projekt, din begivenhed, eller tilmeld dig en workshop, så vender jeg tilbage med et oplæg.
         </p>
       </div>
@@ -162,7 +162,7 @@ import Heading from "./Heading.astro";
                 class="border-accent-100 w-full bg-transparent py-2 font-[WorkSans]"
               >
                 <option value="">Vælg</option>
-                <option value="under-1000">Under 1.000 kr</option>
+                <option value="3000-4000">Under 1.000 kr (Enkelte stilke)</option>
                 <option value="1000-3000">1.000-3.000 kr</option>
                 <option value="3000-5000">3.000-5.000 kr</option>
                 <option value="over-5000">Over 5.000 kr</option>
