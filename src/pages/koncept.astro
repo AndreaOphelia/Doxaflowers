@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
 import Button from "../components/Button.astro";
 import Heading from "../components/Heading.astro";
 import { Image } from "astro:assets";
@@ -67,7 +66,7 @@ import vasestue from "../assets/images/vasestue.webp";
         class="flex flex-col gap-4 justify-center w-full md:w-1/2"
         data-animate="fadein-text"
       >
-        <Heading htmlheading="h2" size="large">
+        <Heading htmlheading="h2" size="large" style="primary">
           Det Startede med en Følelse
         </Heading>
 
@@ -129,9 +128,9 @@ import vasestue from "../assets/images/vasestue.webp";
       <source src="/video/cykel.webm" type="video/webm" />
     </video>
     <div
-      class="sticky top-1/4 bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full z-10 cursor-default"
+      class="sticky top-1/4 bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full z-10 cursor-default scroll-smooth"
     >
-      <Heading htmlheading="h2" size="large">
+      <Heading htmlheading="h2" size="large" style="primary">
         Et skifte drevet af et nyt fokus
       </Heading>
       <p class="mt-4">
@@ -156,7 +155,7 @@ import vasestue from "../assets/images/vasestue.webp";
         class="flex flex-col gap-4 justify-center w-full md:w-1/2"
         data-animate="fadein-text"
       >
-        <Heading htmlheading="h2" size="large">
+        <Heading htmlheading="h2" size="large" style="primary">
           Jeg klipper i frihånd – uden skabeloner
         </Heading>
 
@@ -230,7 +229,7 @@ import vasestue from "../assets/images/vasestue.webp";
     <div
       class="sticky top-1/4 text-primary-content bg-base-100 bg-opacity-50 p-8 max-w-md py-16 w-full z-10 cursor-default"
     >
-      <Heading htmlheading="h2" size="large">
+      <Heading htmlheading="h2" size="large" style="primary">
         Forståelse af naturen er mit udgangspunkt
       </Heading>
       <p class="mt-4">
@@ -266,7 +265,7 @@ import vasestue from "../assets/images/vasestue.webp";
         class="text-primary-content flex flex-col gap-4 justify-center w-full md:w-1/2"
         data-animate="fadein-text"
       >
-        <Heading htmlheading="h2" size="large">
+        <Heading htmlheading="h2" size="large" style="primary">
           Doxa skaber Blomster af Papir
         </Heading>
         <p>
@@ -363,9 +362,9 @@ import vasestue from "../assets/images/vasestue.webp";
         <ul
           class="mb-4 font-light text-primary-content list-none font-[WorkSans]"
         >
-          <li class="mb-4">Betaling: Privatkunder betaler up front.</li>
+          <li class="mb-4"> <span class="uppercase tracking-widest">Betaling: </span>Privatkunder betaler up front.</li>
           <li class="mb-4">
-            Leveringstid: Skræddersyet håndværk kræver tid. Forvent op til 8
+            <span class="uppercase tracking-widest">Leveringstid: </span>Skræddersyet håndværk kræver tid. Forvent op til 8
             ugers levering.
           </li>
         </ul>
@@ -497,7 +496,7 @@ import vasestue from "../assets/images/vasestue.webp";
   <!-- video der spiller ved hover 1-->
   
   <section
-  class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh mt-24 mb-16"
+  class="cursor-pointer relative flex flex-col items-center justify-center min-h-dvh mt-64 mb-16"
   id="videoinview"
   x-data="{
     playOnView: false,

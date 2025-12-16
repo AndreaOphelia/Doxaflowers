@@ -85,7 +85,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
          flex flex-col gap-4
          bg-white/70 backdrop-blur-md p-6 text-primary-content"
     >
-      <Heading htmlheading="h1" size="large">
+      <Heading htmlheading="h1" size="large" style="primary">
         Håndlavede blomster af papir
       </Heading>
 
@@ -106,7 +106,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
     <div
       class="flex flex-col gap-6 w-full md:w-2/3 mb-8 md:mb-0 text-primary-content"
     >
-      <Heading htmlheading="h2" size="large">
+      <Heading htmlheading="h2" size="large" style="primary">
         Doxa buketten er altid i forandring
       </Heading>
 
@@ -155,7 +155,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
         class="max-h-[500px] object-cover w-full hidden md:block"
       />
       <div class="gap-8">
-        <Heading htmlheading="h2" size="large"> Farver af naturen </Heading>
+        <Heading htmlheading="h2" size="large" style="primary"> Farver af naturen </Heading>
         <p class="mt-4">
           Udover de færdigfarvede papirer, indfarver og tilføres nye dimensioner
           med farver fra naturens egne elementer. Farver fra te, kaffe, frugt og
@@ -172,7 +172,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
       />
 
       <div class="flex flex-col">
-        <Heading htmlheading="h2" size="large"> Unikt finish </Heading>
+        <Heading htmlheading="h2" size="large" style="primary"> Unikt finish </Heading>
         <p class="mt-4 mb-4">
           Efter indfarvningen efterbehandler jeg med tørpasteller og eller
           akvarel. Farveskalaen kan derfor være den samme, men vil naturligvis
@@ -207,23 +207,23 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
   >
     <!-- Tekst -->
     <div class="flex flex-col gap-8 mb-8 lg:mb-0 lg:w-1/2">
-      <Heading htmlheading="h2" size="large">
+      <Heading htmlheading="h2" size="large" style="primary">
         Sådan Skaber Vi Dit Værk
       </Heading>
 
       <p>
-        Trin 1: Idé & Dialog Udfyld kontaktformularen, eller kontakt mig og
+        <span class="uppercase">Trin 1: </span> Idé & Dialog Udfyld kontaktformularen, eller kontakt mig og
         fortæl om dine ønsker.
       </p>
 
       <p>
-        Trin 2: Design & Håndværk Grundet den 100% håndlavede proces er
+        <span class="uppercase">Trin 2: </span> Design & Håndværk Grundet den 100% håndlavede proces er
         leveringstiden typisk 4-8 uger efter design og pris er godkendt. Jeg
         skaber dit værk i ro, ikke i hast.
       </p>
 
       <p>
-        Trin 3: Overlevering Dit kunstværk er klar til levering eller
+        <span class="uppercase">Trin 3: </span> Overlevering Dit kunstværk er klar til levering eller
         afhentning.
       </p>
       <a href="/services">
@@ -269,8 +269,10 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
       <!-- Tekst højre side -->
       <div class="md:w-1/2 w-full p-6 mt-4 flex flex-col justify-between gap-4 text-primary-content">
         <div>
-          <h2 class="text-xl font-semibold mb-2">Velkommen til Doxa Flowers</h2>
-          <p class="">Hold øje med kommende workshops og nye kollektioner!</p>
+          <Heading htmlheading="h2" size="large" style="primary">
+          Velkommen til Doxa Flowers
+          </Heading>
+          <p class="mt-4">Hold øje med kommende workshops og nye kollektioner!</p>
           <br />
           <p>
             På Doxa Flowers' workshops får du lov til selv at fordybe dig i
@@ -280,7 +282,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
           </p>
         </div>
 
-        <div class="flex gap-3 mt-4">
+        <div class="flex gap-3">
           <a href="/workshop">
             <Button variant="primary" size="small">Læs mere om workshops</Button>
           </a>

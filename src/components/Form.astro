@@ -24,10 +24,10 @@ import Heading from "./Heading.astro";
       x-data="{ format: '${defaultFormat}', showSuccess: false }"
     >
       <div>
-        <Heading htmlheading="h1" size="large">
+        <Heading htmlheading="h1" size="large" style="primary">
           START DIALOGEN OM DIT UNIKKE VÆRK
         </Heading>
-        <p>
+        <p class="mt-4">
           Doxa Flowers skaber tidskrævende kunsthåndværk på bestilling. Vi tilbyder også workshops hvor du selv kan lære at skabe. Fortæl mig om din idé, dit projekt, din begivenhed, eller tilmeld dig en workshop, så vender jeg tilbage med et oplæg.
         </p>
       </div>
@@ -54,7 +54,7 @@ import Heading from "./Heading.astro";
       >
         <!-- Tekst Sektion -->
         <div>
-          <label class="block text-sm tracking-widest mb-3">
+          <label class="block text-sm tracking-widest mb-2 mt-4">
             ØNSKET FORMAT*
           </label>
           <div class="space-y-2">
@@ -83,7 +83,7 @@ import Heading from "./Heading.astro";
 
         <!-- Navn Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2">
+          <label class="block text-sm tracking-widest mb-2 mt-4">
             DIT FULDE NAVN*
           </label>
           <input
@@ -97,7 +97,7 @@ import Heading from "./Heading.astro";
 
         <!-- Email Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2"> EMAIL* </label>
+          <label class="block text-sm tracking-widest mb-2 mt-4"> EMAIL* </label>
           <input
             type="email"
             placeholder="Indtast din email"
@@ -109,7 +109,7 @@ import Heading from "./Heading.astro";
 
         <!-- Telefonnummer Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2">
+          <label class="block text-sm tracking-widest mb-2 mt-4">
             TELEFONNUMMER*
           </label>
           <input
@@ -128,7 +128,7 @@ import Heading from "./Heading.astro";
           x-show="format === 'workshop'"
         >
           <div>
-            <label class="block text-sm tracking-widest mb-2">
+            <label class="block text-sm tracking-widest mb-2 mt-4">
               VÆLG DATO*
             </label>
             <select
