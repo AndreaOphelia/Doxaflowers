@@ -273,7 +273,7 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
           <p class="">Hold øje med kommende workshops og nye kollektioner!</p>
           <br />
           <p>
-            På Doxa Flowers’ workshops får du lov til selv at fordybe dig i
+            På Doxa Flowers' workshops får du lov til selv at fordybe dig i
             håndværket bag de unikke papirblomster. Du lærer teknikkerne,
             farverne og formen – trin for trin – og går hjem med dine egne
             håndlavede blomster og en kreativ ro i kroppen.
@@ -281,131 +281,49 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
         </div>
 
         <div class="flex gap-3 mt-4">
-          
-
           <a href="/workshop">
-            <Button variant="primary" size="small">Læs mere om workshops</Button
-            >
+            <Button variant="primary" size="small">Læs mere om workshops</Button>
           </a>
         </div>
       </div>
     </div>
   </div>
-
-
 </MainLayout>
 
 <script>
+  // Image slider functionality
   const leftImages = document.querySelectorAll(".fadeLeft");
   const rightImages = document.querySelectorAll(".fadeRight");
-
-  let index = 0;
-
-  function fadeSlider() {
-    // Fade ud af alle
-    leftImages.forEach((img) => (img.style.opacity = 0));
-    rightImages.forEach((img) => (img.style.opacity = 0));
-
-    // Fade ind på næste billede
-    leftImages[index].style.opacity = 1;
-    rightImages[index].style.opacity = 1;
-
-    // Næste index
-    index = (index + 1) % leftImages.length;
-  }
-
-  // Skift hvert 4 sekund
-  setInterval(fadeSlider, 4000);
-</script>
-
-<script is:client>
-  const leftImages = document.querySelectorAll(".fadeLeft");
-  const rightImages = document.querySelectorAll(".fadeRight");
-  const dots = document.querySelectorAll(".dot");
-
   let index = 0;
 
   function updateSlider() {
-    // Skift billeder
-    leftImages.forEach((img, i) => (img.style.opacity = i === index ? 1 : 0));
-    rightImages.forEach((img, i) => (img.style.opacity = i === index ? 1 : 0));
-
-    // Opdater dots
-    dots.forEach((dot, i) => {
-      if (i === index) {
-        dot.classList.add("bg-white");
-        dot.classList.remove("bg-white/40");
-      } else {
-        dot.classList.remove("bg-white");
-        dot.classList.add("bg-white/40");
-      }
+    // Update images
+    leftImages.forEach((img, i) => {
+      img.style.opacity = i === index ? "1" : "0";
+    });
+    rightImages.forEach((img, i) => {
+      img.style.opacity = i === index ? "1" : "0";
     });
 
     index = (index + 1) % leftImages.length;
   }
 
+  // Start slider interval
   setInterval(updateSlider, 4000);
-</script>
 
-<script>
+  // Popup functionality - using sessionStorage instead of localStorage
+  // This will show popup once per browser session
   window.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("popup-overlay");
-    const closeBtn = document.getElementById("popup-close");
-
-    // Vis popup'en
-    popup.classList.remove("hidden");
-
-    // Luk popup'en
-    closeBtn.addEventListener("click", () => {
-      popup.classList.add("hidden");
-    });
-
-    // Luk ved klik udenfor popup
-    popup.addEventListener("click", (e) => {
-      if (e.target === popup) {
-        popup.classList.add("hidden");
-      }
-    });
-  });
-</script>
-
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const popup = document.getElementById("popup-overlay");
-    const closeBtn = document.getElementById("popup-close");
     const closeX = document.getElementById("popup-close-x");
 
-    // Vis popup efter 300 ms
-    setTimeout(() => {
-      popup.classList.remove("hidden");
-    }, 300);
-
-    // Lukke funktion
-    function closePopup() {
-      popup.classList.add("hidden");
+    if (!popup || !closeX) {
+      console.warn("Popup elements not found");
+      return;
     }
 
-    // Luk via nederste knap
-    closeBtn.addEventListener("click", closePopup);
-
-    // Luk via X-knap
-    closeX.addEventListener("click", closePopup);
-
-    // Luk hvis der klikkes udenfor boksen
-    popup.addEventListener("click", (e) => {
-      if (e.target === popup) closePopup();
-    });
-  });
-</script>
-
-<script client:load>
-  const popup = document.getElementById("popup-overlay");
-  const closeX = document.getElementById("popup-close-x");
-
-  if (!popup || !closeX) {
-    console.warn("Popup elements not found");
-  } else {
-    const hasSeenPopup = localStorage.getItem("doxaPopupSeen");
+    // Check if popup has been seen this session
+    const hasSeenPopup = sessionStorage.getItem("doxaPopupSeen");
 
     if (!hasSeenPopup) {
       setTimeout(() => {
@@ -415,14 +333,15 @@ import vaerksted1 from "../assets/images/vaerksted1.webp";
 
     function closePopup() {
       popup.classList.add("hidden");
-      localStorage.setItem("doxaPopupSeen", "true");
+      sessionStorage.setItem("doxaPopupSeen", "true");
     }
 
+    // Close via X button
     closeX.addEventListener("click", closePopup);
 
+    // Close when clicking outside popup
     popup.addEventListener("click", (e) => {
       if (e.target === popup) closePopup();
     });
-  }
+  });
 </script>
-

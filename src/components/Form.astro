@@ -7,7 +7,7 @@ import Heading from "./Heading.astro";
 
 <section class="text-primary-content min-h-screen bg-base-100 justify-center flex py-24">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
-    {/* Venstre side - billede */}
+    <!-- Venstre side - billede -->
     <div
       class="relative flex items-center justify-center h-full md:h-auto md:min-h-[480px]"
     >
@@ -18,7 +18,7 @@ import Heading from "./Heading.astro";
       />
     </div>
 
-    {/* Højre side - formular */}
+    <!-- Højre side - formular -->
     <div
       class="font-[WorkSans] p-7 md:p-0"
       x-data="{ format: '${defaultFormat}', showSuccess: false }"
@@ -32,7 +32,7 @@ import Heading from "./Heading.astro";
         </p>
       </div>
 
-      {/* Feedback besked */}
+      <!-- Feedback besked -->
       <div
         x-show="showSuccess"
         x-transition
@@ -52,7 +52,7 @@ import Heading from "./Heading.astro";
           setTimeout(() => showSuccess = false, 10000)
         "
       >
-        {/* Tekst Sektion */}
+        <!-- Tekst Sektion -->
         <div>
           <label class="block text-sm tracking-widest mb-3">
             ØNSKET FORMAT*
@@ -81,7 +81,7 @@ import Heading from "./Heading.astro";
           </div>
         </div>
 
-        {/* Navn Felt */}
+        <!-- Navn Felt -->
         <div>
           <label class="block text-sm tracking-widest mb-2">
             DIT FULDE NAVN*
@@ -95,7 +95,7 @@ import Heading from "./Heading.astro";
           />
         </div>
 
-        {/* Email Felt */}
+        <!-- Email Felt -->
         <div>
           <label class="block text-sm tracking-widest mb-2"> EMAIL* </label>
           <input
@@ -107,7 +107,7 @@ import Heading from "./Heading.astro";
           />
         </div>
 
-        {/* Telefonnummer Felt */}
+        <!-- Telefonnummer Felt -->
         <div>
           <label class="block text-sm tracking-widest mb-2">
             TELEFONNUMMER*
@@ -121,7 +121,7 @@ import Heading from "./Heading.astro";
           />
         </div>
 
-        {/* Workshop Dato Dropdown */}
+        <!-- Workshop Dato Dropdown -->
         <div
           id="workshopFields"
           class="space-y-6"
@@ -145,13 +145,13 @@ import Heading from "./Heading.astro";
           </div>
         </div>
 
-        {/* Buket Felter */}
+        <!-- Buket Felter -->
         <div
           id="bouquetFields"
           class="space-y-6"
           x-show="format === 'buketter'"
         >
-          {/* Dropdowns */}
+          <!-- Dropdowns -->
           <div class="grid md:grid-cols-2 gap-6">
             <div>
               <label class="block text-sm tracking-widest mb-2">
@@ -186,7 +186,7 @@ import Heading from "./Heading.astro";
             </div>
           </div>
 
-          {/* Beskriv Din Vision */}
+          <!-- Beskriv Din Vision -->
           <div>
             <label class="block text-sm tracking-widest mb-2">
               BESKRIV DIN VISION
@@ -200,7 +200,7 @@ import Heading from "./Heading.astro";
           </div>
         </div>
 
-        {/* Send Knappen */}
+        <!-- Send Knappen -->
         <Button size="small">Start dialog</Button>
       </form>
     </div>
