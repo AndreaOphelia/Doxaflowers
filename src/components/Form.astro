@@ -5,7 +5,9 @@ import Button from "./Button.astro";
 import Heading from "./Heading.astro";
 ---
 
-<section class="text-primary-content min-h-screen bg-base-100 justify-center flex py-24">
+<section
+  class="text-primary-content min-h-screen bg-base-100 justify-center flex py-24"
+>
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
     <div
       class="relative flex items-center justify-center h-full md:h-auto md:min-h-[480px]"
@@ -25,19 +27,12 @@ import Heading from "./Heading.astro";
         <Heading htmlheading="h1" size="large" style="primary">
           START DIALOGEN OM DIT UNIKKE VÆRK
         </Heading>
-        <p class="mt-4">
-          Doxa Flowers skaber tidskrævende kunsthåndværk på bestilling. Vi tilbyder også workshops hvor du selv kan lære at skabe. Fortæl mig om din idé, dit projekt, din begivenhed, eller tilmeld dig en workshop, så vender jeg tilbage med et oplæg.
+        <p class="my-4">
+          Doxa Flowers skaber tidskrævende kunsthåndværk på bestilling. Vi
+          tilbyder også workshops hvor du selv kan lære at skabe. Fortæl mig om
+          din idé, dit projekt, din begivenhed, eller tilmeld dig en workshop,
+          så vender jeg tilbage med et oplæg.
         </p>
-      </div>
-
-      <div
-        x-show="showSuccess"
-        x-transition
-        class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 relative"
-        role="alert"
-      >
-        <strong class="font-bold">Tak for din besked!</strong>
-        <span class="block sm:inline"> Jeg vender tilbage hurtigst muligt.</span>
       </div>
 
       <form
@@ -49,28 +44,33 @@ import Heading from "./Heading.astro";
           setTimeout(() => showSuccess = false, 10000)
         "
       >
-        
         <fieldset>
           <legend class="block text-sm tracking-widest mb-2 mt-4">
             ØNSKET FORMAT*
           </legend>
           <div class="space-y-2">
-            <label for="format_buketter" class="flex items-center gap-3 cursor-pointer">
+            <label
+              for="format_buketter"
+              class="flex items-center gap-3 cursor-pointer"
+            >
               <input
                 type="radio"
                 name="format"
-                id="format_buketter" 
+                id="format_buketter"
                 value="buketter"
                 class="radio radio-sm"
                 x-model="format"
               />
               <span class="font-[WorkSans]">Buketter og installationer</span>
             </label>
-            <label for="format_workshop" class="flex items-center gap-3 cursor-pointer">
+            <label
+              for="format_workshop"
+              class="flex items-center gap-3 cursor-pointer"
+            >
               <input
                 type="radio"
                 name="format"
-                id="format_workshop" 
+                id="format_workshop"
                 value="workshop"
                 class="radio radio-sm"
                 x-model="format"
@@ -81,12 +81,15 @@ import Heading from "./Heading.astro";
         </fieldset>
 
         <div>
-          <label for="name_input" class="block text-sm tracking-widest mb-2 mt-4">
+          <label
+            for="name_input"
+            class="block text-sm tracking-widest mb-2 mt-4"
+          >
             DIT FULDE NAVN*
           </label>
           <input
             type="text"
-            id="name_input" 
+            id="name_input"
             name="name"
             placeholder="Indtast dit fulde navn"
             required
@@ -95,10 +98,15 @@ import Heading from "./Heading.astro";
         </div>
 
         <div>
-          <label for="email_input" class="block text-sm tracking-widest mb-2 mt-4"> EMAIL* </label>
+          <label
+            for="email_input"
+            class="block text-sm tracking-widest mb-2 mt-4"
+          >
+            EMAIL*
+          </label>
           <input
             type="email"
-            id="email_input" 
+            id="email_input"
             placeholder="Indtast din email"
             name="email"
             required
@@ -107,12 +115,15 @@ import Heading from "./Heading.astro";
         </div>
 
         <div>
-          <label for="phone_input" class="block text-sm tracking-widest mb-2 mt-4">
+          <label
+            for="phone_input"
+            class="block text-sm tracking-widest mb-2 mt-4"
+          >
             TELEFONNUMMER*
           </label>
           <input
             type="tel"
-            id="phone_input" 
+            id="phone_input"
             placeholder="Indtast dit telefonnummer"
             name="phone"
             required
@@ -126,12 +137,15 @@ import Heading from "./Heading.astro";
           x-show="format === 'workshop'"
         >
           <div>
-            <label for="date_select" class="block text-sm tracking-widest mb-2 mt-4">
+            <label
+              for="date_select"
+              class="block text-sm tracking-widest mb-2 mt-4"
+            >
               VÆLG DATO*
             </label>
             <select
               name="date"
-              id="date_select" 
+              id="date_select"
               class="border-accent-content-100 w-full bg-transparent py-2"
             >
               <option value="">Vælg en dato</option>
@@ -151,16 +165,21 @@ import Heading from "./Heading.astro";
         >
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label for="price_select" class="block text-sm tracking-widest mb-2">
+              <label
+                for="price_select"
+                class="block text-sm tracking-widest mb-2"
+              >
                 ØNSKET PRISRAMME
               </label>
               <select
                 name="priceRange"
-                id="price_select" 
+                id="price_select"
                 class="border-accent-100 w-full bg-transparent py-2 font-[WorkSans]"
               >
                 <option value="">Vælg</option>
-                <option value="3000-4000">Under 1.000 kr (Enkelte stilke)</option>
+                <option value="3000-4000"
+                  >Under 1.000 kr (Enkelte stilke)</option
+                >
                 <option value="1000-3000">1.000-3.000 kr</option>
                 <option value="3000-5000">3.000-5.000 kr</option>
                 <option value="over-5000">Over 5.000 kr</option>
@@ -168,12 +187,15 @@ import Heading from "./Heading.astro";
             </div>
 
             <div>
-              <label for="worktype_select" class="block text-sm tracking-widest mb-2">
+              <label
+                for="worktype_select"
+                class="block text-sm tracking-widest mb-2"
+              >
                 TYPE VÆRK
               </label>
               <select
                 name="workType"
-                id="worktype_select" 
+                id="worktype_select"
                 class="border-accent-100 w-full bg-transparent py-2 font-[WorkSans]"
               >
                 <option value="">Vælg</option>
@@ -186,12 +208,15 @@ import Heading from "./Heading.astro";
           </div>
 
           <div>
-            <label for="message_area" class="block text-sm tracking-widest mb-2">
+            <label
+              for="message_area"
+              class="block text-sm tracking-widest mb-2"
+            >
               BESKRIV DIN VISION
             </label>
             <textarea
               name="message"
-              id="message_area" 
+              id="message_area"
               placeholder="Fortæl mig om dine ønsker og idéer..."
               rows="6"
               class="border-accent-100 italic w-full py-2 resize-none bg-transparent"
@@ -200,6 +225,17 @@ import Heading from "./Heading.astro";
         </div>
 
         <Button size="small">Start dialog</Button>
+        <div
+          x-show="showSuccess"
+          x-transition
+          class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 relative"
+          role="alert"
+        >
+          <strong class="font-bold">Tak for din besked!</strong>
+          <span class="block sm:inline">
+            Jeg vender tilbage hurtigst muligt.</span
+          >
+        </div>
       </form>
     </div>
   </div>
