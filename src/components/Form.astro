@@ -7,7 +7,6 @@ import Heading from "./Heading.astro";
 
 <section class="text-primary-content min-h-screen bg-base-100 justify-center flex py-24">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-stretch">
-    <!-- Venstre side - billede -->
     <div
       class="relative flex items-center justify-center h-full md:h-auto md:min-h-[480px]"
     >
@@ -18,10 +17,9 @@ import Heading from "./Heading.astro";
       />
     </div>
 
-    <!-- Højre side - formular -->
     <div
       class="font-[WorkSans] p-7 md:p-0"
-      x-data="{ format: '${defaultFormat}', showSuccess: false }"
+      x-data="{ format: 'buketter', showSuccess: false }"
     >
       <div>
         <Heading htmlheading="h1" size="large" style="primary">
@@ -32,7 +30,6 @@ import Heading from "./Heading.astro";
         </p>
       </div>
 
-      <!-- Feedback besked -->
       <div
         x-show="showSuccess"
         x-transition
@@ -48,30 +45,32 @@ import Heading from "./Heading.astro";
         @submit.prevent="
           showSuccess = true; 
           $event.target.reset(); 
-          format = '${defaultFormat}';
+          format = 'buketter';
           setTimeout(() => showSuccess = false, 10000)
         "
       >
-        <!-- Tekst Sektion -->
-        <div>
-          <label class="block text-sm tracking-widest mb-2 mt-4">
+        
+        <fieldset>
+          <legend class="block text-sm tracking-widest mb-2 mt-4">
             ØNSKET FORMAT*
-          </label>
+          </legend>
           <div class="space-y-2">
-            <label class="flex items-center gap-3 cursor-pointer">
+            <label for="format_buketter" class="flex items-center gap-3 cursor-pointer">
               <input
                 type="radio"
                 name="format"
+                id="format_buketter" 
                 value="buketter"
                 class="radio radio-sm"
                 x-model="format"
               />
               <span class="font-[WorkSans]">Buketter og installationer</span>
             </label>
-            <label class="flex items-center gap-3 cursor-pointer">
+            <label for="format_workshop" class="flex items-center gap-3 cursor-pointer">
               <input
                 type="radio"
                 name="format"
+                id="format_workshop" 
                 value="workshop"
                 class="radio radio-sm"
                 x-model="format"
@@ -79,15 +78,15 @@ import Heading from "./Heading.astro";
               <span class="font-[WorkSans]">Workshop tilmelding</span>
             </label>
           </div>
-        </div>
+        </fieldset>
 
-        <!-- Navn Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2 mt-4">
+          <label for="name_input" class="block text-sm tracking-widest mb-2 mt-4">
             DIT FULDE NAVN*
           </label>
           <input
             type="text"
+            id="name_input" 
             name="name"
             placeholder="Indtast dit fulde navn"
             required
@@ -95,11 +94,11 @@ import Heading from "./Heading.astro";
           />
         </div>
 
-        <!-- Email Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2 mt-4"> EMAIL* </label>
+          <label for="email_input" class="block text-sm tracking-widest mb-2 mt-4"> EMAIL* </label>
           <input
             type="email"
+            id="email_input" 
             placeholder="Indtast din email"
             name="email"
             required
@@ -107,13 +106,13 @@ import Heading from "./Heading.astro";
           />
         </div>
 
-        <!-- Telefonnummer Felt -->
         <div>
-          <label class="block text-sm tracking-widest mb-2 mt-4">
+          <label for="phone_input" class="block text-sm tracking-widest mb-2 mt-4">
             TELEFONNUMMER*
           </label>
           <input
             type="tel"
+            id="phone_input" 
             placeholder="Indtast dit telefonnummer"
             name="phone"
             required
@@ -121,18 +120,18 @@ import Heading from "./Heading.astro";
           />
         </div>
 
-        <!-- Workshop Dato Dropdown -->
         <div
           id="workshopFields"
           class="space-y-6"
           x-show="format === 'workshop'"
         >
           <div>
-            <label class="block text-sm tracking-widest mb-2 mt-4">
+            <label for="date_select" class="block text-sm tracking-widest mb-2 mt-4">
               VÆLG DATO*
             </label>
             <select
               name="date"
+              id="date_select" 
               class="border-accent-content-100 w-full bg-transparent py-2"
             >
               <option value="">Vælg en dato</option>
@@ -145,20 +144,19 @@ import Heading from "./Heading.astro";
           </div>
         </div>
 
-        <!-- Buket Felter -->
         <div
           id="bouquetFields"
           class="space-y-6"
           x-show="format === 'buketter'"
         >
-          <!-- Dropdowns -->
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm tracking-widest mb-2">
+              <label for="price_select" class="block text-sm tracking-widest mb-2">
                 ØNSKET PRISRAMME
               </label>
               <select
                 name="priceRange"
+                id="price_select" 
                 class="border-accent-100 w-full bg-transparent py-2 font-[WorkSans]"
               >
                 <option value="">Vælg</option>
@@ -170,11 +168,12 @@ import Heading from "./Heading.astro";
             </div>
 
             <div>
-              <label class="block text-sm tracking-widest mb-2">
+              <label for="worktype_select" class="block text-sm tracking-widest mb-2">
                 TYPE VÆRK
               </label>
               <select
                 name="workType"
+                id="worktype_select" 
                 class="border-accent-100 w-full bg-transparent py-2 font-[WorkSans]"
               >
                 <option value="">Vælg</option>
@@ -186,13 +185,13 @@ import Heading from "./Heading.astro";
             </div>
           </div>
 
-          <!-- Beskriv Din Vision -->
           <div>
-            <label class="block text-sm tracking-widest mb-2">
+            <label for="message_area" class="block text-sm tracking-widest mb-2">
               BESKRIV DIN VISION
             </label>
             <textarea
               name="message"
+              id="message_area" 
               placeholder="Fortæl mig om dine ønsker og idéer..."
               rows="6"
               class="border-accent-100 italic w-full py-2 resize-none bg-transparent"
@@ -200,7 +199,6 @@ import Heading from "./Heading.astro";
           </div>
         </div>
 
-        <!-- Send Knappen -->
         <Button size="small">Start dialog</Button>
       </form>
     </div>

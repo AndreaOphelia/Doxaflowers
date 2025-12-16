@@ -21,19 +21,31 @@ import logosvg from "../assets/images/doxaflowers_logo.svg";
     </div>
 
     <!-- Newsletter -->
-    <div>
-      <Heading htmlheading="h2" size="small" style="primary"
-        >Tilmeld dig vores nyhedsbrev</Heading
-      >
-      <div class="flex mb-8 font-light mt-4">
-        <input
-          type="email"
-          placeholder="Din e-mail"
-          class="text-xs bg-transparent"
-        />
-        <Button size="xsmall" type="submit">Tilmeld</Button>
-      </div>
+ <div>
+  <Heading htmlheading="h2" size="small" style="primary">
+    Tilmeld dig vores nyhedsbrev
+  </Heading>
+
+  <form action="/subscribe" method="POST">
+    <div class="flex mb-8 font-light mt-4">
+      
+      <label for="newsletter_email" class="sr-only">
+        Din e-mail (tilmelding til nyhedsbrev)
+      </label>
+
+      <input
+        type="email"
+        id="newsletter_email"
+        name="email"
+        placeholder="Din e-mail"
+        class="text-xs bg-transparent flex-grow !border-accent-content-100 italic" 
+        required
+      />
+      
+      <Button size="xsmall" type="submit">Tilmeld</Button>
     </div>
+  </form>
+</div>
 
     <!-- Kontakt + Social på mobil ved siden af hinanden -->
     <div class="flex flex-col sm:flex-row gap-8">
