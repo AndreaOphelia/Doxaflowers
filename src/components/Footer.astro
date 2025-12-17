@@ -5,73 +5,87 @@ import { Image } from "astro:assets";
 import logosvg from "../assets/images/doxaflowers_logo.svg";
 ---
 
-<footer
+<footer 
   role="contentinfo"
-  class="text-primary-content bg-base-100 w-full py-8 min-h-[200px]"
->
+  class="text-primary-content bg-base-100 w-full py-8 min-h-[200px]">
   <!-- Top section -->
   <div class="flex flex-col md:flex-row justify-between flex-wrap">
     <!-- Brand -->
     <div class="mb-8">
       <a href="/">
-        <Image src={logosvg} alt="Doxa Flowers Logo" />
+        <Image
+          src={logosvg}
+          alt="Doxa Flowers Logo"
+        />
       </a>
     </div>
 
     <!-- Newsletter -->
-    <div>
-      <Heading htmlheading="h2" size="small" style="primary"
-        >Tilmeld dig vores nyhedsbrev</Heading
-      >
-      <div class="flex mb-8 font-light mt-4">
-        <input
-          aria-label="din email"
-          type="email"
-          placeholder="Din e-mail"
-          class="text-xs bg-transparent"
-        />
-        <Button size="xsmall" type="submit">Tilmeld</Button>
+ <div>
+  <Heading htmlheading="h2" size="small" style="primary">
+    Tilmeld dig vores nyhedsbrev
+  </Heading>
+
+  <form action="/subscribe" method="POST">
+    <div class="flex mb-8 font-light mt-4">
+      
+      <label for="newsletter_email" class="sr-only">
+        Din e-mail (tilmelding til nyhedsbrev)
+      </label>
+
+      <input
+        type="email"
+        id="newsletter_email"
+        name="email"
+        placeholder="Din e-mail"
+        class="text-xs bg-transparent flex-grow !border-accent-content-100 italic" 
+        required
+      />
+      
+      <Button size="xsmall" type="submit">Tilmeld</Button>
+    </div>
+  </form>
+</div>
+
+    <!-- Kontakt + Social på mobil ved siden af hinanden -->
+    <div class="flex flex-col sm:flex-row gap-8">
+      <!-- Kontakt -->
+      <divs>
+        <Heading htmlheading="h2" size="small" style="primary"
+        >Kontakt</Heading>
+        <ul class="mt-4">
+          <li>
+            <a href="#" class="font-light text-xs">info@doxaflowers.dk</a>
+          </li>
+          <li>
+            <a href="#" class="font-light text-xs">+45 42 94 10 03</a>
+          </li>
+        </ul>
+      </divs>
+
+      <!-- Social -->
+      <div>
+        <Heading htmlheading="h2" size="small" style="primary">Social</Heading>
+        <ul class="mt-4">
+          <li>
+            <a href="#" class="font-light text-xs">Instagram</a>
+          </li>
+          <li>
+            <a href="#" class="font-light text-xs">Facebook</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-</footer>
 
-<!-- Kontakt + Social på mobil ved siden af hinanden -->
-<div class="flex flex-col sm:flex-row gap-8">
-  <!-- Kontakt -->
-  <divs>
-    <Heading htmlheading="h2" size="small" style="primary">Kontakt</Heading>
-    <ul class="mt-4">
-      <li>
-        <a href="#" class="font-light text-xs">info@doxaflowers.dk</a>
-      </li>
-      <li>
-        <a href="#" class="font-light text-xs">+45 42 94 10 03</a>
-      </li>
-    </ul>
-  </divs>
+  <!-- Divider -->
+  <hr class="border-base-200 my-4" />
 
-  <!-- Social -->
-  <div>
-    <Heading htmlheading="h2" size="small" style="primary">Social</Heading>
-    <ul class="mt-4">
-      <li>
-        <a href="#" class="font-light text-xs">Instagram</a>
-      </li>
-      <li>
-        <a href="#" class="font-light text-xs">Facebook</a>
-      </li>
-    </ul>
+  <!-- Bottom -->
+  <div class="flex flex-col md:flex-row justify-between">
+    <p class="font-light text-xs">
+      © 2025 DOXAFLOWERS – Alle rettigheder forbeholdes
+    </p>
+    <p class="text-xs">CVR:30460960</p>
   </div>
-</div>
-
-<!-- Divider -->
-<hr class="border-base-200 my-4" />
-
-<!-- Bottom -->
-<div class="flex flex-col md:flex-row justify-between">
-  <p class="font-light text-xs">
-    © 2025 DOXAFLOWERS – Alle rettigheder forbeholdes
-  </p>
-  <p class="text-xs">CVR:30460960</p>
-</div>
+</footer>
